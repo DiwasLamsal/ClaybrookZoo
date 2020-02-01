@@ -77,7 +77,7 @@ if(isset($student))
                     <tr>
                       <th>Action</th>
                       <td>
-                        <a id="myBtn" style="cursor: pointer;"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                        <a id="myBtn" style="cursor: pointer;"><img src="/ZooAssignment/public/resources/images/deleteuser.png" width="150"></a>
                       </td>
                     </tr>
                 </tbody>
@@ -98,7 +98,7 @@ if(isset($student))
                 <tr>
                     <th>PAT: </th>
                     <td> <?php
-    $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$pat['uid'].'">'.
+    $link = '<a target="_blank" style="color:blue;" href = "/ZooAssignment/public/ManageModuleLeaders/browse/'.$pat['uid'].'">'.
               $pat['fname'].' '.$pat['mname'].' '.$pat['lname'].'</a>';
     echo $link;
   ?></td>
@@ -106,7 +106,7 @@ if(isset($student))
                 <tr>
                   <th>Course:</th>
                   <td>  <?php
-    $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageCourses/browse/'.$enCourse['cid'].'">'.
+    $link = '<a target="_blank" style="color:blue;" href = "/ZooAssignment/public/ManageCourses/browse/'.$enCourse['cid'].'">'.
               $enCourse['ctitle'].'</a>';
     echo $link;
   ?></td>
@@ -114,7 +114,7 @@ if(isset($student))
                 <tr>
                   <th>Level:</th>
                   <td>  <?php
-    $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageLevels/browse/'.$enLevel['lvid'].'">'.
+    $link = '<a target="_blank" style="color:blue;" href = "/ZooAssignment/public/ManageLevels/browse/'.$enLevel['lvid'].'">'.
               $enLevel['lvtitle'].' - '.$enLevel['lvaltname'].'</a>';
     echo $link;
   ?></td>
@@ -144,7 +144,7 @@ if(isset($student))
   if($modules->rowCount()>0){
     while($module = $modules->fetch()){
       $att = round(getAttendancePercentage($student['suid'], $module['mid']));
-      $actionText = '<a href="/GroupProject/public/PrintOfferLetter/concern/'.$student['suid'].'" target="_blank">
+      $actionText = '<a href="/ZooAssignment/public/PrintOfferLetter/concern/'.$student['suid'].'" target="_blank">
                       <font color = red>Take Action</font>
                     </a>'
 ?>
@@ -217,15 +217,15 @@ else{
                 </div>
                 <a href="mailto:<?php echo $user['uemail']?>">
                     <button>
-                        <img src="/GroupProject/public/resources/images/mail.png" width="20"
+                        <img src="/ZooAssignment/public/resources/images/mail.png" width="20"
                             style="margin-bottom: -5px; float: left;">
                         &nbsp; Mail Conditional Letter
                     </button>
                 </a>
 
-                <a href="/GroupProject/public/PrintOfferLetter/conditional/<?php echo $user['uid']?>" target="_blank">
+                <a href="/ZooAssignment/public/PrintOfferLetter/conditional/<?php echo $user['uid']?>" target="_blank">
                     <button style="background: DodgerBlue;">
-                        <img src="/GroupProject/public/resources/images/print.png" width="20"
+                        <img src="/ZooAssignment/public/resources/images/print.png" width="20"
                             style="margin-bottom: -5px; float: left;">
                         &nbsp;Print Conditional Letter
                     </button>
@@ -240,15 +240,15 @@ else{
                 </div>
                 <a href="mailto:<?php echo $user['uemail']?>">
                     <button>
-                        <img src="/GroupProject/public/resources/images/mail.png" width="20"
+                        <img src="/ZooAssignment/public/resources/images/mail.png" width="20"
                             style="margin-bottom: -5px; float: left;">
                         &nbsp;Mail Unconditional Letter
                     </button>
                 </a>
 
-                <a href="/GroupProject/public/PrintOfferLetter/conditional/<?php echo $user['uid']?>" target="_blank">
+                <a href="/ZooAssignment/public/PrintOfferLetter/conditional/<?php echo $user['uid']?>" target="_blank">
                     <button style="background: DodgerBlue;">
-                        <img src="/GroupProject/public/resources/images/print.png" width="20"
+                        <img src="/ZooAssignment/public/resources/images/print.png" width="20"
                             style="margin-bottom: -5px; float: left;">
                         &nbsp;Print Unconditional Letter
                     </button>

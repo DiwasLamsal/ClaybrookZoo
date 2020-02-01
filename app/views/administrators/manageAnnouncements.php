@@ -3,9 +3,9 @@
 <div class = "boxesContainer boxesContainerManage">
 
   <div class = "contentBoxLarge contentBoxLargeManage addNewBox">
-    <a href = "/GroupProject/public/ManageAnnouncements/add">
+    <a href = "/ZooAssignment/public/ManageAnnouncements/add">
       <div style="width: 100%; height: 80%; padding-top: 4%;">
-        <img src = "/GroupProject/public/resources/images/addannouncement.png" width="50"><br>
+        <img src = "/ZooAssignment/public/resources/images/addannouncement.png" width="50"><br>
         Add new Announcement
       </div>
     </a>
@@ -40,12 +40,12 @@
     $count = 0;
       while($announcement = $announcements->fetch()){
 
-        $viewIcon = '<a href = "/GroupProject/public/ManageAnnouncements/browse/'.$announcement['anid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/view.svg">
+        $viewIcon = '<a href = "/ZooAssignment/public/ManageAnnouncements/browse/'.$announcement['anid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/view.svg">
                         </a>';
 
-        $archiveIcon = '<a href = "/GroupProject/public/ManageAnnouncements/archive/'.$announcement['anid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/archive.svg">
+        $archiveIcon = '<a href = "/ZooAssignment/public/ManageAnnouncements/archive/'.$announcement['anid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/archive.svg">
                         </a>';
 
         $statusText = $announcement['anstatus']=="Y" ? '<font color = "green">Visible</font>':

@@ -13,15 +13,15 @@ Please Upload the SQL file groupb.sql before you proceed. The database name is g
 *******************************************
 *IMPORTANT*
 
-Please add the folder GroupProject to the root server directory because Absolute path has been used
+Please add the folder ZooAssignment to the root server directory because Absolute path has been used
 The files such as CSS, images, or javascript required absolute pathing due to the htaccess structure 
 and the MVC module
 
 The folder structure shall be:
 
-	htdocs/GroupProject/
+	htdocs/ZooAssignment/
 	
-such that GroupProject is the first directory in the url - localhost/GroupProject
+such that ZooAssignment is the first directory in the url - localhost/ZooAssignment
 
 Please do not change the root folder name or restructure the directories
 
@@ -31,7 +31,7 @@ Information about Database Connection code:
 
 The database connection code can be found inside the pdoconnect folder inside the app folder.
 
-/GroupProject/App/pdoconnect/pdoconnect.php
+/ZooAssignment/App/pdoconnect/pdoconnect.php
 
 The current values are:
 
@@ -81,7 +81,7 @@ Resources information:
 All the dummy data that can be uploaded to the system is placed inside the uploadData folder inside the resources folder 
 inside the public folder. 
 
-/GroupProject/Public/resources/uploadData
+/ZooAssignment/Public/resources/uploadData
 
 The admissionData folder contains student UCAS admission csv file.
 The assignmentSubmission folder contains dummy student assignment submissions files.

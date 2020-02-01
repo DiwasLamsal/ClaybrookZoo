@@ -3,9 +3,9 @@
 <div class = "boxesContainer boxesContainerManage">
 
   <div class = "contentBoxLarge contentBoxLargeManage addNewBox">
-    <a href = "/GroupProject/public/ManageAdministrators/add">
+    <a href = "/ZooAssignment/public/ManageAdministrators/add">
       <div style="width: 100%; height: 80%; padding-top: 4%;">
-        <img src = "/GroupProject/public/resources/images/adduser.png" width="50"><br>
+        <img src = "/ZooAssignment/public/resources/images/adduser.png" width="50"><br>
         Add new Administrator
       </div>
     </a>
@@ -62,14 +62,14 @@
     <?php
 
     $viewIcon = '<a href = "#">
-                      <img class = "tableIcon" src = "/GroupProject/public/resources/images/view.svg">
+                      <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/view.svg">
                     </a>';
     $deleteIcon = '<a href = "#">
-                      <img class = "tableIcon" src = "/GroupProject/public/resources/images/delete.svg">
+                      <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/delete.svg">
                     </a>';
 
     $archiveIcon = '<a href = "#">
-                      <img class = "tableIcon" src = "/GroupProject/public/resources/images/archive.svg">
+                      <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/archive.svg">
                     </a>';
 
     $count = 0;

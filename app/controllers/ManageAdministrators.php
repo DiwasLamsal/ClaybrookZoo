@@ -56,7 +56,7 @@ class ManageAdministrators extends Controller{
         header("Location:../index/editpasssuccess");
       }
 
-      $link = '/GroupProject/public/ManageAdministrators/delete/'.$val;
+      $link = '/ZooAssignment/public/ManageAdministrators/delete/'.$val;
       $template = '../app/views/administrators/modal.php';
       $modal = loadTemplate($template, ['type'=>'Administrator', 'link'=>$link]);
 

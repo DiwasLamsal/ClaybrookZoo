@@ -45,7 +45,7 @@ if(isset($module)){
                     <tr>
                       <th>Action</th>
                       <td>
-                        <a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                        <a id="myBtn"><img src="/ZooAssignment/public/resources/images/deleteuser.png" width="150"></a>
                       </td>
                   </tr>
               </tbody>
@@ -69,7 +69,7 @@ if(isset($module)){
                 <tr>
                     <th>Leader: </th>
                     <td><?php
-      $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
+      $link = '<a target="_blank" style="color:blue;" href = "/ZooAssignment/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
                 $leader['fname'].' '.$leader['mname'].' '.$leader['lname'].'</a>';
       echo $link;
     ?></td>
@@ -79,7 +79,7 @@ if(isset($module)){
                         Course:
                     </th>
                     <td> <?php
-      $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageCourses/browse/'.$mCourse['cid'].'">'.
+      $link = '<a target="_blank" style="color:blue;" href = "/ZooAssignment/public/ManageCourses/browse/'.$mCourse['cid'].'">'.
                 $mCourse['ctitle'].'</a>';
       echo $link;
     ?></td>
@@ -87,7 +87,7 @@ if(isset($module)){
                 <tr>
                     <th>Level:</th>
                     <td><?php
-      $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageLevels/browse/'.$mLevel['lvid'].'">'.
+      $link = '<a target="_blank" style="color:blue;" href = "/ZooAssignment/public/ManageLevels/browse/'.$mLevel['lvid'].'">'.
                 $mLevel['lvtitle'].' - '.$mLevel['lvaltname'].'</a>';
       echo $link;
     ?></td>

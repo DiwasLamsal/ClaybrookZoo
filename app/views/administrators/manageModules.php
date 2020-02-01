@@ -2,9 +2,9 @@
 <div class = "boxesContainer boxesContainerManage">
 
   <div class = "contentBoxLarge contentBoxLargeManage addNewBox">
-    <a href = "/GroupProject/public/ManageModules/add">
+    <a href = "/ZooAssignment/public/ManageModules/add">
       <div style="width: 100%; height: 80%; padding-top: 4%;">
-        <img src = "/GroupProject/public/resources/images/addmodule.png" width="50"><br>
+        <img src = "/ZooAssignment/public/resources/images/addmodule.png" width="50"><br>
         Add new Module
       </div>
     </a>
@@ -41,12 +41,12 @@
     $count = 0;
       while($module = $modules->fetch()){
 
-        $viewIcon = '<a href = "/GroupProject/public/ManageModules/browse/'.$module['mid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/view.svg">
+        $viewIcon = '<a href = "/ZooAssignment/public/ManageModules/browse/'.$module['mid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/view.svg">
                         </a>';
 
-        $archiveIcon = '<a href = "/GroupProject/public/ManageModules/archive/'.$module['mid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/archive.svg">
+        $archiveIcon = '<a href = "/ZooAssignment/public/ManageModules/archive/'.$module['mid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/archive.svg">
                         </a>';
 
         $statusText = $module['mstatus']=="Y" ? '<font color = "green">Visible</font>':
@@ -55,15 +55,15 @@
        $leader = getUserById($module['mluid'])->fetch();
 
 
-       $link = '<u><a target="_blank" style="color:#717ede;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
+       $link = '<u><a target="_blank" style="color:#717ede;" href = "/ZooAssignment/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
                  $leader['fname'].' '.$leader['mname'].' '.$leader['lname'].'</a></u>';
 
        $course = getCourseById($module['mcid'])->fetch();
-       $courseLink = '<u><a target="_blank" style="color:#717ede;" href = "/GroupProject/public/ManageCourses/browse/'.$course['cid'].'">'.
+       $courseLink = '<u><a target="_blank" style="color:#717ede;" href = "/ZooAssignment/public/ManageCourses/browse/'.$course['cid'].'">'.
                  $course['ctitle'].'</a></u>';
 
       $level = getLevelById($module['mlvid'])->fetch();
-      $levelLink = '<u><a target="_blank" style="color:#717ede;" href = "/GroupProject/public/ManageLevels/browse/'.$level['lvid'].'">'.
+      $levelLink = '<u><a target="_blank" style="color:#717ede;" href = "/ZooAssignment/public/ManageLevels/browse/'.$level['lvid'].'">'.
                 $level['lvtitle'].'</a></u>';
 
         $count++;

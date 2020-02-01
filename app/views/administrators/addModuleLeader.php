@@ -59,7 +59,7 @@ if(isset($moduleLeader))
                     <tr>
                       <th>Action</th>
                       <td>
-                        <a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                        <a id="myBtn"><img src="/ZooAssignment/public/resources/images/deleteuser.png" width="150"></a>
                       </td>
                   </tr>
               </tbody>
@@ -91,7 +91,7 @@ if(isset($moduleLeader))
 $course = checkCourseLeader($moduleLeader['luid']);
 if($course->rowCount()>0){
   $course = $course->fetch();
-  $link = '<a style=color:blue; href = "/GroupProject/public/ManageCourses/browse/'.$course['cid'].'">'.$course['ctitle'].'</a>';
+  $link = '<a style=color:blue; href = "/ZooAssignment/public/ManageCourses/browse/'.$course['cid'].'">'.$course['ctitle'].'</a>';
   echo 'Course Leader for '.$link;
 }
 else{
@@ -122,7 +122,7 @@ while($module = $modules->fetch()){
 ?>
 
   <?php
-  $link = '<a class = "courseModuleLink" target = "_blank" href = "/GroupProject/public/ManageModules/browse/'.$module['mid'].'">';
+  $link = '<a class = "courseModuleLink" target = "_blank" href = "/ZooAssignment/public/ManageModules/browse/'.$module['mid'].'">';
   echo $link;
   echo '<div class = "courseModuleBox" style = "background: '.generateRandomColor().';">';
   echo $module['mname'];

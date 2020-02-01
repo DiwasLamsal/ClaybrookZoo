@@ -1,8 +1,8 @@
 <div class = "boxesContainer boxesContainerManage">
   <div class = "contentBoxLarge contentBoxLargeManage addNewBox">
-    <a href = "/GroupProject/public/ManageStudents/add">
+    <a href = "/ZooAssignment/public/ManageStudents/add">
       <div style="width: 100%; height: 80%; padding-top: 4%;">
-        <img src = "/GroupProject/public/resources/images/addstudent.png" width="50"><br>
+        <img src = "/ZooAssignment/public/resources/images/addstudent.png" width="50"><br>
         Student Admission
       </div>
     </a>

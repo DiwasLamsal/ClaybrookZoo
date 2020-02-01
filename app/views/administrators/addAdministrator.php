@@ -50,7 +50,7 @@ if(isset($user)){
                     <tr>
                         <th>Action</th>
                         <td>
-                          <a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                          <a id="myBtn"><img src="/ZooAssignment/public/resources/images/deleteuser.png" width="150"></a>
                         </td>
                     </tr>
                 </tbody>

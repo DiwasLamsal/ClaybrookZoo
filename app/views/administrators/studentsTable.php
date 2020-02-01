@@ -19,12 +19,12 @@
         $enCourse = getCourseById($student['cid'])->fetch();
         $enLevel = getLevelById($student['slvid'])->fetch();
 
-        $viewIcon = '<a href = "/GroupProject/public/ManageStudents/browse/'.$user['uid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/view.svg">
+        $viewIcon = '<a href = "/ZooAssignment/public/ManageStudents/browse/'.$user['uid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/view.svg">
                         </a>';
 
-        $archiveIcon = '<a href = "/GroupProject/public/ManageStudents/archive/'.$user['uid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/archive.svg">
+        $archiveIcon = '<a href = "/ZooAssignment/public/ManageStudents/archive/'.$user['uid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/archive.svg">
                         </a>';
         $statusText = $student['rstatus']=="Live" ? '<font color = "green">Live</font>':
                                                            '<font color = "red">'.$student['rstatus'].'</font>';

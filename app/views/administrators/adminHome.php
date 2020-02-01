@@ -3,7 +3,7 @@
 
 
   <div class = "adminDashboardBox adbstudents">
-    <a href = "/GroupProject/public/ManageStudents">
+    <a href = "/ZooAssignment/public/ManageStudents">
       <img src = "resources/images/student.png" alt = "Students">
       <?php echo $count['students']; ?> Students
     </a>
@@ -11,7 +11,7 @@
 
 
   <div class = "adminDashboardBox adbmoduleleaders">
-    <a href = "/GroupProject/public/ManageModuleLeaders">
+    <a href = "/ZooAssignment/public/ManageModuleLeaders">
       <img src = "resources/images/teacher.png" alt = "Module Leaders">
       <?php echo $count['moduleLeaders']; ?> Module Leaders
     </a>
@@ -19,7 +19,7 @@
 
 
   <div class = "adminDashboardBox adbcourses">
-    <a href = "/GroupProject/public/ManageCourses">
+    <a href = "/ZooAssignment/public/ManageCourses">
       <img src = "resources/images/course.png" alt = "Courses">
       <?php echo $count['courses']; ?> Courses
     </a>
@@ -27,7 +27,7 @@
 
 
   <div class = "adminDashboardBox adbmodules">
-    <a href = "/GroupProject/public/ManageModules">
+    <a href = "/ZooAssignment/public/ManageModules">
       <img src = "resources/images/module.png" alt = "Modules">
       <?php echo $count['modules']; ?> Modules
     </a>
@@ -100,7 +100,7 @@
         while($announcement = $announcements->fetch()){
           if($announcement['anstatus']=='N')
             continue;
-          echo '<a href = "/GroupProject/public/ManageAnnouncements/browse/'.$announcement['anid'].'" style="color: black;"><div class = "subContentList"><b>';
+          echo '<a href = "/ZooAssignment/public/ManageAnnouncements/browse/'.$announcement['anid'].'" style="color: black;"><div class = "subContentList"><b>';
             echo $announcement['antitle'];
           echo '</b></div></a>';
         }

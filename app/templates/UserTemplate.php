@@ -4,116 +4,72 @@ if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
 
-if(!isset($_SESSION['loggedin'])){
-	header("Location: /GroupProject/public/Home");
-}
-else{
-	if($role!=$_SESSION['loggedin']['urole']){
-		header("Location: /GroupProject/public/Logout");
-	}
-}
-
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="/GroupProject/public/css/userStyle.css"/>
 	<title><?php echo $title;?></title>
-	<script src = "/GroupProject/public/script/script.js"></script>
-	<script src="/GroupProject/public/script/jquery.js"></script>
+	<link rel="stylesheet" href="/ZooAssignment/public/css/bootstrap.min.css"/>
+	<script src="/ZooAssignment/public/script/jquery.js"></script>
+	<script src="/ZooAssignment/public/script/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/ZooAssignment/public/css/userStyle.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="/ZooAssignment/public/css/font-awesome.css">
+	<script src = "/ZooAssignment/public/script/script.js"></script>
 </head>
 
 <body>
 
-<!--################### -LOADER SECTION- #################-->
-<!--################### -MUST NOT BE EDITED- #################-->
-  <div class="load">
-  	<div class = "loader">
-	  	<div class ="firstBar bar"></div>
-	  	<div class ="secondBar bar"></div>
-	  	<div class ="thirdBar bar"></div>
-	  	<div class ="fourthBar bar"></div>
-	  	<div class ="fifthBar bar"></div>
-	  	<div class ="sixthBar bar"></div>
-	  	<div class ="seventhBar bar"></div>
-	  	<div class ="eighthBar bar"></div>
-  	</div>
-  </div>
 
 
 	<main>
-
-	  <nav>
-			<div class="logosection">
-			<img src = "/GroupProject/public/resources/images/logorectangle.bmp" alt = "">
-
-			</div>
-
-			<ul>
-
-	    <!-- Contents for the navigation go here -->
-	    <?php echo $navigation;?>
-		</ul>
-
-	  </nav>
-
-
-		<section>
-			<header>
-
-				<div id = "headerLeft">
-					<h4 style=" color: white; width: 70%; margin: auto;">
-						Academic Year <?php echo date("Y").' - '.(date("Y")+1);?>
-					</h4>
-				</div>
-
-				<div id = "headerMiddle">
+		<div class="wrapper">
+     <header>
+        <nav>
+           <div class="menu-icon">
+              <i class="fa fa-bars fa-2x"></i>
+           </div>
+           <div class="logo">
+					 	<a href = "#">
+							<img id = "nav-logo" src = "/ZooAssignment/public/resources/images/logo.jpg" alt = "logo">
+							<span id = "nav-logo-text">&nbsp; Claybrook Zoo</span>
+						</a>
+           </div>
+           <div class="menu">
+              <ul>
+                 <li><a href="#">Home</a></li>
+                 <li><a href="#">Animals</a></li>
+                 <li><a href="#">Areas</a></li>
+                 <li><a href="#">About</a></li>
+                 <li><a href="#">Contact</a></li>
+              </ul>
+           </div>
+        </nav>
+     </header>
 
 
-					<h3 style="text-align: center;"><?php echo date("l, F j, Y"); ?></h3>
-
-				</div>
-
-
-				<div id = "headerRight">
-						<div id = "dropdown">
-							<h5>
-								<img src = "/GroupProject/public/resources/images/avatar.svg" alt = "">
-								<?php if(isset($_SESSION['loggedin'])) echo $_SESSION['loggedin']['fname'].' '.$_SESSION['loggedin']['lname']; ?> &nbsp;
-								<!-- https://www.w3schools.com/howto/howto_css_arrows.asp -->
-								<i id = "arrow" class="downArrow rightArrow"></i>
+	 		<section>
+				<div class="content">
+           <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+           </p>
+           <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+           </p>
+        </div>
+	 		</section>
 
 
-								<div id="myDropdown" class="dropdown-content">
-							    <a href="/GroupProject/public/Logout">Logout</a>
-							  </div>
-							</h5>
 
-							<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown -->
+		<footer>
+			Footer
+			&copy; Claybrook Zoo <?php echo date("Y");?>
+		</footer>
 
-
-						</span>
-				</div>
-
-			</header>
-
-			<div class = "contentArea">
-
-		    <!-- Main Contents go here -->
-		    <?php echo $content;?>
-
-			</div>
-		</section>
-
+		      </div>
 	</main>
 
-
-	<footer>
-		&copy; Woodlands University College <?php echo date("Y");?>
-	</footer>
 </body>
 </html>

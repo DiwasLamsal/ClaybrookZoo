@@ -29,7 +29,7 @@ if(isset($course)){
                     <tr>
                         <th>Course Leader:</th>
                         <td> <?php
-        $link = '<a target="_blank" style="color:#717ede;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
+        $link = '<a target="_blank" style="color:#717ede;" href = "/ZooAssignment/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
                   $leader['fname'].' '.$leader['mname'].' '.$leader['lname'].'</a>';
         echo $link;
       ?></td>
@@ -46,7 +46,7 @@ if(isset($course)){
                     <tr>
                       <th>Action</th>
                       <td>
-                        <a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                        <a id="myBtn"><img src="/ZooAssignment/public/resources/images/deleteuser.png" width="150"></a>
                       </td>
                   </tr>
               </tbody>
@@ -74,7 +74,7 @@ if(isset($course)){
 ?>
 
     <?php
-      $link = '<a class = "courseModuleLink" target = "_blank" href = "/GroupProject/public/ManageModules/browse/'.$module['mid'].'">';
+      $link = '<a class = "courseModuleLink" target = "_blank" href = "/ZooAssignment/public/ManageModules/browse/'.$module['mid'].'">';
       echo $link;
       echo '<div class = "courseModuleBox opacityCourseModuleBox" style = "background: '.generateRandomColor().';">';
       echo $module['mname'];

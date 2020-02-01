@@ -2,9 +2,9 @@
 <div class = "boxesContainer boxesContainerManage">
 
   <div class = "contentBoxLarge contentBoxLargeManage addNewBox">
-    <a href = "/GroupProject/public/ManageLevels/add">
+    <a href = "/ZooAssignment/public/ManageLevels/add">
       <div style="width: 100%; height: 80%; padding-top: 4%;">
-        <img src = "/GroupProject/public/resources/images/addlevel.png" width="50"><br>
+        <img src = "/ZooAssignment/public/resources/images/addlevel.png" width="50"><br>
         Add new Level
       </div>
     </a>
@@ -38,8 +38,8 @@
     $count = 0;
       while($level = $levels->fetch()){
 
-        $viewIcon = '<a href = "/GroupProject/public/ManageLevels/browse/'.$level['lvid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/view.svg">
+        $viewIcon = '<a href = "/ZooAssignment/public/ManageLevels/browse/'.$level['lvid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/view.svg">
                         </a>';
 
 

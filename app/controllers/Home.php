@@ -10,9 +10,10 @@
         else if($_SESSION['loggedin']['urole']=="Module Leader")
           header("Location:ModuleLeaderHome");
       }
-      else{
-        header("Location:home");
-      }
+
+      $fileName = '../app/templates/UserTemplate.php';
+      $content = loadTemplate($fileName, ['title'=>'Claybrook Zoo']);
+      $this->view($content);
 
     }
 

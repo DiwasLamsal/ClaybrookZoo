@@ -2,9 +2,9 @@
 <div class = "boxesContainer boxesContainerManage">
 
   <div class = "contentBoxLarge contentBoxLargeManage addNewBox">
-    <a href = "/GroupProject/public/ManageCourses/add">
+    <a href = "/ZooAssignment/public/ManageCourses/add">
       <div style="width: 100%; height: 80%; padding-top: 4%;">
-        <img src = "/GroupProject/public/resources/images/addcourse.png" width="50"><br>
+        <img src = "/ZooAssignment/public/resources/images/addcourse.png" width="50"><br>
         Add new Course
       </div>
     </a>
@@ -38,12 +38,12 @@
     $count = 0;
       while($course = $courses->fetch()){
 
-        $viewIcon = '<a href = "/GroupProject/public/ManageCourses/browse/'.$course['cid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/view.svg">
+        $viewIcon = '<a href = "/ZooAssignment/public/ManageCourses/browse/'.$course['cid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/view.svg">
                         </a>';
 
-        $archiveIcon = '<a href = "/GroupProject/public/ManageCourses/archive/'.$course['cid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/archive.svg">
+        $archiveIcon = '<a href = "/ZooAssignment/public/ManageCourses/archive/'.$course['cid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/archive.svg">
                         </a>';
 
         $statusText = $course['cstatus']=="Y" ? '<font color = "green">Visible</font>':
@@ -52,7 +52,7 @@
        $leader = getUserById($course['cuid'])->fetch();
 
 
-       $link = '<u><a target="_blank" style="color:#717ede;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
+       $link = '<u><a target="_blank" style="color:#717ede;" href = "/ZooAssignment/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
                  $leader['fname'].' '.$leader['mname'].' '.$leader['lname'].'</a></u>';
 
 

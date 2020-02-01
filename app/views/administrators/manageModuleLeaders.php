@@ -3,9 +3,9 @@
 <div class = "boxesContainer boxesContainerManage">
 
   <div class = "contentBoxLarge contentBoxLargeManage addNewBox">
-    <a href = "/GroupProject/public/ManageModuleLeaders/add">
+    <a href = "/ZooAssignment/public/ManageModuleLeaders/add">
       <div style="width: 100%; height: 80%; padding-top: 4%;">
-        <img src = "/GroupProject/public/resources/images/addlecturer.png" width="50"><br>
+        <img src = "/ZooAssignment/public/resources/images/addlecturer.png" width="50"><br>
         Add new Module Leader
       </div>
     </a>
@@ -45,12 +45,12 @@
     $count = 0;
       while($user = $users->fetch()){
 
-        $viewIcon = '<a href = "/GroupProject/public/ManageModuleLeaders/browse/'.$user['uid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/view.svg">
+        $viewIcon = '<a href = "/ZooAssignment/public/ManageModuleLeaders/browse/'.$user['uid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/view.svg">
                         </a>';
 
-        $archiveIcon = '<a href = "/GroupProject/public/ManageModuleLeaders/archive/'.$user['uid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/archive.svg">
+        $archiveIcon = '<a href = "/ZooAssignment/public/ManageModuleLeaders/archive/'.$user['uid'].'">
+                          <img class = "tableIcon" src = "/ZooAssignment/public/resources/images/archive.svg">
                         </a>';
 
         $statusText = $user['ustatus']=="Y" ? '<font color = "green">Visible</font>':

@@ -81,7 +81,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 		<footer>
-			Footer
 			&copy; Claybrook Zoo <?php echo date("Y");?>
 		</footer>
 

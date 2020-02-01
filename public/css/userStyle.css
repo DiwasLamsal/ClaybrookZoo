@@ -101,22 +101,12 @@ body{
 
 /********************************************************************************************************************/
 
-
-
 main{
   width: 100%;
   margin: auto;
 }
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
 
-body {
-  font-family: "Helvetica Neue",sans-serif;
-  font-weight: lighter;
-}
+/********************************************************************************************************************/
 
 header {
   width: 100%;
@@ -216,7 +206,7 @@ nav ul li a:hover{
   background: #000;
   text-align: right;
   box-sizing: border-box;
-  padding: 15px 24px;
+  padding: 7px 24px;
   cursor: pointer;
   color: #fff;
   display: none;
@@ -231,12 +221,12 @@ nav ul li a:hover{
   .logo {
     position: fixed;
     top: 0;
-    margin: 16px 16px;
+    margin: 5px 16px;
     width: 75%;
   }
 
   nav #nav-logo, nav.black #nav-logo{
-    width: 12%;
+    width: 11%;
   }
 
   nav #nav-logo-text{
@@ -271,3 +261,16 @@ nav ul li a:hover{
   }
 
 }
+
+/********************************************************************************************************************/
+
+
+footer{
+  min-height: 15vh;
+  background: lightgrey;
+  padding: 10px 0px;
+  text-align: center;
+  font-size: calc(1.5vh + 5px);
+}
+
+/********************************************************************************************************************/

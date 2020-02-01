@@ -40,6 +40,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 	<main>
+
 		<div class="wrapper">
      <header>
         <nav>
@@ -62,8 +63,9 @@ if (session_status() == PHP_SESSION_NONE) {
               </ul>
            </div>
         </nav>
-     </header>
 
+				<h1 class = "header-text">Closed.</h1>
+     </header>
 
 	 		<section>
 				<div class="content">
@@ -83,7 +85,7 @@ if (session_status() == PHP_SESSION_NONE) {
 			&copy; Claybrook Zoo <?php echo date("Y");?>
 		</footer>
 
-		      </div>
+    </div>
 	</main>
 
 </body>

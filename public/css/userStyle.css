@@ -120,7 +120,7 @@ body {
 
 header {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   background: linear-gradient(to top right, transparent 50%, rgba(0, 0, 0, 0.5) 60%) 0 0/100% 200px no-repeat, url('/ZooAssignment/public/resources/images/header/header.jpg') no-repeat 50% 50%;
   background-size: cover;
 }
@@ -137,7 +137,7 @@ header {
   line-height: 60px;
   position: fixed;
   float: left;
-  margin: 16px 16px;
+  margin: 16px 46px;
   color: #fff;
   font-weight: bold;
   font-size: 20px;
@@ -149,7 +149,7 @@ header {
 nav #nav-logo{
   width: 40%;
   border-radius: 5px;
-  transition: .3s;
+  transition: width .3s;
 }
 nav #nav-logo-text{
   visibility: hidden;
@@ -161,22 +161,18 @@ nav #nav-logo-text{
 }
 
 nav.black #nav-logo{
-  width: 9%;
+  width: 20%;
 }
 
-nav.black #nav-logo-text{
-  visibility: visible;
-  color: #fff;
-  transition: color .3s;
-  transition-delay: .3s;
-}
 
 nav.black .logo{
-  transform: translateX(20px);
+  /* transform: translateX(20px); */
 }
 
 nav {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   line-height: 60px;
 }
@@ -226,23 +222,29 @@ nav ul li a:hover{
   display: none;
 }
 
+.header-text{
+  display: none;
+}
 
 @media(max-width: 786px) {
 
   .logo {
     position: fixed;
     top: 0;
-    margin-top: 16px;
+    margin: 16px 16px;
+    width: 75%;
   }
 
-  nav #nav-logo{
-    width: 9%;
+  nav #nav-logo, nav.black #nav-logo{
+    width: 12%;
   }
 
   nav #nav-logo-text{
     visibility: visible;
     color: #fff;
   }
+
+
   nav .logo{
     transform: translateX(20px);
   }

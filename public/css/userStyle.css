@@ -153,7 +153,11 @@ nav #nav-logo{
 }
 nav #nav-logo-text{
   visibility: hidden;
+  color: rgba(0,0,0,0);
+}
 
+.logo a:hover{
+  text-decoration: none !important;
 }
 
 nav.black #nav-logo{
@@ -162,8 +166,11 @@ nav.black #nav-logo{
 
 nav.black #nav-logo-text{
   visibility: visible;
-
+  color: #fff;
+  transition: color .3s;
+  transition-delay: .3s;
 }
+
 nav.black .logo{
   transform: translateX(20px);
 }
@@ -202,6 +209,11 @@ nav ul li a {
   font-size: 16px;
 }
 
+nav ul li a:hover{
+  text-decoration: none;
+  color: yellow;
+}
+
 .menu-icon {
   line-height: 60px;
   width: 100%;
@@ -214,47 +226,46 @@ nav ul li a {
   display: none;
 }
 
+
 @media(max-width: 786px) {
 
   .logo {
-        position: fixed;
-        top: 0;
-        margin-top: 16px;
+    position: fixed;
+    top: 0;
+    margin-top: 16px;
   }
+
   nav #nav-logo{
     width: 9%;
   }
 
   nav #nav-logo-text{
     visibility: visible;
-
+    color: #fff;
   }
   nav .logo{
     transform: translateX(20px);
   }
 
   nav ul {
-        max-height: 0px;
-        background: #000;
-  }
-
-  nav.black ul {
-        background: #000;
+    max-height: 0px;
+    background: #2E8B57;
   }
 
   .showing {
-        max-height: 34em;
+    max-height: 90vh;
   }
 
   nav ul li {
-        box-sizing: border-box;
-        width: 100%;
-        padding: 24px;
-        text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
   }
 
   .menu-icon {
-        display: block;
+    display: block;
+    background: #2E8B57;
   }
 
 }

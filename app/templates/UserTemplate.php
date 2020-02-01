@@ -17,10 +17,25 @@ if (session_status() == PHP_SESSION_NONE) {
 	<link rel="stylesheet" href="/ZooAssignment/public/css/userStyle.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/ZooAssignment/public/css/font-awesome.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src = "/ZooAssignment/public/script/script.js"></script>
 </head>
 
 <body>
+	<!--################### -LOADER SECTION- #################-->
+	<!--################### -MUST NOT BE EDITED- #################-->
+	  <div class="load">
+	  	<div class = "loader">
+		  	<div class ="firstBar bar"></div>
+		  	<div class ="secondBar bar"></div>
+		  	<div class ="thirdBar bar"></div>
+		  	<div class ="fourthBar bar"></div>
+		  	<div class ="fifthBar bar"></div>
+		  	<div class ="sixthBar bar"></div>
+		  	<div class ="seventhBar bar"></div>
+		  	<div class ="eighthBar bar"></div>
+	  	</div>
+	  </div>
 
 
 
@@ -32,14 +47,14 @@ if (session_status() == PHP_SESSION_NONE) {
               <i class="fa fa-bars fa-2x"></i>
            </div>
            <div class="logo">
-					 	<a href = "#">
+					 	<a href = "/ZooAssignment/public/">
 							<img id = "nav-logo" src = "/ZooAssignment/public/resources/images/logo.jpg" alt = "logo">
 							<span id = "nav-logo-text">&nbsp; Claybrook Zoo</span>
 						</a>
            </div>
            <div class="menu">
               <ul>
-                 <li><a href="#">Home</a></li>
+                 <li><a href="/ZooAssignment/public/">Home</a></li>
                  <li><a href="#">Animals</a></li>
                  <li><a href="#">Areas</a></li>
                  <li><a href="#">About</a></li>

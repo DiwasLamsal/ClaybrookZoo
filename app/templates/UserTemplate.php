@@ -60,6 +60,8 @@ if (session_status() == PHP_SESSION_NONE) {
                  <li><a href="#">Areas</a></li>
                  <li><a href="#">About</a></li>
                  <li><a href="#">Contact</a></li>
+								 <li><a href="/ZooAssignment/public/kids">Kids</a></li>
+								 <li><a href="#">Careers</a></li>
               </ul>
            </div>
         </nav>
@@ -69,16 +71,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
 	 		<section>
 				<div class="content">
-           <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-           </p>
-           <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-           </p>
+					<!-- Content body goes here -->
+           <?php echo $content;?>
         </div>
 	 		</section>
-
-
 
 		<footer>
 			&copy; Claybrook Zoo <?php echo date("Y");?>

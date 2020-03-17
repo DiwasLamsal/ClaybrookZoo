@@ -9,7 +9,6 @@ function loadTemplate($fileName, $templateVars) {
 }
 
 
-
 function getGeneratedPassword($firstname, $lastname, $date){
   // Ram Krishna Shrestha 1990-05-15   FL-YYYY-MM-DD  RS-1990-05-15
   $pass = substr($firstname,0,1).substr($lastname, 0, 1).'-'.$date;

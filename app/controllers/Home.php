@@ -7,13 +7,15 @@
       if(isset($_SESSION['loggedin'])){
         if($_SESSION['loggedin']['urole']=="Administrator")
           header("Location:AdminHome");
-        else if($_SESSION['loggedin']['urole']=="Module Leader")
-          header("Location:ModuleLeaderHome");
+        else
+          header("Location:Home");
       }
 
-      $fileName = '../app/templates/UserTemplate.php';
-      $content = loadTemplate($fileName, ['title'=>'Claybrook Zoo']);
-      $this->view($content);
+      $template = '../app/views/home/homeContent.php';
+      $content = loadTemplate($template, []);
+      $title = "Claybrook Zoo - Home";
+
+      require_once "../app/controllers/userLoadView.php";
 
     }
 

@@ -1,13 +1,8 @@
 <?php
-$template = '../app/views/administrators/AdminNavigation.php';
-$navigation = loadTemplate($template, ['selected'=>$selected]);
-
-$template = '../app/templates/UserTemplate.php';
+$template = '../app/templates/admin/AdminTemplate.php';
 $contents = [
   'title'=>$title,
-  'navigation'=>$navigation,
-  'content'=>$content,
-  'role'=>'Administrator'
+  'content'=>$content
 ];
 $content = loadTemplate($template, $contents);
 

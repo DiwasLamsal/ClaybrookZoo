@@ -78,6 +78,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 		<footer>
 			&copy; Claybrook Zoo <?php echo date("Y");?>
+			&nbsp; | &nbsp; <a href="#">Login to Dashboard</a>
 		</footer>
 
     </div>

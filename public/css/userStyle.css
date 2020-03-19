@@ -27,6 +27,7 @@ h3{font-family: opensansbold}
 h4{font-family: opensansbold}
 h5{font-family: opensansbold}
 a{color: white; text-decoration: none;font-family: opensanssemibold;}
+a:hover, a:active{color:yellow;}
 
 
 /* CSS Start */
@@ -161,6 +162,7 @@ nav.black .logo{
 }
 
 nav {
+  user-select: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -169,7 +171,7 @@ nav {
 }
 
 nav ul {
-  line-height: 60px;
+  line-height: 40px;
   list-style: none;
   background: rgba(0, 0, 0, 0);
   overflow: hidden;

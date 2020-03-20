@@ -1,6 +1,6 @@
 <?php
 
-  class AdminHome extends Controller{
+  class UserHome extends Controller{
 
     public function index(){
 

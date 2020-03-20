@@ -1,39 +1,30 @@
 <?php
 
-class ManageAdministrators extends Controller{
+class ManageUsers extends Controller{
 
   public function index($val=""){
     $userClass = new DatabaseTable('users');
-    $users = $userClass->findSorted('urole','Administrator', 'fname');
-
-    $manage = "administrator";
-    $template = '../app/views/administrators/userNote.php';
-    $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
-
-    $template = '../app/views/administrators/manageAdministrators.php';
-    $content = loadTemplate($template, ['val'=>$val, 'users'=>$users, 'note'=>$note]);
-    $selected = "Administrators";
-    $title = "Admin - Staff";
+    $users = $userClass->findAll();
+    $template = '../app/views/adminDash/manageUsers.php';
+    $content = loadTemplate($template, ['users'=>$users]);
+    $title = "Dashboard - Users";
     require_once "../app/controllers/adminLoadView.php";
-
   }
+
 
   public function add(){
     $userClass = new DatabaseTable('users');
 
     if(isset($_POST['submit'])){
-      $_POST['user']['urole']="Administrator";
-      $_POST['user']['ustatus']="Y";
+      $_POST['user']['ustatus']="Active";
       $_POST['user']['password']=password_hash($_POST['user']['password'], PASSWORD_DEFAULT);
       $userClass->save($_POST['user']);
       header("Location:../ManageAdministrators/index/addsuccess");
     }
 
-    $template = '../app/views/administrators/addAdministrator.php';
+    $template = '../app/views/adminDash/addUser.php';
     $content = loadTemplate($template, ['role'=>'Administrator']);
-    $selected = "Administrators";
-    $title = "Admin - Add new Staff";
-
+    $title = "Dashboard - Add new User";
     require_once "../app/controllers/adminLoadView.php";
   }
 

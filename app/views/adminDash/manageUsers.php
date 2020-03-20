@@ -1,24 +1,4 @@
 
-<!-- Content Header (Page header) -->
-<div class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Users</h1>
-      </div><!-- /.col -->
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="/ZooAssignment/public/UserHome">Home</a></li>
-          <li class="breadcrumb-item active">Users</li>
-        </ol>
-      </div><!-- /.col -->
-    </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
-</div>
-<!-- /.content-header -->
-
-
-
 
 <div class="row">
   <section class="col-lg-12 connectedSortable">
@@ -43,11 +23,11 @@
     $count = 0;
       while($user = $users->fetch()){
 
-        $viewIcon = '<a href = "/ZooAssignment/public/ManageAdministrators/browse/'.$user['uid'].'">
+        $viewIcon = '<a href = "/ZooAssignment/public/ManageUsers/browse/'.$user['uid'].'">
                           <i class="fas fa-eye"></i>
                         </a>';
 
-        $archiveIcon = '<a href = "/ZooAssignment/public/ManageAdministrators/archive/'.$user['uid'].'">
+        $archiveIcon = '<a href = "/ZooAssignment/public/ManageUsers/archive/'.$user['uid'].'">
                           <i class="fas fa-trash"></i>
                         </a>';
 

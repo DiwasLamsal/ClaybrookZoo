@@ -1,7 +1,6 @@
 <?php
-
+// For navigation sidebar
 $uri = $_SERVER['REQUEST_URI'];
-
 
 ?>
 
@@ -18,7 +17,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title><?php echo $title; ?></title>
-
+  <link rel="stylesheet" href="/ZooAssignment/public/css/adminStyle.css">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="/ZooAssignment/public/css/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
@@ -101,17 +100,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="/ZooAssignment/public/ManageUsers/all" class="nav-link">
+                  <i class="fas fa-users nav-icon"></i>
+                  <p>View Staff</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="/ZooAssignment/public/ManageUsers/add" class="nav-link">
                   <i class="fas fa-user-plus nav-icon"></i>
                   <p>Add Staff</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="/ZooAssignment/public/ManageUsers" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>View Staff</p>
-                </a>
-              </li>
+              <hr>
             </ul>
           </li>
 <!-- End of Staff Navigation Area -->
@@ -129,17 +129,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-user-plus nav-icon"></i>
-                  <p>Add User</p>
+                <a href="/ZooAssignment/public/ManageAnimals/all" class="nav-link">
+                  <i class="fas fa-users nav-icon"></i>
+                  <p>View Animals</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>View Users</p>
+                <a href="/ZooAssignment/public/ManageAnimals/add" class="nav-link">
+                  <i class="fas fa-user-plus nav-icon"></i>
+                  <p>Add Animal</p>
                 </a>
               </li>
+
+              <hr>
             </ul>
           </li>
 <!-- End of Animals Navigation Area -->
@@ -168,6 +170,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>View Users</p>
                 </a>
               </li>
+              <hr>
             </ul>
           </li>
 <!-- End of Areas Navigation Area -->
@@ -196,6 +199,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>View Users</p>
                 </a>
               </li>
+              <hr>
             </ul>
           </li>
 <!-- End of Sponsors Navigation Area -->
@@ -224,6 +228,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>View Users</p>
                 </a>
               </li>
+              <hr>
             </ul>
           </li>
 <!-- End of Watchlist Navigation Area -->
@@ -251,6 +256,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>View Users</p>
                 </a>
               </li>
+              <hr>
             </ul>
           </li>
 <!-- End of Tickets Navigation Area -->
@@ -279,6 +285,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>View Users</p>
                 </a>
               </li>
+              <hr>
             </ul>
           </li>
 <!-- End of Events Navigation Area -->
@@ -306,6 +313,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>View Users</p>
                 </a>
               </li>
+              <hr>
             </ul>
           </li>
 <!-- End of Vacancies Navigation Area -->
@@ -326,7 +334,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
 
-
+<?php echo $breadcrumb;?>
 <?php echo $content;?>
 
 
@@ -361,6 +369,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="/ZooAssignment/public/script/dist/js/adminlte.min.js"></script>
 
+<script>
+var uri = window.location.pathname;
+$(".nav-link").each(function(index) {
+  if(uri.includes($(this).attr('href'))){
+    $(this).addClass("active");
+    $(this).parent().parent().parent().addClass("menu-open");
+    $(this).parent().parent().parent().children("a").addClass("active");
+  }
+});
+</script>
 
 </body>
 </html>

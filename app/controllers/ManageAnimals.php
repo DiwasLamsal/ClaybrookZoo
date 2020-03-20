@@ -1,40 +1,36 @@
 <?php
 
-class ManageUsers extends Controller{
+class ManageAnimals extends Controller{
 
   public function index(){
-    header("Location:../public/ManageUsers/all");
+    header("Location:../public/ManageAnimals/all");
   }
 
   public function all($val=""){
-    $userClass = new DatabaseTable('users');
-    $users = $userClass->findAll();
-    $template = '../app/views/adminDash/manageUsers.php';
-    $content = loadTemplate($template, ['users'=>$users]);
-    $title = "Dashboard - Users";
-    $breadcrumbContent=["ManageUsers"=>"Users"];
-    $bodyTitle="Users";
+    $animalClass = new DatabaseTable('animals');
+    $animals = $animalClass->findAll();
+    $template = '../app/views/adminDash/manageAnimals.php';
+    $content = loadTemplate($template, ['animals'=>$animals]);
+    $title = "Dashboard - Animals";
+    $breadcrumbContent=["ManageAnimals"=>"Animals"];
+    $bodyTitle="Animals";
     require_once "../app/controllers/adminLoadView.php";
   }
 
   public function add(){
-    $userClass = new DatabaseTable('users');
+    $animalClass = new DatabaseTable('animals');
 
     if(isset($_POST['submit'])){
-      $_POST['user']['ustatus']="Active";
-      $_POST['user']['upassword']=password_hash($_POST['user']['upassword'], PASSWORD_DEFAULT);
-      $userClass->save($_POST['user']);
-      header("Location:../ManageUsers/all/addsuccess");
+      $userClass->save($_POST['animal']);
+      header("Location:../ManageAnimals/all/addsuccess");
     }
-
-    $template = '../app/views/adminDash/addUser.php';
+    $template = '../app/views/adminDash/addAnimal.php';
     $content = loadTemplate($template, []);
-    $title = "Dashboard - Add new User";
-    $breadcrumbContent=["ManageUsers"=>"Users", "ManageUsers/Add"=>"Add User"];
-    $bodyTitle="Add User";
+    $title = "Dashboard - Add new Animal";
+    $breadcrumbContent=["ManageAnimals"=>"Animals", "ManageAnimals/Add"=>"Add Animal"];
+    $bodyTitle="Add Animal";
     require_once "../app/controllers/adminLoadView.php";
   }
-
 
 
   public function browse($val = ""){
@@ -59,16 +55,15 @@ class ManageUsers extends Controller{
       $template = '../app/views/administrators/modal.php';
       $modal = loadTemplate($template, ['type'=>'Administrator', 'link'=>$link]);
 
-      $template = '../app/views/adminDash/addUser.php';
-      $content = loadTemplate($template, []);
-      $title = "Dashboard - Add new User";
-      $breadcrumbContent=["ManageUsers"=>"Users", "ManageUsers/Add"=>"Add User"];
-      $bodyTitle="Edit User";
+      $template = '../app/views/administrators/addAdministrator.php';
+      $content = loadTemplate($template, ['user'=>$user, 'modal'=>$modal]);
+      $selected = "Administrators";
+      $title = "Admin - Browse Administrator";
       require_once "../app/controllers/adminLoadView.php";
     }
 
     else{
-      header("Location:../all/nosuchuser");
+      header("Location:../index/nosuchuser");
     }
 
   }

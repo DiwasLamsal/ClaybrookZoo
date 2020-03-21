@@ -9,7 +9,8 @@
 
       $title = "Admin - Dashboard";
       $selected = "Dashboard";
-
+      $breadcrumbContent=["UserHome"=>"Dashboard"];
+      $bodyTitle="Users";
       require_once "../app/controllers/adminLoadView.php";
 
     }

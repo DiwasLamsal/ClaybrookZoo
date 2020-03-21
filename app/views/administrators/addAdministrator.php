@@ -77,7 +77,7 @@ if(isset($user)){
                 8 characters</p>
             <label for="confirmpassword">Confirm Password: </label>
             <input type="password" onkeyup="checkPassword()" name="confirmpassword" id="confirmpassword" required>
-            <p id="confirmpasstest" style="font-size: 14px; color: red; margin-bottom: 10px;"></p>
+            <p id="confirmpasstest" style="font-size: 14px; color: red; margin-bottom: 10px;">Passwords must match</p>
 
             <input type="submit" value="Submit" name="passubmit" id="submission">
         </div>

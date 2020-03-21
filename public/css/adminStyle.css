@@ -4,3 +4,30 @@ nav hr{
   border: 0.5px solid rgba(100,100,100,0.9);
   background: white;
 }
+
+/* ------------------------------------------------------------------------------------------  */
+
+.allTable{
+
+}
+
+.allTable th{
+  background: #007bff;
+  color: white;
+}
+
+.allTable tr{
+  background: white !important;
+}
+
+.allTable tr:hover{
+  background: #EFEFEF !important;
+}
+
+/* ------------------------------------------------------------------------------------------  */
+
+.staff-textarea{
+  resize: none;
+}
+
+/* ------------------------------------------------------------------------------------------  */

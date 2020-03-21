@@ -2,7 +2,7 @@
 
 <div class="row">
   <section class="col-lg-12 connectedSortable">
-  <table id="listTable" class="table table-striped table-bordered" style="width:100%">
+  <table id="listTable" class="table allTable table-striped table-bordered" style="width:100%">
     <thead>
       <tr>
         <th>S.N.</th>
@@ -23,12 +23,12 @@
     $count = 0;
       while($user = $users->fetch()){
 
-        $viewIcon = '<a href = "/ZooAssignment/public/ManageUsers/browse/'.$user['uid'].'">
-                          <i class="fas fa-eye"></i>
+        $viewIcon = '<a class="btn btn-success btn-sm" href = "/ZooAssignment/public/ManageUsers/all/'.$user['uid'].'">
+                            <i class="fas fa-folder"></i> View
                         </a>';
 
-        $archiveIcon = '<a href = "/ZooAssignment/public/ManageUsers/archive/'.$user['uid'].'">
-                          <i class="fas fa-trash"></i>
+        $archiveIcon = '<a class="btn btn-warning btn-sm" href = "/ZooAssignment/public/ManageUsers/archive/'.$user['uid'].'">
+                          <i class="fas fa-trash"></i> Change Status
                         </a>';
 
         $count++;
@@ -51,16 +51,4 @@
 </div>
 
 
-
-<script src="/ZooAssignment/public/script/jquery-3.3.1.js"></script>
-<script src="/ZooAssignment/public/script/jquery.dataTables.min.js"></script>
-<script src="/ZooAssignment/public/script/dataTables.bootstrap4.min.js"></script>
-
-<script>
-$(document).ready(function() {
-    $('#listTable').DataTable({
-      "scrollX": true
-    });
-    $('#listTable').css("max-width","100%;");
-});
-</script>
+<?php echo $dataTableCode;?>

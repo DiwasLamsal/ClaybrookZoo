@@ -117,6 +117,62 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- End of Staff Navigation Area -->
 
 
+<!-- Areas Navigation Area -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-compass"></i>
+              <p>
+                Areas
+                <i class="fas fa-angle-left right"></i>
+                <!-- <span class="badge badge-info right">6</span> -->
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/ZooAssignment/public/ManageAreas/all" class="nav-link">
+                <i class="fas fa-binoculars nav-icon"></i>
+                <p>View Areas</p>
+              </a>
+            </li>
+              <li class="nav-item">
+                <a href="/ZooAssignment/public/ManageAreas/add" class="nav-link">
+                  <i class="fas fa-plus-square nav-icon"></i>
+                  <p>Add Area</p>
+                </a>
+              </li>
+              <hr>
+            </ul>
+          </li>
+<!-- End of Areas Navigation Area -->
+
+<!-- Locations Navigation Area -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-map-marked"></i>
+              <p>
+                Locations
+                <i class="fas fa-angle-left right"></i>
+                <!-- <span class="badge badge-info right">6</span> -->
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="/ZooAssignment/public/ManageLocations/all" class="nav-link">
+                <i class="fas fa-binoculars nav-icon"></i>
+                <p>View Locations</p>
+              </a>
+            </li>
+              <li class="nav-item">
+                <a href="/ZooAssignment/public/ManageLocations/add" class="nav-link">
+                  <i class="fas fa-plus-square nav-icon"></i>
+                  <p>Add Location</p>
+                </a>
+              </li>
+              <hr>
+            </ul>
+          </li>
+<!-- End of Locations Navigation Area -->
+
 <!-- Animals Navigation Area -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -130,13 +186,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="/ZooAssignment/public/ManageAnimals/all" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
+                  <i class="fas fa-binoculars nav-icon"></i>
                   <p>View Animals</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="/ZooAssignment/public/ManageAnimals/add" class="nav-link">
-                  <i class="fas fa-user-plus nav-icon"></i>
+                  <i class="fas fa-plus-square nav-icon"></i>
                   <p>Add Animal</p>
                 </a>
               </li>
@@ -145,35 +201,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
 <!-- End of Animals Navigation Area -->
-
-
-<!-- Areas Navigation Area -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-compass"></i>
-              <p>
-                Areas
-                <i class="fas fa-angle-left right"></i>
-                <!-- <span class="badge badge-info right">6</span> -->
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-user-plus nav-icon"></i>
-                  <p>Add User</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>View Users</p>
-                </a>
-              </li>
-              <hr>
-            </ul>
-          </li>
-<!-- End of Areas Navigation Area -->
 
 
 <!-- Sponsors Navigation Area -->
@@ -188,15 +215,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-user-plus nav-icon"></i>
-                  <p>Add User</p>
+                <a href="/ZooAssignment/public/ManageSponsors/all" class="nav-link">
+                  <i class="fas fa-binoculars nav-icon"></i>
+                  <p>View Sponsor</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>View Users</p>
+                <a href="/ZooAssignment/public/ManageSponsors/add" class="nav-link">
+                  <i class="fas fa-plus nav-icon"></i>
+                  <p>Add Sponsor</p>
                 </a>
               </li>
               <hr>
@@ -217,15 +244,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-user-plus nav-icon"></i>
-                  <p>Add User</p>
+                <a href="/ZooAssignment/public/ManageWatchlist/all" class="nav-link">
+                  <i class="fas fa-binoculars nav-icon"></i>
+                  <p>View Watchlist</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>View Users</p>
+                <a href="/ZooAssignment/public/ManageWatchlist/add" class="nav-link">
+                  <i class="fas fa-plus nav-icon"></i>
+                  <p>New Watchlist</p>
                 </a>
               </li>
               <hr>
@@ -274,15 +301,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-user-plus nav-icon"></i>
-                  <p>Add User</p>
+                <a href="/ZooAssignment/public/ManageEvents/all" class="nav-link">
+                  <i class="fas fa-binoculars nav-icon"></i>
+                  <p>View Events</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>View Users</p>
+                <a href="/ZooAssignment/public/ManageEvents/add" class="nav-link">
+                  <i class="fas fa-calendar-plus nav-icon"></i>
+                  <p>Add Event</p>
                 </a>
               </li>
               <hr>
@@ -378,6 +405,9 @@ $(".nav-link").each(function(index) {
     $(this).parent().parent().parent().children("a").addClass("active");
   }
 });
+
+//-------------------------------------------------------------------------------------//
+
 </script>
 
 </body>

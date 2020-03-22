@@ -72,7 +72,7 @@ class ManageUsers extends Controller{
 
       $template = '../app/views/adminDash/addUser.php';
       $content = loadTemplate($template, ['user'=>$user, 'modal'=>$modal]);
-      $title = "Dashboard - Add new User";
+      $title = "Dashboard - View User";
       $breadcrumbContent=["ManageUsers"=>"Users", "ManageUsers/browse"=>"View User"];
       $bodyTitle="Edit User";
       require_once "../app/controllers/adminLoadView.php";

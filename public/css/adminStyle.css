@@ -24,10 +24,40 @@ nav hr{
   background: #EFEFEF !important;
 }
 
+.allTable td{
+  max-width: 200px !important;
+}
+
+
 /* ------------------------------------------------------------------------------------------  */
 
 .staff-textarea{
   resize: none;
+}
+
+/* ------------------------------------------------------------------------------------------  */
+
+/* Animal form to display only selected category listings */
+
+#extraFormElements{
+  display: none;
+}
+/* ------------------------------------------------------------------------------------------  */
+
+/* Animal image to display on the table */
+
+.table-cover-image{
+  width: 50px;
+  height: 50px;
+  transition: .2s;
+}
+
+.table-cover-image:hover{
+  transform: scale(1.05);
+}
+
+.tbl-btn{
+  white-space: nowrap;
 }
 
 /* ------------------------------------------------------------------------------------------  */

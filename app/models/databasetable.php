@@ -14,7 +14,8 @@ class DatabaseTable{
 	        $this->insert($record);
 	    }
 	    catch(Exception $e){
-	        $this->update($record, $pk);
+	        if($this->update($record, $pk))return true;
+					return false;
 	    }
 	}
 
@@ -38,7 +39,8 @@ class DatabaseTable{
 	    $query = "UPDATE $this->table SET $parametersWithComma WHERE $pk = :pk";
 	    $record['pk'] = $record[$pk];
 	    $stmt = $pdo->prepare($query);
-	    $stmt->execute($record);
+	    if($stmt->execute($record))return true;
+			return false;
 	}
 
 	function find($field, $value) {

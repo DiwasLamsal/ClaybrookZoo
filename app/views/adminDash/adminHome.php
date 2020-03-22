@@ -4,22 +4,21 @@
     <div class="row">
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-success">
+        <div class="small-box bg-olive">
           <div class="inner">
-            <h3>150</h3>
-
+            <h3><?php echo getCount('animals'); ?></h3>
             <p>Animals</p>
           </div>
           <div class="icon">
             <i class="fas fa-otter"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="./ManageAnimals/all" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-success">
+        <div class="small-box bg-olive">
           <div class="inner">
             <h3>53</h3>
 
@@ -34,7 +33,7 @@
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-success">
+        <div class="small-box bg-olive">
           <div class="inner">
             <h3>20<sup style="font-size: 20px">%</sup></h3>
 
@@ -43,22 +42,22 @@
           <div class="icon">
             <i class="fas fa-eye"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="./ManageWatchlist/all" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-success">
+        <div class="small-box bg-olive">
           <div class="inner">
-            <h3>3</h3>
+            <h3><?php echo getCount('animals'); ?></h3>
 
-            <p>Upcoming Events</p>
+            <p>Total Staff</p>
           </div>
           <div class="icon">
             <i class="fas fa-calendar-alt"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="./ManageUsers/all" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->

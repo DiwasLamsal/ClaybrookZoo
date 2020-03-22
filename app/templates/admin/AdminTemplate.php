@@ -196,7 +196,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Add Animal</p>
                 </a>
               </li>
-
+              <li class="nav-item">
+                <a href="/ZooAssignment/public/ManageAnimals/trash" class="nav-link">
+                  <i class="fas fa-trash nav-icon"></i>
+                  <p>Trash</p>
+                </a>
+              </li>
               <hr>
             </ul>
           </li>

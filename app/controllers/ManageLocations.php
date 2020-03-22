@@ -50,6 +50,7 @@ class ManageLocations extends Controller{
     $areaClass = new DatabaseTable('areas');
     $areas=$areaClass->findAll();
 
+
     if($location->rowCount()>0){
       if(isset($_POST['submit'])){
         $_POST['location']['lid']=$val;
@@ -57,14 +58,14 @@ class ManageLocations extends Controller{
         header("Location:../all/editsuccess");
       }
 
-      if(true)
-        $link = true;
-      $link='/ZooAssignment/public/ManageLocations/delete/'.$val;
+      $link='/ZooAssignment/public/ManageAreas/delete/'.$val;
+      if(checkLocationContainsAnimals($val))
+        $link = false;
+      $message = ($link==false)?"This location contains animals and cannot be deleted.":"";
 
       $template = '../app/views/adminDash/modal.php';
       $dataTableCode = loadTemplate($template, []);
 
-      $message = ($link==false)?"This location contains animals.":"";
       $template = '../app/views/adminDash/modal.php';
       $modal = loadTemplate($template, ['type'=>'location', 'link'=>$link, 'message'=>$message]);
       $template = '../app/views/adminDash/addLocation.php';

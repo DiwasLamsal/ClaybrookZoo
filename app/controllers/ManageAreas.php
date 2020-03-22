@@ -53,11 +53,11 @@ class ManageAreas extends Controller{
         header("Location:../all/editsuccess");
       }
 
-      if(true)
-        $link = true;
       $link='/ZooAssignment/public/ManageAreas/delete/'.$val;
+      if(checkAreaContainsLocations($val))
+        $link = false;
 
-      $message = ($link==false)?"This area contains locations.":"";
+      $message = ($link==false)?"This area contains locations and cannot be deleted.":"";
       $template = '../app/views/adminDash/modal.php';
       $modal = loadTemplate($template, ['type'=>'Area', 'link'=>$link, 'message'=>$message]);
       $template = '../app/views/adminDash/addArea.php';

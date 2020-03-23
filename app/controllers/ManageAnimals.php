@@ -52,6 +52,7 @@ class ManageAnimals extends Controller{
       $code=generateAnimalCode($_POST['animal']);
       $_POST['animal']['aid']=$code;
 
+
       //Create folder for animal to store images
       createAnimalImageFolder($code);
 
@@ -74,7 +75,7 @@ class ManageAnimals extends Controller{
               break;
           case "Fish":
                 // code if fish
-                $birdClass = new DatabaseTable('fish');
+                $fishClass = new DatabaseTable('fish');
                 $_POST['fish']['faid']=$code;
                 $fishClass->save($_POST['fish']);
               break;
@@ -88,6 +89,7 @@ class ManageAnimals extends Controller{
                 // default code
               break;
       }
+
 
       // Save animal image
       $aiClass = new DatabaseTable('animal_images');
@@ -146,24 +148,47 @@ class ManageAnimals extends Controller{
       }
 
       if(isset($_POST['submitCoverImage'])){
-        $coverImageId=getCoverImageId($val);
-        removeCurrentCoverImage($val);
+        $coverImageId=getCoverImage($val)['aiid'];
+        removeCurrentCoverImageFile($val);
 
-        $target_dir = "resources/images/animals/".$val.'/';
+        $target_dir = "resources/images/animals/".$val."/";
         $target_file = $target_dir.microtime(true).'-Cover-'.basename($_FILES["coverImg"]["name"]);
         $target_file = str_replace(' ', '_', $target_file);
-
         move_uploaded_file($_FILES["coverImg"]["tmp_name"], $target_file);
+
         $_POST['animal_image']['aifilename']=$target_file;
         $_POST['animal_image']['aiid']=$coverImageId;
         $_POST['animal_image']['aifiletype']="Cover";
         $_POST['animal_image']['aianimal']=$val;
 
-
         if($aiClass->save($_POST['animal_image'], 'aiid'))
-          var_dump($_POST['animal_image']);
           header("Location:../all/editimagesuccess");
       }
+
+
+      // submit gallery code
+     if(isset($_POST['submitGallery'])){
+       if($_FILES['galleryImgs']['name'][0]!=""){
+         $flag=true;
+         deleteImagesByType($val, 'Gallery');
+
+         $target_dir = "resources/images/animals/".$val.'/';
+         foreach($_FILES["galleryImgs"]["tmp_name"] as $key=>$value){
+           $target_file = $target_dir.microtime(true).'-Gallery-'.basename($_FILES["galleryImgs"]["name"][$key]);
+           $target_file = str_replace(' ', '_', $target_file);
+
+           move_uploaded_file($_FILES["galleryImgs"]["tmp_name"][$key], $target_file);
+           $_POST['animal_image']['aifilename']=$target_file;
+           $_POST['animal_image']['aifiletype']="Gallery";
+           $_POST['animal_image']['aianimal']=$val;
+
+           $aiClass->save($_POST['animal_image'], 'aiid');
+
+         }
+         header("Location:../all/galleryimagesuccess");
+       }
+     }
+
 
 
       $template = '../app/views/adminDash/addAnimal.php';

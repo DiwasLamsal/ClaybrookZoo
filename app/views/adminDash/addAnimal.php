@@ -3,7 +3,7 @@
 if(isset($animal)){
   $animal=$animal->fetch();
 
-  $coverImage = '<img src="/ZooAssignment/public/'.$coverImage.'" class="product-image" alt="Cover Image">';
+  $coverImage = '<img src="/ZooAssignment/public/'.$coverImage['aifilename'].'" class="product-image" alt="Cover Image">';
 ?>
 
 <!-- Code for edit animal -->

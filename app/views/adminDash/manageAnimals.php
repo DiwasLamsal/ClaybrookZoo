@@ -54,7 +54,7 @@
                         '.$location['lcode'].'
                     </a>';
 
-        $image = getImagesByType($animal['aid'],'Cover');
+        $image = getImagesByType($animal['aid'],'Cover')->fetch()['aifilename'];
         $imgCode = '<img class = "table-cover-image" src=/ZooAssignment/public/'.$image.' alt = "Cover Image">';
 
         $count++;

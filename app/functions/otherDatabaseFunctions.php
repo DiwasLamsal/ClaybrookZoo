@@ -34,6 +34,25 @@ function checkLocationContainsAnimals($lid){
   return false;
 }
 
+function checkGlobalImageExists($aid){
+  global $pdo;
+  $stmt = $pdo->prepare('SELECT * FROM animal_images ai
+                           WHERE ai.aianimal = "'.$aid.'" AND ai.aifiletype = "Global"');
+  $stmt->execute();
+  if($stmt->rowCount()>0)
+    return true;
+  return false;
+}
+
+function getGlobalImage($aid){
+  global $pdo;
+  $stmt = $pdo->prepare('SELECT * FROM animal_images ai
+                           WHERE ai.aianimal = "'.$aid.'" AND ai.aifiletype = "Global"');
+  $stmt->execute();
+  if($stmt->rowCount()>0)
+    return $stmt->fetch();
+  return false;
+}
 
 function getCoverImage($aid){
   global $pdo;
@@ -57,6 +76,18 @@ function removeCurrentImageFiles($aid){
   return false;
 }
 
+function deleteImagesByType($aid, $type){
+  $objClass = new DatabaseTable('animal_images');
+  $obj = $objClass->find('aianimal', $aid);
+  $path="/ZooAssignment/public/";
+  while($ob=$obj->fetch()){
+    if($ob['aifiletype']!=$type)continue;
+    if(file_exists($ob['aifilename'])){unlink($ob['aifilename']);}
+    if(file_exists($path.$ob['aifilename'])){unlink($path.$ob['aifilename']);}
+    $objClass->delete('aiid', $ob['aiid']);
+  }
+}
+
 function removeCurrentCoverImageFile($aid){
   $objClass = new DatabaseTable('animal_images');
   $ob = getCoverImage($aid);
@@ -67,7 +98,18 @@ function removeCurrentCoverImageFile($aid){
       if(file_exists($ob['aifilename'])){unlink($ob['aifilename']);}
       if(file_exists($path.$ob['aifilename'])){unlink($path.$ob['aifilename']);}
     }
-  return false;
+}
+
+function removeCurrentGlobalImageFile($aid){
+  $objClass = new DatabaseTable('animal_images');
+  $ob = getGlobalImage($aid);
+  $obj = $objClass->find('aianimal', $aid);
+  $path="/ZooAssignment/public/";
+    while($ob=$obj->fetch()){
+      if($ob['aifiletype']!="Global")continue;
+      if(file_exists($ob['aifilename'])){unlink($ob['aifilename']);}
+      if(file_exists($path.$ob['aifilename'])){unlink($path.$ob['aifilename']);}
+    }
 }
 
 function getAllImage($aid){
@@ -88,11 +130,11 @@ function getAllImages($aid){
 
 function getImagesByType($aid, $type){
   global $pdo;
-  $stmt = $pdo->prepare('SELECT aifilename FROM animal_images ai
+  $stmt = $pdo->prepare('SELECT * FROM animal_images ai
                            WHERE ai.aianimal = "'.$aid.'" AND ai.aifiletype = "'.$type.'"');
   $stmt->execute();
   if($stmt->rowCount()>0)
-    return $stmt->fetch()['aifilename'];
+    return $stmt;
   return false;
 }
 

@@ -42,6 +42,14 @@ nav hr{
 #extraFormElements{
   display: none;
 }
+
+/* Dashboard global image display */
+.dash-global-img{
+  max-width: 215px;
+}
+
+
+
 /* ------------------------------------------------------------------------------------------  */
 
 /* Animal image to display on the table */

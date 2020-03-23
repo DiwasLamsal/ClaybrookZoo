@@ -136,7 +136,7 @@ class ManageAnimals extends Controller{
 
     $animalCover=getCoverImage($val);
     $animalGallery=getImagesByType($val, 'Gallery');
-    $animalGlobal=getImagesByType($val,'Global');
+    $animalGlobal=checkGlobalImageExists($val)?getImagesByType($val,'Global'):false;
 
     if($animal->rowCount()>0){
       if(isset($_POST['submit'])){
@@ -165,30 +165,48 @@ class ManageAnimals extends Controller{
           header("Location:../all/editimagesuccess");
       }
 
-
       // submit gallery code
      if(isset($_POST['submitGallery'])){
        if($_FILES['galleryImgs']['name'][0]!=""){
-         $flag=true;
          deleteImagesByType($val, 'Gallery');
-
          $target_dir = "resources/images/animals/".$val.'/';
          foreach($_FILES["galleryImgs"]["tmp_name"] as $key=>$value){
            $target_file = $target_dir.microtime(true).'-Gallery-'.basename($_FILES["galleryImgs"]["name"][$key]);
            $target_file = str_replace(' ', '_', $target_file);
-
            move_uploaded_file($_FILES["galleryImgs"]["tmp_name"][$key], $target_file);
            $_POST['animal_image']['aifilename']=$target_file;
            $_POST['animal_image']['aifiletype']="Gallery";
            $_POST['animal_image']['aianimal']=$val;
 
            $aiClass->save($_POST['animal_image'], 'aiid');
-
          }
          header("Location:../all/galleryimagesuccess");
        }
      }
 
+
+     if(isset($_POST['submitGlobalImage'])){
+
+       $target_dir = "resources/images/animals/".$val."/";
+       $target_file = $target_dir.microtime(true).'-Global-'.basename($_FILES["globalImg"]["name"]);
+       $target_file = str_replace(' ', '_', $target_file);
+       move_uploaded_file($_FILES["globalImg"]["tmp_name"], $target_file);
+
+       $_POST['animal_image']['aifilename']=$target_file;
+       $_POST['animal_image']['aifiletype']="Global";
+       $_POST['animal_image']['aianimal']=$val;
+
+       if(checkGlobalImageExists($val)){
+         $_POST['animal_image']['aiid']=getGlobalImage($val)['aiid'];
+         removeCurrentGlobalImageFile($val);
+         $aiClass->save($_POST['animal_image'], 'aiid');
+       }
+       else{
+         $aiClass->save($_POST['animal_image']);
+       }
+
+         header("Location:../all/editimagesuccess");
+     }
 
 
       $template = '../app/views/adminDash/addAnimal.php';

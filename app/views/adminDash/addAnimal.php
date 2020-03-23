@@ -24,7 +24,9 @@ if(isset($animal)){
                <?php
                if($galleryImages)
                 while($galleryImage=$galleryImages->fetch()){
-                  echo '<div class="product-image-thumb" >'.$galleryImage.'</div>';
+                  echo '<div class="product-image-thumb">
+                          <img src="/ZooAssignment/public/'.$galleryImage['aifilename'].'" class="product-image" alt="Cover Image">
+                        </div>';
                 }
                 else{
                   echo '<p>No Image Available.</p>';
@@ -127,16 +129,31 @@ if(isset($animal)){
              </div>
            </nav>
            <div class="tab-content p-3" id="nav-tabContent">
-             <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab">
-               <p>
-                 <b>Natural Habitat:</b>
-                 <?php echo $animal['anaturalhabitat'];?>
-               </p>
-               <p>
-                 <b>Global Population:</b>
-                 <?php echo $animal['aglobalpopulation'];?>
-               </p>
-             </div>
+             <div class="tab-pane row fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab">
+
+               <?php if($globalImage){ ?>
+                <div class = "row ">
+                 <div class = "col-md-3">
+                   <?php $img=$globalImage->fetch();?>
+                       <img src="/ZooAssignment/public/<?php echo $img['aifilename'];?>" class="float-left dash-global-img" alt="Global Image">
+                   </div>
+                   <div class = "col-md-9">
+                  <?php }?>
+
+                 <p>
+                   <b>Natural Habitat:</b>
+                   <?php echo $animal['anaturalhabitat'];?>
+                 </p>
+                 <p>
+                   <b>Global Population:</b>
+                   <?php echo $animal['aglobalpopulation'];?>
+                 </p>
+                 <?php if($globalImage){ ?>
+               </div>
+              </div>
+             <?php }?>
+
+           </div>
 
              <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab">
                <p>
@@ -212,38 +229,72 @@ if(isset($animal)){
      <!-- /.card -->
 </div>
 
+<div class = "col-md-12">
+  <form method="POST" class="userForm" enctype="multipart/form-data">
+
+  <!-- Input addon -->
+    <div class="card card-info">
+      <div class="card-header">
+        <h3 class="card-title">Change Cover Image</h3>
+      </div>
+      <div class="card-body">
+
+        <label>
+          <!-- <?php echo $coverImage;?> -->
+        </label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupFileAddon01"><i class="fa fa-upload"></i></span>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile01"
+              aria-describedby="inputGroupFileAddon01" name = "coverImg" required
+              accept="image/*">
+            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+          </div>
+        </div><br>
+        <b>Note:</b> Cover image will be replaced after this action.
+      </div>
+        <div class="card-footer">
+          <input class="btn btn-primary"
+          type="submit" value="<?php echo isset($animal)?'Update':'Submit';?>"
+          name="submitCoverImage">
+        </div>
+      <!-- /.card-body -->
+    </div>
+  </form>
+</div>
 
 <div class="row col-md-12">
+
   <div class = "col-md-6">
     <form method="POST" class="userForm" enctype="multipart/form-data">
 
     <!-- Input addon -->
       <div class="card card-info">
         <div class="card-header">
-          <h3 class="card-title">Change Cover Image</h3>
+          <h3 class="card-title">Change/Upload Global Distribution Map Image</h3>
         </div>
         <div class="card-body">
-
           <label>
-            <!-- <?php echo $coverImage;?> -->
           </label>
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroupFileAddon01"><i class="fa fa-upload"></i></span>
+              <span class="input-group-text" id="inputGroupFileAddon03"><i class="fa fa-upload"></i></span>
             </div>
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="inputGroupFile01"
-                aria-describedby="inputGroupFileAddon01" name = "coverImg" required
+              <input type="file" class="custom-file-input" id="inputGroupFile03"
+                aria-describedby="inputGroupFileAddon03" name = "globalImg" required
                 accept="image/*">
-              <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+              <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
             </div>
           </div><br>
-          <b>Note:</b> Cover image will be replaced after this action.
+          <b>Note:</b> Global image will be replaced after this action.
         </div>
           <div class="card-footer">
             <input class="btn btn-primary"
-            type="submit" value="<?php echo isset($animal)?'Update':'Submit';?>"
-            name="submitCoverImage">
+            type="submit" value="Submit"
+            name="submitGlobalImage">
           </div>
         <!-- /.card-body -->
       </div>
@@ -268,8 +319,8 @@ if(isset($animal)){
               <span class="input-group-text" id="inputGroupFileAddon01"><i class="fa fa-upload"></i></span>
             </div>
             <div class="custom-file">
-              <input type="file" multiple class="custom-file-input" id="inputGroupFile02"
-                aria-describedby="inputGroupFileAddon02" name = "galleryImgs"  required
+              <input type="file" multiple="multiple" class="custom-file-input" id="inputGroupFile02"
+                aria-describedby="inputGroupFileAddon02" name = "galleryImgs[]"  required
                 accept="image/*">
               <label class="custom-file-label" for="inputGroupFile02">Choose files</label>
             </div>
@@ -712,15 +763,21 @@ if(isset($animal)){
 
 // Ionică Bizău - https://stackoverflow.com/questions/48613992/bootstrap-4-file-input-doesnt-show-the-file-name
 // Change file name on upload
-  $('#inputGroupFile01').on('change',function(){
+  $('#inputGroupFile01, #inputGroupFile03').on('change',function(){
       var fileName = $(this).val();
       var cleanFileName = fileName.replace('C:\\fakepath\\', " ");
-      $(this).next('.custom-file-label').html(cleanFileName);
+      if(cleanFileName.length<50)
+        $(this).next('.custom-file-label').html(cleanFileName);
+      else
+        $(this).next('.custom-file-label').html("File Name Too Long");
   });
 
+  $('#inputGroupFile02').on('change',function(){
+      $(this).next('.custom-file-label').html("Image Files Are Selected...");
+  });
+
+
 // Display Relevant form according to animal Type (Fish, Mammal, Bird, Reptiles and Amphibians)
-
-
 function formManipulate() {
   var e = document.getElementById("typeSelect");
   var selected = e.options[e.selectedIndex].value;

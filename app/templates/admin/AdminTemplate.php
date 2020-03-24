@@ -26,6 +26,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link href="/ZooAssignment/public/css/fa-admin-lte-admin.css" rel="stylesheet">
   <!-- Bootstrap Data Table -->
   <link href="/ZooAssignment/public/css/dataTables.bootstrap4.min.css" rel ="stylesheet">
+  <link rel="icon" href="/ZooAssignment/public/resources/images/favicon.ico" type="image/gif" sizes="16x16">
   <!-- jQuery -->
   <script src="/ZooAssignment/public/script/jquery.min.js"></script>
 </head>
@@ -366,10 +367,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
 
+        <section class="content">
+
 <?php echo $breadcrumb;?>
 <?php echo $content;?>
 
-
+        </section>
 
       </div><!-- /.container-fluid -->
     </div>

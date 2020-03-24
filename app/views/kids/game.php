@@ -1,13 +1,22 @@
+<!-- Game from https://www.gamearter.com/ -->
+<div class="card">
+  <div class="card-header bg-info text-white text-center">Play Tiger Jigsaw</div>
+  <div class="card-body text-center">
+    <iframe src="https://www.gamearter.com/game/tiger-jigsaw/"
+            allow="fullscreen"
+            class = "kidsGame">
+          </iframe>
+  </div>
+</div>
 
-<h1>Play Tiger Jigsaw</h1>
-<iframe src="https://www.gamearter.com/game/tiger-jigsaw/"
-        allow="fullscreen"
-        class = "kidsGame">
-      </iframe>
 
-
-<h1>Play Jungle Matching</h1>
-<iframe src="https://www.gamearter.com/game/jungle-matching/"
-        allow="fullscreen"
-        class = "kidsGame">
-      </iframe>
+<!-- Game from https://www.gamearter.com/ -->
+<div class="card">
+  <div class="card-header bg-info text-white text-center">Play Jungle Matching</div>
+  <div class="card-body text-center">
+    <iframe src="https://www.gamearter.com/game/jungle-matching/"
+            allow="fullscreen"
+            class = "kidsGame">
+          </iframe>
+  </div>
+</div>

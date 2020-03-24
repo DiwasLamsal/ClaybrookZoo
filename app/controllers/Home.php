@@ -13,7 +13,8 @@
       $template = '../app/views/home/homeContent.php';
       $content = loadTemplate($template, []);
       $title = "Claybrook Zoo - Home";
-
+      $heading = "Welcome to Claybrook Zoo";
+      $selected="Home";
       require_once "../app/controllers/userLoadView.php";
 
     }

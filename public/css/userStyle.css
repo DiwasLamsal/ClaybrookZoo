@@ -26,8 +26,8 @@ h2{font-family: opensansbold}
 h3{font-family: opensansbold}
 h4{font-family: opensansbold}
 h5{font-family: opensansbold}
-a{color: white; text-decoration: none;font-family: opensanssemibold;}
-a:hover, a:active{color:yellow;}
+a{color: white; text-decoration: none;font-family: opensanssemibold; transition: .1s;}
+a:hover, a:active{text-decoration: none;}
 
 
 /* CSS Start */
@@ -40,6 +40,8 @@ a:hover, a:active{color:yellow;}
 body{
   overflow-x: hidden;
   font-family: opensansregular;
+  background-color: #ffffff;
+  background-image: url("/ZooAssignment/public/resources/images/asfalt-dark.png");
 }
 
 
@@ -109,28 +111,50 @@ main{
 
 /********************************************************************************************************************/
 
-header {
-  width: 100%;
-  height: 80vh;
-  background: linear-gradient(to top right, transparent 50%,
-    rgba(0, 0, 0, 0.5) 60%) 0 0/100% 200px no-repeat,
-    url('/ZooAssignment/public/resources/images/header/header2.jpg') no-repeat 50% 50%;
-  background-size: cover;
+.text-green {
+    color: #2E8B57;
 }
+
+header {
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  height: 75vh;
+  max-height: 480px;
+  background: linear-gradient(to top right, transparent 50%,
+    rgba(0, 10, 0, 0.5) 60%) 0 0/100% 200px no-repeat,
+    url('/ZooAssignment/public/resources/images/header/header.jpg') no-repeat 50% 60%;
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: 0 -20px 20px 10px white inset;
+}
+
 
 .content {
   width: 94%;
-  margin: 4em auto;
+  margin: 1em auto;
   font-size: 20px;
   line-height: 30px;
   text-align: justify;
 }
 
+.main-content-section{
+  z-index: 1;
+  min-height: 70vh;
+  margin-bottom: 40px;
+}
+
+/* SVG image taken from https://apenheul.com/ */
+h2.divided.text-green {
+    background: url('/ZooAssignment/public/resources/images/extras/header-line.svg') center center no-repeat;
+}
+
+/********************************************************************************************************************/
+
 .logo {
   line-height: 60px;
   position: fixed;
   float: left;
-  margin: 16px 46px;
+  margin: 10px 46px;
   color: #fff;
   font-weight: bold;
   font-size: 20px;
@@ -139,11 +163,17 @@ header {
   max-width: 80%;
 }
 
+nav{
+  z-index: 100;
+}
+
 nav #nav-logo{
   width: 60%;
-  border-radius: 5px;
+  border-radius: 20px;
   transition: width .3s;
+  border: 5px groove lightgrey;
 }
+
 nav #nav-logo-text{
   display: none;
 }
@@ -171,7 +201,7 @@ nav {
 }
 
 nav ul {
-  line-height: 40px;
+  line-height: 10px;
   list-style: none;
   background: rgba(0, 0, 0, 0);
   overflow: hidden;
@@ -179,29 +209,44 @@ nav ul {
   padding: 0;
   text-align: right;
   margin: 0;
-  padding-right: 40px;
-  transition: 1s;
+  padding-right: 10px;
+  transition: .5s;
 }
 
 nav.black ul {
-  background: #2E8B57;
+  background: #111D;
 }
 
 nav ul li {
   display: inline-block;
-  padding: 16px 40px;;
+  padding: 5px 0px;
 }
 
-nav ul li a {
+nav ul li a.nav-link{
   text-decoration: none;
   color: #fff;
+  padding: 15px 15px;
+  border-radius: 10px;
   font-size: 16px;
+  transition: .2s;
+}
+
+nav ul li a.active, nav.black ul li a.active{
+  color: white;
+  background: #9acd32;
+}
+
+nav ul li a.active:hover, nav.black ul li a.active:hover{
+  color:white;
+  background: #89c441;
 }
 
 nav ul li a:hover{
   text-decoration: none;
-  color: yellow;
+  color:lightgrey;
 }
+
+/********************************************************************************************************************/
 
 .menu-icon {
   line-height: 60px;
@@ -218,6 +263,7 @@ nav ul li a:hover{
 .header-text{
   display: none;
 }
+/********************************************************************************************************************/
 
 .kidsGame{
   width: 100%;
@@ -226,8 +272,16 @@ nav ul li a:hover{
   margin-top: 20px;
 }
 
+/********************************************************************************************************************/
 
 @media(max-width: 786px) {
+
+
+
+  header{
+    width: 100%;
+    margin: 0;
+  }
 
   .logo {
     position: fixed;
@@ -252,7 +306,8 @@ nav ul li a:hover{
 
   nav ul {
     max-height: 0px;
-    background: #2E8B57;
+    background: #000b;
+    line-height: 30px;
   }
 
   .showing {
@@ -282,6 +337,30 @@ footer{
   padding: 10px 0px;
   text-align: center;
   font-size: calc(1.5vh + 5px);
+  width: 100%;
 }
 
+/********************************************************************************************************************/
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkgrey;
+}
 /********************************************************************************************************************/

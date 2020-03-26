@@ -26,7 +26,7 @@ h2{font-family: opensansbold}
 h3{font-family: opensansbold}
 h4{font-family: opensansbold}
 h5{font-family: opensansbold}
-a{color: white; text-decoration: none;font-family: opensanssemibold; transition: .1s;}
+a{text-decoration: none;font-family: opensanssemibold; transition: .1s;}
 a:hover, a:active{text-decoration: none;}
 
 
@@ -118,7 +118,7 @@ main{
 header {
   width: calc(100% + 40px);
   margin-left: -20px;
-  height: 75vh;
+  height: 60vh;
   max-height: 480px;
   background: linear-gradient(to top right, transparent 50%,
     rgba(0, 10, 0, 0.5) 60%) 0 0/100% 200px no-repeat,
@@ -132,8 +132,8 @@ header {
 .content {
   width: 94%;
   margin: 1em auto;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 28px;
   text-align: justify;
 }
 
@@ -271,6 +271,28 @@ nav ul li a:hover{
   margin-bottom: 40px;
   margin-top: 20px;
 }
+
+/********************************************************************************************************************/
+
+.featured-img-holder{
+  height: 350px;
+  overflow: hidden;
+}
+
+.animal-img-holder{
+  height: 250px;
+  overflow: hidden;
+}
+
+.featured-box-img, .animal-box-img{
+  height: 100%;
+  transition: .3s;
+}
+
+.featured-box:hover .featured-box-img, .animal-box:hover .animal-box-img{
+  transform: scale(1.05);
+}
+
 
 /********************************************************************************************************************/
 

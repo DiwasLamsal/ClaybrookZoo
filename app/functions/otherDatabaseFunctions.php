@@ -223,4 +223,50 @@ function deleteSponsorData($val){
   return $sponsorClass->delete('said',$val);
 }
 
+function removeCurrentFeaturedAnimal(){
+  global $pdo;
+  $stmt = $pdo->prepare('UPDATE animals SET afeatured = "No"
+                           WHERE afeatured = "Yes";');
+  $stmt->execute();
+}
+
+
+// https://stackoverflow.com/questions/26270237/php-mysql-search-with-multiple-criteria - gahse
+function findSearchedAnimals($criteria){
+    global $pdo;
+    extract($criteria);
+
+    $q = "SELECT * FROM animals a INNER JOIN locations l ON a.alid = l.lid WHERE astatus='Active' ";
+
+    if(isset($location) && !empty($location)){
+        $q .= " AND (a.alid = '$location')";
+    }
+
+    if(isset($area) && !empty($area)){
+      $q .= " AND l.larea = '$area'";
+    }
+
+    if(isset($category) && !empty($category)){
+      $category=str_replace("_", " ", $category);
+      $q .= " AND a.acategory='$category'";
+    }
+
+    if(isset($name) && !empty($name)){
+      $q .= " AND a.aname LIKE '%$name%'";
+    }
+
+    if(isset($sort) && !empty($sort)){
+      $q .= " ORDER BY $sort DESC;";
+    }
+    // $q .= " ORDER BY a.adateofjoin DESC LIMIT $per_page , $start;";
+    $stmt = $pdo->prepare($q);
+    $stmt->execute();
+    return $stmt;
+}
+
+
+
+
+
+
 ?>

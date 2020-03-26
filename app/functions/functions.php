@@ -61,7 +61,29 @@ function checkDateStatus($sdate, $edate){
   }
 }
 
+// https://stackoverflow.com/questions/3776682/php-calculate-age - answered Sep 23 '10 at 9:07 Sudhir Bastakoti
+function getAgeFromDate1($dob){
+    $dob = strtotime($dob);
+    $dob=date('m/d/Y', $dob);
+    //explode the date to get month, day and year
+    $dob = explode("/", $dob);
+    //get age from date or birthdate
+    $age = (date("md", date("U", mktime(0, 0, 0, $dob[0], $dob[1], $dob[2]))) > date("md")
+      ? ((date("Y") - $dob[2]) - 1)
+      : (date("Y") - $dob[2]));
+    return $age;
+}
 
+function getAgeFromDate($dob){
+    $dob = strtotime($dob);
+    $dob=date('Y-m-d', $dob);
+    $dob = new DateTime($dob);
+    $diff = $dob->diff(new DateTime());
+    $years = $diff->format('%y');
+    $months = $diff->format('%m');
+    if($years==0) return $months.' months';
+    return $years.' years, '.$months.' months.';
+}
 
 
 

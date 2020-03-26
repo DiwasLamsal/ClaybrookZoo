@@ -51,6 +51,8 @@ class ManageAnimals extends Controller{
       // CAT = Category, SP = Species, YY = Year Added, RND = Random Number, L = Level   CATSPYYRNDL ex: MAMGO20253C
       $code=generateAnimalCode($_POST['animal']);
       $_POST['animal']['aid']=$code;
+      $_POST['animal']['afeatured']="No";
+
 
 
       //Create folder for animal to store images
@@ -262,7 +264,22 @@ class ManageAnimals extends Controller{
     }
   }
 
-
+  public function featured($val = ""){
+    $animalClass = new DatabaseTable('animals');
+    $animal = $animalClass->find('aid',$val);
+    if($animal->rowCount()>0){
+      removeCurrentFeaturedAnimal();
+      $criteria = [
+        'aid'=>$val,
+        'afeatured'=>'Yes'
+      ];
+      $animalClass->save($criteria, 'aid');
+      header("Location:../all/featuresuccess");
+    }
+    else{
+      header("Location:../all/nosuchanimal");
+    }
+  }
 
 }
 

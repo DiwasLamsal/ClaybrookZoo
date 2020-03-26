@@ -8,7 +8,8 @@
       $content = loadTemplate($template, []);
       $title = "Claybrook Zoo - Contact";
       $selected="Contact";
-      $heading = "Contact Us";
+      $bodyTitle = "Contact";
+      $breadcrumbContent=["Contact"=>"Contact"];
       require_once "../app/controllers/userLoadView.php";
     }
 

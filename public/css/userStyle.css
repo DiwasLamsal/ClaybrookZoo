@@ -145,7 +145,7 @@ header {
 
 /* SVG image taken from https://apenheul.com/ */
 h2.divided.text-green {
-    background: url('/ZooAssignment/public/resources/images/extras/header-line.svg') center center no-repeat;
+    /* background: url('/ZooAssignment/public/resources/images/extras/header-line.svg') center center no-repeat; */
 }
 
 /********************************************************************************************************************/

@@ -57,7 +57,7 @@
           <div class = "form-row text-center">
             <div class="col-12">
               <form method="POST" class="animalForm" action="/ZooAssignment/public/Animals/search/">
-                <input type="hidden" name="area" value="<?php echo $location['lid'];?>">
+                <input type="hidden" name="location" value="<?php echo $location['lid'];?>">
                 <input class="btn btn-success"
                   type="submit" value="View All Animals in This Location"
                   name="search">

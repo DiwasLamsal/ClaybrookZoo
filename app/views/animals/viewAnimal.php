@@ -81,6 +81,11 @@
         </span>
         <hr>
 
+        <strong style="text-transform:uppercase;">
+          <a href = "/ZooAssignment/public/Animals/signage/<?php echo $animal['aid'];?>" target="_blank">
+          <i class="fas fa-sign mr-1"></i>
+          Signage</strong></a>
+
       </div>
       <!-- /.card-body -->
     </div>
@@ -255,8 +260,10 @@
       </div>
       <div class="card-body text-center">
 
-        <p class = "text-center">No Sponsor Available.</p>
-
+        <p class = "text-center">No Sponsors Available.</p><br>
+        <a href="/ZooAssignment/public/Animals/sponsor/<?php echo $animal['aid'];?>" class="btn btn-success">
+          Sponsor This Animal
+        </a>
 
       </div>
     </div>

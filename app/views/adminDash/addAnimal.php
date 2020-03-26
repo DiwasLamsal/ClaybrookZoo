@@ -482,7 +482,7 @@ if(isset($animal)){
                               <span class="input-group-text"><i class="fa fa-th"></i></span>
                             </div>
                             <select name="animal[acategory]" class="form-control" id = "typeSelect" <?php if(isset($animal))echo'disabled';?>>
-                              <option value="Bird" <?if(isset($animal) && $animal['acategory']=="Bird")echo'selected';?>>Bird</option>
+                              <option value="Bird" <?if(isset($animal) && $animal['acategory']=="Bird")echo'selected';?>Bird</option>
                               <option value="Fish" <?php if(isset($animal) && $animal['acategory']=="Fish")echo 'selected';?>>Fish</option>
                               <option value="Mammal" <?php if(isset($animal) && $animal['acategory']=="Mammal")echo 'selected';?>>Mammal</option>
                               <option value="Reptile or Amphibian" <?php if(isset($animal) && $animal['acategory']=="Reptile or Amphibian")echo 'selected';?>>Reptile or Amphibian</option>

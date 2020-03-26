@@ -9,7 +9,8 @@
       $template = '../app/views/areas/allAreas.php';
       $content = loadTemplate($template, ['areas'=>$areas]);
       $title = "Claybrook Zoo - Areas";
-      $heading = "Animal Areas";
+      $bodyTitle = "Areas";
+      $breadcrumbContent=["Areas"=>"Areas"];
       $selected = "Areas";
       require_once "../app/controllers/userLoadView.php";
     }
@@ -31,7 +32,8 @@
         ];
         $content = loadTemplate($template, $criteria);
         $title = "Claybrook Zoo - Areas";
-        $heading = "Area Details";
+        $bodyTitle = "Area Details";
+        $breadcrumbContent=["Areas"=>"Areas", "Areas/browse"=>"Area Details"];
         $selected = "Areas";
         require_once "../app/controllers/userLoadView.php";
       }
@@ -55,7 +57,8 @@
         ];
         $content = loadTemplate($template, $criteria);
         $title = "Claybrook Zoo - Areas";
-        $heading = "Location Details";
+        $bodyTitle = "Location Details";
+        $breadcrumbContent=["Areas"=>"Areas", "Areas/locations"=>"Location Details"];
         $selected = "Areas";
         require_once "../app/controllers/userLoadView.php";
       }

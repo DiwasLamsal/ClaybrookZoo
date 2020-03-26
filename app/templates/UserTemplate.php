@@ -1,7 +1,7 @@
 <?php
 
 if (session_status() == PHP_SESSION_NONE) {
-	session_start();
+	// session_start();
 }
 
 
@@ -105,9 +105,8 @@ if (session_status() == PHP_SESSION_NONE) {
 	 		<section class = "main-content-section">
 				<div class="content">
 
-					<div class = "text-center heading-text">
-					  <h2 class="text-green divided mb-5"><?php echo $heading;?></h2>
-					</div>
+					
+					<?php echo $breadcrumb;?>
 
 
 					<!-- Content body goes here -->

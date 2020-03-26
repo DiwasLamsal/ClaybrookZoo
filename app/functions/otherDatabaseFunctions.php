@@ -265,6 +265,14 @@ function findSearchedAnimals($criteria){
 }
 
 
+function checkAnimalContainsSponsorship($id){
+  $spClass = new DatabaseTable('sponsorships');
+  $sp = $spClass->find('said', $id);
+  if($sp->rowCount()>0)
+    return true;
+  return false;
+}
+
 
 
 

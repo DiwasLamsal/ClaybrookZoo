@@ -60,7 +60,13 @@ nav hr{
   transition: .2s;
 }
 
-.table-cover-image:hover{
+.table-banner-image{
+  max-height: 50px;
+  object-fit: contain;
+  transition: .2s;
+}
+
+.table-cover-image:hover, .table-banner-image:hover{
   transform: scale(1.05);
 }
 

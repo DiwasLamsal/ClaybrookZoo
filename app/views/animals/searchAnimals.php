@@ -1,6 +1,15 @@
 
 <div class="row">
 <?php
+
+if($animals->rowCount()==0){
+  ?>
+
+  <div class = "col text-center"><h2> No Animals Found 😥</h2></div>
+
+
+  <?php
+}
   while ($animal=$animals->fetch()){
     $image=getImagesByType($animal['aid'],'Cover')->fetch()['aifilename'];
 ?>

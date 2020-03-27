@@ -31,7 +31,7 @@
       <div class="card-header">
         <h3 class="card-title">Search</h3>
       </div>
-      <div class="card-body">
+      <div class="card-body" style="padding-bottom: 0px; padding-top: 10px;">
         <form method="POST" class="animalForm" action="/ZooAssignment/public/Animals/search/">
 
           <label>Name: </label>

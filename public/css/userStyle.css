@@ -118,7 +118,7 @@ main{
 header {
   width: calc(100% + 40px);
   margin-left: -20px;
-  height: 60vh;
+  height: 55vh;
   max-height: 480px;
   background: linear-gradient(to top right, transparent 50%,
     rgba(0, 10, 0, 0.5) 60%) 0 0/100% 200px no-repeat,
@@ -144,8 +144,8 @@ header {
 }
 
 /* SVG image taken from https://apenheul.com/ */
-h2.divided.text-green {
-    /* background: url('/ZooAssignment/public/resources/images/extras/header-line.svg') center center no-repeat; */
+.heading-row-bg {
+    background: url('/ZooAssignment/public/resources/images/extras/header-line.svg') center center no-repeat;
 }
 
 /********************************************************************************************************************/
@@ -169,9 +169,9 @@ nav{
 
 nav #nav-logo{
   width: 60%;
-  border-radius: 20px;
+  border-radius: 10px;
   transition: width .3s;
-  border: 5px groove lightgrey;
+  border: 2px groove lightgrey;
 }
 
 nav #nav-logo-text{
@@ -275,7 +275,7 @@ nav ul li a:hover{
 /********************************************************************************************************************/
 
 .featured-img-holder{
-  height: 350px;
+  height: 310px;
   overflow: hidden;
 }
 

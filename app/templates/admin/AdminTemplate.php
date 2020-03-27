@@ -41,7 +41,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/ZooAssignment/public/UserHome" class="nav-link">Home</a>
+        <a href="/ZooAssignment/public/Dashboard" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Profile</a>
@@ -214,22 +214,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-hand-holding-usd"></i>
               <p>
-                Sponsors
+                Sponsorships
                 <i class="fas fa-angle-left right"></i>
                 <!-- <span class="badge badge-info right">6</span> -->
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/ZooAssignment/public/ManageSponsors/all" class="nav-link">
-                  <i class="fas fa-binoculars nav-icon"></i>
-                  <p>View Sponsor</p>
+                <a href="/ZooAssignment/public/ManageSponsorships/sponsors" class="nav-link">
+                  <i class="fas fa-building nav-icon"></i>
+                  <p>Sponsors</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/ZooAssignment/public/ManageSponsors/add" class="nav-link">
-                  <i class="fas fa-plus nav-icon"></i>
-                  <p>Add Sponsor</p>
+                <a href="/ZooAssignment/public/ManageSponsorships/active" class="nav-link">
+                  <i class="fas fa-check-square nav-icon"></i>
+                  <p>Active Sponsorhips</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/ZooAssignment/public/ManageSponsorships/pending" class="nav-link">
+                  <i class="fas fa-hourglass-start nav-icon"></i>
+                  <p>Pending Sponsorships</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/ZooAssignment/public/ManageSponsorships/expiring" class="nav-link">
+                  <i class="fas fa-exclamation-triangle nav-icon"></i>
+                  <p>Expiring Sponsorships</p>
                 </a>
               </li>
               <hr>

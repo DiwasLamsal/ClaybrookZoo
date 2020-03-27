@@ -1,5 +1,18 @@
 <?php
 
+function getSponsorshipPrice($level){
+  $sponsorship = [
+    'A'=>2500,
+    'B'=>2000,
+    'C'=>1500,
+    'D'=>1000,
+    'E'=>500
+  ];
+  return $sponsorship[$level];
+}
+
+
+
 function loadTemplate($fileName, $templateVars) {
   extract($templateVars);
   ob_start();

@@ -198,10 +198,6 @@
                  echo "<p><b>$key:</b> $value</p>";
               }
               ?>
-              <p>
-                <b>Size:</b>
-                <?php echo $animal['asize'];?>
-              </p>
 
             </div>
 

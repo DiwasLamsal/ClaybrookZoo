@@ -105,9 +105,9 @@ if (session_status() == PHP_SESSION_NONE) {
 	 		<section class = "main-content-section">
 				<div class="content">
 
-					
-					<?php echo $breadcrumb;?>
 
+					<?php echo $breadcrumb;?>
+					
 
 					<!-- Content body goes here -->
            <?php echo $content;?>
@@ -115,8 +115,11 @@ if (session_status() == PHP_SESSION_NONE) {
 	 		</section>
 
 		<footer>
-			&copy; Claybrook Zoo <?php echo date("Y");?>
-			&nbsp; | &nbsp; <a href="#">Login to Dashboard</a>
+			<br>
+			<a href="#">Kiosk Template</a>&nbsp; | &nbsp; <a href="/ZooAssignment/public/Login">Login to Dashboard</a>
+			<br><br>
+			&copy; Claybrook Zoo <?php echo date("Y");?>. <br><br><br><br>
+
 		</footer>
 
     </div>

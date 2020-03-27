@@ -65,7 +65,7 @@
           }
       }
       else{
-        header("Location:../all/nosuchanimal");
+        header("Location:../nosuchanimal");
       }
     }
 
@@ -136,7 +136,7 @@
           }
       }
       else{
-        header("Location:../all/nosuchanimal");
+        header("Location:../nosuchanimal");
       }
     }
 
@@ -145,13 +145,39 @@
       $animalClass = new DatabaseTable('animals');
       $animal = $animalClass->find('aid', $val);
       $headerLocation = "Location:../nosuchanimal";
+      $sponsorClass = new DatabaseTable('sponsors');
+      $sponsors=$sponsorClass->findAll();
+      $sponsorshipClass = new DatabaseTable('sponsorships');
+
+      if(isset($_POST['submit'])){
+        if($_POST['existing']=="No"){
+          // Upload the banner image
+          $target_dir = "resources/images/sponsors/";
+          $target_file = $target_dir.microtime(true).'-Banner-'.basename($_FILES["bannerImg"]["name"]);
+          $target_file = str_replace(' ', '_', $target_file);
+          move_uploaded_file($_FILES["bannerImg"]["tmp_name"], $target_file);
+          $_POST['sponsor']['sbanner']=$target_file;
+          if($sponsorClass->save($_POST['sponsor']))
+            $_POST['sponsorship']['ssid']=$sponsorClass->findLastRecordId('sid')->fetch()['sid'];
+        }
+        $_POST['sponsorship']['said']=$val;
+        $_POST['sponsorship']['sstartdate']=$_POST['year']."-01-01";
+        $_POST['sponsorship']['senddate']=$_POST['year']."-12-31";
+        $_POST['sponsorship']['spaid']="No";
+        $_POST['sponsorship']['sstatus']="Pending";
+        if($sponsorshipClass->insert($_POST['sponsorship']))
+          header("Location:/ZooAssignment/public/Animals/".$val.'/success');
+
+      }
+
 
       if($animal->rowCount()>0){
         $animal=$animal->fetch();
         if($animal['astatus']=="Active" && !checkAnimalContainsSponsorship($val)){
             $template = '../app/views/animals/sponsorForm.php';
             $criteria=[
-              'animal'=>$animal
+              'animal'=>$animal,
+              'sponsors'=>$sponsors
             ];
             $content = loadTemplate($template, $criteria);
             $title = "Claybrook Zoo - Animal Signage";

@@ -1,5 +1,12 @@
 <?php
 
+function getSponsorById($id){
+  $objClass=new DatabaseTable('sponsors');
+  $ob=$objClass->find('sid',$id);
+  return $ob;
+}
+
+
 function getAreaById($id){
     $areaClass = new DatabaseTable('areas');
     $area = $areaClass->find('aid', $id);
@@ -30,6 +37,14 @@ function checkLocationContainsAnimals($lid){
   $animalClass = new DatabaseTable('animals');
   $animal = $animalClass->find('alid', $lid);
   if($animal->rowCount()>0)
+    return true;
+  return false;
+}
+
+function checkSponsorContainsSponsorships($ssid){
+  $sponsorshipClass = new DatabaseTable('sponsorships');
+  $sponsorship = $sponsorshipClass->find('ssid', $ssid);
+  if($sponsorship->rowCount()>0)
     return true;
   return false;
 }
@@ -74,6 +89,17 @@ function removeCurrentImageFiles($aid){
       if(file_exists($path.$ob['aifilename'])){unlink($path.$ob['aifilename']);}
     }
   return false;
+}
+
+function removeSponsorBanner($sid){
+  $objClass = new DatabaseTable('sponsors');
+  $obj = $objClass->find('sid', $sid);
+  $path="/ZooAssignment/public/";
+  if($obj->rowCount()>0){
+    $ob=$obj->fetch();
+    if(file_exists($ob['sbanner'])){unlink($ob['sbanner']);}
+    if(file_exists($path.$ob['sbanner'])){unlink($path.$ob['sbanner']);}
+  }
 }
 
 function deleteImagesByType($aid, $type){

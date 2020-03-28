@@ -11,63 +11,60 @@ class ManageEvents extends Controller{
       $this->browse($val);
       return;
     }
-
-    $areaClass = new DatabaseTable('areas');
-    $areas = $areaClass->findAll();
+    $eventClass = new DatabaseTable('events');
+    $events = $eventClass->findAll();
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
 
-    $template = '../app/views/adminDash/ManageAreas.php';
-    $content = loadTemplate($template, ['areas'=>$areas, 'dataTableCode'=>$dataTableCode]);
-    $title = "Dashboard - Areas";
-    $breadcrumbContent=["ManageAreas"=>"Areas"];
+    $template = '../app/views/adminDash/events/manageEvents.php';
+    $content = loadTemplate($template, ['events'=>$events, 'dataTableCode'=>$dataTableCode]);
+    $title = "Dashboard - Events";
+    $breadcrumbContent=["ManageEvents"=>"Events"];
     $role=['Administrator','Moderator'];
-    $bodyTitle="Areas";
+    $bodyTitle="Events";
     require_once "../app/controllers/adminLoadView.php";
   }
 
   public function add(){
-    $areaClass = new DatabaseTable('areas');
+    $eventClass = new DatabaseTable('events');
     if(isset($_POST['submit'])){
-      $areaClass->save($_POST['area']);
-      header("Location:../ManageAreas/all/addsuccess");
+      $eventClass->save($_POST['event']);
+      header("Location:/ZooAssignment/public/ManageEvents/all/addsuccess");
     }
-
-    $template = '../app/views/adminDash/addArea.php';
+    $template = '../app/views/adminDash/events/addEvent.php';
     $content = loadTemplate($template, []);
-    $title = "Dashboard - Add new area";
-    $breadcrumbContent=["ManageAreas"=>"areas", "ManageAreas/Add"=>"Add Area"];
+    $title = "Dashboard - Add new event";
+    $breadcrumbContent=["ManageEvents"=>"Events", "ManageEvents/add"=>"Add Event"];
     $role=['Administrator','Moderator'];
-    $bodyTitle="Add area";
+    $bodyTitle="Add Event";
     require_once "../app/controllers/adminLoadView.php";
   }
 
 
 
   public function browse($val = ""){
-    $areaClass = new DatabaseTable('areas');
-    $area = $areaClass->find('aid', $val);
+    $eventClass = new DatabaseTable('events');
+    $event = $eventClass->find('eid', $val);
 
-    if($area->rowCount()>0){
+    if($event->rowCount()>0){
       if(isset($_POST['submit'])){
-        $_POST['area']['aid']=$val;
-        $areaClass->save($_POST['area'], 'aid');
+        $_POST['event']['eid']=$val;
+        $eventClass->save($_POST['event'], 'eid');
         header("Location:../all/editsuccess");
       }
 
       $link='/ZooAssignment/public/ManageEvents/delete/'.$val;
+      $message = ($link==false)?"This event cannot be deleted.":"";
 
-
-      $message = ($link==false)?"This area contains locations and cannot be deleted.":"";
       $template = '../app/views/adminDash/modal.php';
-      $modal = loadTemplate($template, ['type'=>'Area', 'link'=>$link, 'message'=>$message]);
-      $template = '../app/views/adminDash/addArea.php';
-      $content = loadTemplate($template, ['area'=>$area, 'modal'=>$modal]);
+      $modal = loadTemplate($template, ['type'=>'Event', 'link'=>$link, 'message'=>$message]);
+      $template = '../app/views/adminDash/events/addEvent.php';
+      $content = loadTemplate($template, ['event'=>$event, 'modal'=>$modal]);
 
-      $title = "Dashboard - Edit area";
-      $breadcrumbContent=["ManageAreas"=>"Areas", "ManageAreas/browse"=>"View area"];
+      $title = "Dashboard - Edit Event";
+      $breadcrumbContent=["ManageEvents"=>"Events", "ManageEvents/browse"=>"View Event"];
       $role=['Administrator','Moderator'];
-      $bodyTitle="Edit area";
+      $bodyTitle="View Event";
       require_once "../app/controllers/adminLoadView.php";
     }
 
@@ -77,12 +74,11 @@ class ManageEvents extends Controller{
 
   }
 
-
   public function delete($val = ""){
-    $areaClass = new DatabaseTable('areas');
-    $area = $areaClass->find('aid',$val);
-    if($area->rowCount()>0){
-      $areaClass->delete('aid', $val);
+    $eventClass = new DatabaseTable('events');
+    $event = $eventClass->find('eid', $val);
+    if($event->rowCount()>0){
+      $eventClass->delete('eaid', $val);
       header("Location:../all/deletesuccess");
     }
     else{

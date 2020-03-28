@@ -287,6 +287,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- End of Watchlist Navigation Area -->
 <?php if(in_array($currentUser['utype'],['Administrator','Moderator'])){ //Show only if admin or moderator ?>
 
+
+	<!-- Events Navigation Area -->
+	          <li class="nav-item has-treeview">
+	            <a href="#" class="nav-link">
+	              <i class="nav-icon fas fa-calendar-alt"></i>
+	              <p>
+	                Events
+	                <i class="fas fa-angle-left right"></i>
+	                <!-- <span class="badge badge-info right">6</span> -->
+	              </p>
+	            </a>
+	            <ul class="nav nav-treeview">
+	              <li class="nav-item">
+	                <a href="/ZooAssignment/public/ManageEvents/all" class="nav-link">
+	                  <i class="fas fa-binoculars nav-icon"></i>
+	                  <p>View Events</p>
+	                </a>
+	              </li>
+	              <li class="nav-item">
+	                <a href="/ZooAssignment/public/ManageEvents/add" class="nav-link">
+	                  <i class="fas fa-calendar-plus nav-icon"></i>
+	                  <p>Add Event</p>
+	                </a>
+	              </li>
+	              <hr>
+	            </ul>
+	          </li>
+	<!-- End of Events Navigation Area -->
+
 <!-- Tickets Navigation Area -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -314,35 +343,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
 <!-- End of Tickets Navigation Area -->
-
-
-<!-- Events Navigation Area -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-calendar-alt"></i>
-              <p>
-                Events
-                <i class="fas fa-angle-left right"></i>
-                <!-- <span class="badge badge-info right">6</span> -->
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/ZooAssignment/public/ManageEvents/all" class="nav-link">
-                  <i class="fas fa-binoculars nav-icon"></i>
-                  <p>View Events</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/ZooAssignment/public/ManageEvents/add" class="nav-link">
-                  <i class="fas fa-calendar-plus nav-icon"></i>
-                  <p>Add Event</p>
-                </a>
-              </li>
-              <hr>
-            </ul>
-          </li>
-<!-- End of Events Navigation Area -->
 
 <!-- Vacancies Navigation Area -->
           <li class="nav-item has-treeview">

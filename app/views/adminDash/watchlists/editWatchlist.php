@@ -71,6 +71,13 @@
   </div>
 </div>
 
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+ if(in_array($_SESSION['loggedin']['utype'],['Administrator','Moderator'])){ //Show only if admin or moderator ?>
+
+
       <div class="col-md-12 mb-3">
         <div class="card h-100">
           <div class="card-header bg-gradient-info">
@@ -152,3 +159,6 @@
         </form>
       </div>
     <?php echo $modal;?>
+
+
+<?php } ?>

@@ -1,15 +1,15 @@
 <?php
   $animal = getAnimalById($sponsorship['said'])->fetch();
   $sponsor = getSponsorById($sponsorship['ssid'])->fetch();
-  $animalLink = "<a class = 'btn btn-lg btn-primary' href = '/ZooAssignment/public/ManageAnimals/all/$animal[aid]' target='_blank'>$animal[aname]</a>";
-  $sponsorLink = "<a class = 'btn btn-lg btn-primary' href = '/ZooAssignment/public/ManageSponsorships/sponsors/$sponsor[sid]' target='_blank'>$sponsor[scompany]</a>";
+  $animalLink = "<a class = 'btn bg-gradient-olive' href = '/ZooAssignment/public/ManageAnimals/all/$animal[aid]' target='_blank'>$animal[aname]</a>";
+  $sponsorLink = "<a class = 'btn bg-gradient-olive' href = '/ZooAssignment/public/ManageSponsorships/sponsors/$sponsor[sid]' target='_blank'>$sponsor[scompany]</a>";
 ?>
 
 
 <div class="row col-md-12 text-center">
   <div class = "col-md-6">
-    <div class="card card-info">
-      <div class="card-header">
+    <div class="card">
+      <div class="card-header bg-gradient-info">
         <h3 class="card-title">Sponsored Animal</h3>
       </div>
       <div class="card-body">
@@ -19,8 +19,8 @@
   </div>
 
   <div class = "col-md-6">
-    <div class="card card-info">
-      <div class="card-header">
+    <div class="card">
+      <div class="card-header bg-gradient-info">
         <h3 class="card-title">Sponsored By</h3>
       </div>
       <div class="card-body">
@@ -37,8 +37,8 @@
   <form method="POST" class="sponsorForm" >
 
 <!-- Input addon -->
-            <div class="card card-info">
-              <div class="card-header">
+            <div class="card">
+              <div class="card-header bg-gradient-info">
                 <h3 class="card-title">Sponsor Details</h3>
               </div>
               <div class="card-body">

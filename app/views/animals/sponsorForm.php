@@ -255,6 +255,14 @@ $year = date("Y", strtotime($newEndingDate));
             </div>
           </div>
 
+          <label>Email Address:</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            </div>
+            <input type="text" name="sponsor[semail]" class="form-control"
+             placeholder="Email">
+          </div><br>
 
         <label>Address Details:</label>
         <div class="input-group mb-3">

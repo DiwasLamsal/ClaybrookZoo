@@ -1,6 +1,6 @@
 <?php
 
-class ManageAreas extends Controller{
+class ManageEvents extends Controller{
 
   public function index(){
     header("Location:./all");

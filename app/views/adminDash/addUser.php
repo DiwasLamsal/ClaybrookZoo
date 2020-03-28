@@ -12,7 +12,7 @@ if(isset($user)){
       <!-- Widget: user widget style 2 -->
       <div class="card card-widget widget-user-2 h-100">
         <!-- Add the bg color to the header using any of the bg-* classes -->
-        <div class="widget-user-header bg-warning">
+        <div class="widget-user-header bg-gradient-warning">
           <div class="widget-user-image">
             <img class="img-circle elevation-2" src="/ZooAssignment/public/resources/images/extras/avatar5.png" alt="User Avatar">
           </div>
@@ -73,8 +73,8 @@ if(isset($user)){
       <form method="POST" class="userForm h-100" >
 
 <!-- Input addon -->
-        <div class="card card-info h-100">
-          <div class="card-header">
+        <div class="card h-100">
+          <div class="card-header  bg-gradient-info">
             <h3 class="card-title">User Form</h3>
           </div>
           <div class="card-body">
@@ -153,8 +153,8 @@ if(isset($user)){
 <div class="row">
   <div class="col-md-12">
     <form method="POST" class="userForm" >
-    <div class="card card-secondary">
-            <div class="card-header">
+    <div class="card">
+            <div class="card-header bg-gradient-info">
               <h3 class="card-title">Update Password</h3>
 
               <div class="card-tools">

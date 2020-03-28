@@ -17,8 +17,8 @@ if(isset($location)){
       <form method="POST" class="locationForm" >
 
     <!-- Input addon -->
-                <div class="card card-info">
-                  <div class="card-header">
+                <div class="card card">
+                  <div class="card-header  bg-gradient-info">
                     <h3 class="card-title">Location Form</h3>
                   </div>
                   <div class="card-body">

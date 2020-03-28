@@ -2,8 +2,8 @@
   <form method="POST" class="sponsorForm" >
 
 <!-- Input addon -->
-            <div class="card card-info">
-              <div class="card-header">
+            <div class="card">
+              <div class="card-header bg-gradient-info">
                 <h3 class="card-title">Sponsor Details</h3>
               </div>
               <div class="card-body">
@@ -41,6 +41,18 @@
                           </div>
                         </div>
 
+                      <div class="row">
+                        <div class="col">
+                        <label>Email Address:</label>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                          </div>
+                          <input type="text" name="sponsor[semail]" class="form-control"
+                           placeholder="Email" value="<?php echo $sponsor['semail'];?>">
+                        </div><br>
+                      </div>
+                      <div class="col">
                         <label>Website Link:</label>
                         <div class="input-group">
                           <div class="input-group-prepend">
@@ -49,6 +61,8 @@
                           <input type="text" name="sponsor[swebsite]" class="form-control"
                            placeholder="Website" value="<?php echo $sponsor['swebsite'];?>">
                         </div><br>
+                      </div>
+                    </div>
 
                         <label>Address Details:</label>
                         <div class="input-group mb-3">
@@ -82,8 +96,8 @@
 
   <div class = "col-md-12">
     <form method="POST" class="areaForm" enctype="multipart/form-data">
-      <div class="card card-info">
-        <div class="card-header">
+      <div class="card">
+        <div class="card-header bg-gradient-info">
           <h3 class="card-title">Banner</h3>
         </div>
         <div class="card-body">

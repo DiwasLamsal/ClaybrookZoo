@@ -253,8 +253,8 @@ if(isset($animal)){
   <form method="POST" class="userForm" enctype="multipart/form-data">
 
   <!-- Input addon -->
-    <div class="card card-info">
-      <div class="card-header">
+    <div class="card">
+      <div class="card-header bg-gradient-info">
         <h3 class="card-title">Change Cover Image</h3>
       </div>
       <div class="card-body">
@@ -291,8 +291,8 @@ if(isset($animal)){
     <form method="POST" class="userForm" enctype="multipart/form-data">
 
     <!-- Input addon -->
-      <div class="card card-info">
-        <div class="card-header">
+    <div class="card">
+      <div class="card-header bg-gradient-info">
           <h3 class="card-title">Change/Upload Global Distribution Map Image</h3>
         </div>
         <div class="card-body">
@@ -325,8 +325,8 @@ if(isset($animal)){
     <form method="POST" class="userForm" enctype="multipart/form-data">
 
     <!-- Input addon -->
-      <div class="card card-info">
-        <div class="card-header">
+    <div class="card">
+      <div class="card-header bg-gradient-info">
           <h3 class="card-title">Change/Upload Gallery Images</h3>
         </div>
         <div class="card-body">
@@ -367,8 +367,8 @@ if(isset($animal)){
 
     <!-- Input addon -->
 
-                <div class="card card-info">
-                  <div class="card-header">
+                <div class="card">
+                  <div class="card-header bg-gradient-info">
                     <h3 class="card-title">Animal Form</h3>
                   </div>
                   <div class="card-body">
@@ -777,8 +777,8 @@ if(isset($animal)){
 <?php if(isset($animal)){ ?>
 
       <div class="col-md-12 mb-3">
-        <div class="card card-info h-100">
-          <div class="card-header">
+        <div class="card h-100">
+          <div class="card-header bg-gradient-info">
             <h3 class="card-title">Animal Watchlist</h3>
           </div>
           <div class="card-body" style="padding-bottom: 0px; padding-top: 10px;">

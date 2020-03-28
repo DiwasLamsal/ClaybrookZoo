@@ -5,8 +5,8 @@
 
 
 <div class="col-md-12 mb-3">
-  <div class="card card-info h-100">
-    <div class="card-header">
+  <div class="card h-100">
+    <div class="card-header bg-gradient-info">
       <h3 class="card-title">Animal Watchlist Info</h3>
     </div>
     <div class="card-body">
@@ -72,8 +72,8 @@
 </div>
 
       <div class="col-md-12 mb-3">
-        <div class="card card-info h-100">
-          <div class="card-header">
+        <div class="card h-100">
+          <div class="card-header bg-gradient-info">
             <h3 class="card-title">Edit Watchlist</h3>
           </div>
           <div class="card-body">

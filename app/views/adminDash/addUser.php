@@ -26,7 +26,7 @@ if(isset($user)){
             </li>
             <li class="nav-item">
               <span class="nav-link">
-                <b>Username </b><span class="float-right"><?php echo $user['uusername'];?></span>
+                <b>User ID </b><span class="float-right"><?php echo $user['uid'];?></span>
               </span>
             </li>
             <li class="nav-item">
@@ -86,12 +86,12 @@ if(isset($user)){
               <input type="text" name="user[ufullname]" class="form-control"  required <?php if(isset($user))echo 'value="'.$user['ufullname'].'"';?> placeholder="Full Name">
             </div>
 
-            <div class="input-group mb-3">
+            <!-- <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-user-circle"></i></span>
               </div>
               <input type="text" name="user[uusername]" class="form-control"  required <?php if(isset($user))echo 'value="'.$user['uusername'].'"';?> placeholder="Username">
-            </div>
+            </div> -->
 
             <div class="input-group mb-3">
               <div class="input-group-prepend">
@@ -122,7 +122,7 @@ if(isset($user)){
               <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fa fa-user-md"></i></span>
               </div>
-              <select name="user[utype]" class="form-control" id = "typeSelect">
+              <select name="user[utype]" class="form-control" id = "typeSelect" <?php if(isset($user) && $user['utype']=="Administrator" && checkLastAdministrator())echo 'disabled';?>>
                   <option value="Administrator" <?php if(isset($user) && $user['utype']=="Administrator")echo 'selected';?>>Administrator</option>
                   <option value="Moderator" <?php if(isset($user) && $user['utype']=="Moderator")echo 'selected';?>>Moderator
                   </option>
@@ -131,6 +131,9 @@ if(isset($user)){
               </select>
             </div>
 
+            <?php if(isset($user) && $user['utype']=="Administrator" && checkLastAdministrator()){?><br>
+              <b>Note:</b> There needs to be at least one active administrator in the system.
+            <?php } ?>
 
             <!-- /input-group -->
           </div>

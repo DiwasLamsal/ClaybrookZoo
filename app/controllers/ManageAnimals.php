@@ -22,6 +22,7 @@ class ManageAnimals extends Controller{
     $content = loadTemplate($template, ['animals'=>$animals, 'dataTableCode'=>$dataTableCode, 'type'=>'']);
     $title = "Dashboard - Animals";
     $breadcrumbContent=["ManageAnimals"=>"Animals"];
+    $role=['Administrator','Moderator'];
     $bodyTitle="Animals";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -36,6 +37,7 @@ class ManageAnimals extends Controller{
     $content = loadTemplate($template, ['animals'=>$animals, 'dataTableCode'=>$dataTableCode, 'type'=>"archive"]);
     $title = "Dashboard - Dormant Animals";
     $breadcrumbContent=["ManageAnimals"=>"Archived Animals"];
+    $role=['Administrator'];
     $bodyTitle="Archived Animals";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -114,6 +116,7 @@ class ManageAnimals extends Controller{
     $content = loadTemplate($template, ['locations'=>$locations]);
     $title = "Dashboard - Add new Animal";
     $breadcrumbContent=["ManageAnimals"=>"Animals", "ManageAnimals/Add"=>"Add Animal"];
+    $role=['Administrator','Moderator'];
     $bodyTitle="Add Animal";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -163,8 +166,8 @@ class ManageAnimals extends Controller{
         $_POST['animal_image']['aifiletype']="Cover";
         $_POST['animal_image']['aianimal']=$val;
 
-        if($aiClass->save($_POST['animal_image'], 'aiid'))
-          header("Location:../all/editimagesuccess");
+        $aiClass->save($_POST['animal_image'], 'aiid');
+        header("Location:../all/editimagesuccess");
       }
 
       // submit gallery code
@@ -222,6 +225,7 @@ class ManageAnimals extends Controller{
       $content = loadTemplate($template, $criteria);
       $title = "Dashboard - View Animal";
       $breadcrumbContent=["ManageAnimals"=>"Animals", "ManageAnimals/browse"=>"View Animal"];
+      $role=['Administrator','Moderator'];
       $bodyTitle="Edit Animal";
       require_once "../app/controllers/adminLoadView.php";
     }

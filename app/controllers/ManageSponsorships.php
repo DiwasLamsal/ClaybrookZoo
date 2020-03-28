@@ -39,6 +39,7 @@ class ManageSponsorships extends Controller{
     $content = loadTemplate($template, ['sponsorships'=>$sponsorships, 'dataTableCode'=>$dataTableCode]);
     $title = "Dashboard - Sponsorships";
     $breadcrumbContent=["ManageSponsorships/sponsorships"=>"Sponsorships"];
+    $role=['Administrator','Moderator'];
     $bodyTitle="Sponsorships";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -66,6 +67,7 @@ class ManageSponsorships extends Controller{
       $content = loadTemplate($template, ['sponsorship'=>$sponsorship, 'modal'=>$modal]);
       $title = "Dashboard - View Sponsorship";
       $breadcrumbContent=["ManageSponsorships"=>"Sponsorships", "ManageSponsorships/browseSponsorship"=>"View Sponsorship"];
+      $role=['Administrator','Moderator'];
       $bodyTitle="Edit Sponsorship";
       require_once "../app/controllers/adminLoadView.php";
     }
@@ -100,6 +102,7 @@ class ManageSponsorships extends Controller{
     $content = loadTemplate($template, ['sponsors'=>$sponsors, 'dataTableCode'=>$dataTableCode]);
     $title = "Dashboard - Sponsors";
     $breadcrumbContent=["ManageSponsorships/sponsors"=>"Sponsors"];
+    $role=['Administrator','Moderator'];
     $bodyTitle="Sponsors";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -126,8 +129,8 @@ class ManageSponsorships extends Controller{
         $target_file = str_replace(' ', '_', $target_file);
         move_uploaded_file($_FILES["bannerImg"]["tmp_name"], $target_file);
         $_POST['sponsor']['sbanner']=$target_file;
-        if($sponsorClass->save($_POST['sponsor'], 'sid'))
-          header("Location:../sponsors/edisuccess");
+        $sponsorClass->save($_POST['sponsor'], 'sid');
+        header("Location:../sponsors/edisuccess");
       }
 
       $link='/ZooAssignment/public/ManageSponsorships/deleteSponsor/'.$val;
@@ -141,6 +144,7 @@ class ManageSponsorships extends Controller{
       $content = loadTemplate($template, ['sponsor'=>$sponsor, 'modal'=>$modal]);
       $title = "Dashboard - View Sponsor";
       $breadcrumbContent=["ManageSponsor"=>"Sponsors", "ManageSponsorships/browseSponsor"=>"View Sponsor"];
+      $role=['Administrator','Moderator'];
       $bodyTitle="Edit Sponsor";
       require_once "../app/controllers/adminLoadView.php";
     }

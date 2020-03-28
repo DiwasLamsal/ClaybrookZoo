@@ -775,7 +775,93 @@ if(isset($animal)){
 
 
 <?php if(isset($animal)){ ?>
-<?php } ?>
+
+      <div class="col-md-12 mb-3">
+        <div class="card card-info h-100">
+          <div class="card-header">
+            <h3 class="card-title">Animal Watchlist</h3>
+          </div>
+          <div class="card-body" style="padding-bottom: 0px; padding-top: 10px;">
+
+
+
+        <?php
+        $watchlist=checkAnimalContainsWatchlist($animal['aid']);
+        if($watchlist){ ?>
+        <div class = "col-md-12 text-center">
+          <br><h3>Animal Already in Watchlist</h3><br>
+          <a target="_blank" href="/ZooAssignment/public/ManageWatchlist/all/<?php echo $watchlist->fetch()['wid'];?>" class="btn btn-primary">
+            View Watchlist
+          </a><br><br><br>
+        </div>
+      </div>
+      <?php
+        }
+        else{ ?>
+
+
+
+
+            <form method="POST" class="animalForm" action="/ZooAssignment/public/ManageWatchlist/add/<?php echo $animal['aid'];?>">
+
+              <label>Condition: (Ex: Avian influenza)</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-biohazard"></i></span>
+                </div>
+                <input type="text" name="watchlist[wcondition]" class="form-control" placeholder="Animal Condition">
+              </div>
+
+              <div class = "row">
+                <div class = "col">
+                  <label>Threat Level: </label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-exclamation-triangle"></i></span>
+                    </div>
+                    <select name="watchlist[wlevel]" class="form-control">
+                      <option value="Low" <?php if(isset($watchlist) && $watchlist['wlevel']=="Low")echo 'selected';?>>Low</option>
+                      <option value="Moderate" <?php if(isset($watchlist) && $watchlist['wlevel']=="Moderate")echo 'selected';?>>Moderate</option>
+                      <option value="Substantial" <?php if(isset($watchlist) && $watchlist['wlevel']=="Substantial")echo 'selected';?>>Substantial</option>
+                      <option value="Severe" <?php if(isset($watchlist) && $watchlist['wlevel']=="Severe")echo 'selected';?>>Severe</option>
+                      <option value="Critical" <?php if(isset($watchlist) && $watchlist['wlevel']=="Critical")echo 'selected';?>>Critical</option>
+                    </select>
+                  </div>
+                </div>
+                <div class = "col">
+                  <label>Date Recorded: </label>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-calendar-day"></i></span>
+                    </div>
+                    <input type="date" name="watchlist[wrecorddate]"
+                    class="form-control" placeholder="Animal Name"
+                    value="<?php if(isset($watchlist)) echo $watchlist['wrecorddate'];?>">
+                  </div>
+                </div>
+              </div>
+
+              <label>Other Details: </label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-file-signature"></i></span>
+                </div>
+                <textarea type="text" name="watchlist[wdetails]" class="form-control staff-textarea"
+                required rows="5"><?php if(isset($watchlist))echo $watchlist['wdetails'];?></textarea>
+              </div>
+
+            </div>
+              <div class="card-footer">
+                <input class="btn btn-primary"
+                type="submit" value="Add to Watchlist"
+                name="watchlistSubmit">
+              </div>
+          </div>
+        </form>
+      </div>
+
+
+<?php } } ?>
 
 
 

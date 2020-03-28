@@ -21,6 +21,7 @@ class ManageAreas extends Controller{
     $content = loadTemplate($template, ['areas'=>$areas, 'dataTableCode'=>$dataTableCode]);
     $title = "Dashboard - Areas";
     $breadcrumbContent=["ManageAreas"=>"Areas"];
+    $role=['Administrator','Moderator'];
     $bodyTitle="Areas";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -36,6 +37,7 @@ class ManageAreas extends Controller{
     $content = loadTemplate($template, []);
     $title = "Dashboard - Add new area";
     $breadcrumbContent=["ManageAreas"=>"areas", "ManageAreas/Add"=>"Add Area"];
+    $role=['Administrator','Moderator'];
     $bodyTitle="Add area";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -63,8 +65,9 @@ class ManageAreas extends Controller{
       $template = '../app/views/adminDash/addArea.php';
       $content = loadTemplate($template, ['area'=>$area, 'modal'=>$modal]);
 
-      $title = "Dashboard - Add new area";
+      $title = "Dashboard - Edit area";
       $breadcrumbContent=["ManageAreas"=>"Areas", "ManageAreas/browse"=>"View area"];
+      $role=['Administrator','Moderator'];
       $bodyTitle="Edit area";
       require_once "../app/controllers/adminLoadView.php";
     }

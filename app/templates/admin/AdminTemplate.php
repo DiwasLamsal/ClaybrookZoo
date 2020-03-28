@@ -2,6 +2,14 @@
 // For navigation sidebar
 $uri = $_SERVER['REQUEST_URI'];
 
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
+if(!isset($_SESSION['loggedin'])||!in_array($_SESSION['loggedin']['utype'], $role)){
+	header("Location: /ZooAssignment/public/Logout");
+}
+$currentUser=$_SESSION['loggedin'];
+
 ?>
 
 
@@ -43,16 +51,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <li class="nav-item d-none d-sm-inline-block">
         <a href="/ZooAssignment/public/Dashboard" class="nav-link">Home</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
+      <!-- <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Profile</a>
-      </li>
+      </li> -->
     </ul>
 
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Logout</a>
+        <a href="/ZooAssignment/public/Logout" class="nav-link">Logout</a>
       </li>
     </ul>
   </nav>
@@ -77,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a>Full Name</a>
+          <a><?php echo $currentUser['ufullname']; ?></a>
         </div>
       </div>
 
@@ -88,7 +96,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-
+<?php if($currentUser['utype']=="Administrator"){ ?>
 <!-- Staff Navigation Area -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -116,7 +124,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
 <!-- End of Staff Navigation Area -->
-
+<?php } ?>
+<?php if(in_array($currentUser['utype'],['Administrator','Moderator'])){ //Show only if admin or moderator ?>
 
 <!-- Areas Navigation Area -->
           <li class="nav-item has-treeview">
@@ -197,12 +206,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>Add Animal</p>
                 </a>
               </li>
+						<?php if($currentUser['utype']=="Administrator"){ //Show only if admin ?>
               <li class="nav-item">
                 <a href="/ZooAssignment/public/ManageAnimals/trash" class="nav-link">
                   <i class="fas fa-trash nav-icon"></i>
                   <p>Trash</p>
                 </a>
               </li>
+						<?php } ?>
               <hr>
             </ul>
           </li>
@@ -249,6 +260,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
 <!-- End of Sponsors Navigation Area -->
 
+<?php } ?>
 
 <!-- Watchlist Navigation Area -->
           <li class="nav-item has-treeview">
@@ -267,16 +279,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <p>View Watchlist</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="/ZooAssignment/public/ManageWatchlist/add" class="nav-link">
-                  <i class="fas fa-plus nav-icon"></i>
-                  <p>New Watchlist</p>
-                </a>
-              </li>
               <hr>
             </ul>
           </li>
 <!-- End of Watchlist Navigation Area -->
+<?php if(in_array($currentUser['utype'],['Administrator','Moderator'])){ //Show only if admin or moderator ?>
 
 <!-- Tickets Navigation Area -->
           <li class="nav-item has-treeview">
@@ -362,7 +369,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
 <!-- End of Vacancies Navigation Area -->
-
+<?php } ?>
 
         </ul>
       </nav>

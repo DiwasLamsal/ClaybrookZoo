@@ -60,8 +60,8 @@
             ];
             $content = loadTemplate($template, $criteria);
             $title = "Claybrook Zoo - Animal";
-            $bodyTitle = "Animal Details";
-            $breadcrumbContent=["Animals"=>"Animals", "Animals/browse"=>"Animal Details"];
+            $bodyTitle = $animal['aname'];
+            $breadcrumbContent=["Animals"=>"Animals", "Animals/browse"=>$animal['aname']];
             $selected = "Animals";
             require_once "../app/controllers/userLoadView.php";
           }

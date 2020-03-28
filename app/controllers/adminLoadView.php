@@ -7,7 +7,8 @@ $template = '../app/templates/admin/AdminTemplate.php';
 $contents = [
   'title'=>$title,
   'content'=>$content,
-  'breadcrumb'=>$breadcrumb
+  'breadcrumb'=>$breadcrumb,
+  'role'=>$role
 ];
 $content = loadTemplate($template, $contents);
 

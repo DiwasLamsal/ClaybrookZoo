@@ -16,12 +16,12 @@ class ManageUsers extends Controller{
     $users = $userClass->findAll();
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
-
     $template = '../app/views/adminDash/manageUsers.php';
     $content = loadTemplate($template, ['users'=>$users, 'dataTableCode'=>$dataTableCode]);
     $title = "Dashboard - Staff";
     $breadcrumbContent=["ManageUsers"=>"Staff"];
     $bodyTitle="Users";
+    $role=['Administrator'];
     require_once "../app/controllers/adminLoadView.php";
   }
 
@@ -40,6 +40,7 @@ class ManageUsers extends Controller{
     $title = "Dashboard - Add new Staff";
     $breadcrumbContent=["ManageUsers"=>"Users", "ManageUsers/Add"=>"Add Staff"];
     $bodyTitle="Add Staff";
+    $role=['Administrator'];
     require_once "../app/controllers/adminLoadView.php";
   }
 
@@ -48,12 +49,15 @@ class ManageUsers extends Controller{
   public function browse($val = ""){
     $userClass = new DatabaseTable('users');
     $user = $userClass->find('uid', $val);
-
+    if (session_status() == PHP_SESSION_NONE) {
+    	session_start();
+    }
     if($user->rowCount()>0){
       if(isset($_POST['submit'])){
         $_POST['user']['uid']=$val;
         $userClass->save($_POST['user'], 'uid');
         header("Location:../all/editsuccess");
+        if($_SESSION['loggedin']['uid']==$val)header("Location:../all/Logout");
       }
 
       if(isset($_POST['submitPassword'])){
@@ -61,6 +65,7 @@ class ManageUsers extends Controller{
         $_POST['user']['upassword']=password_hash($_POST['user']['upassword'], PASSWORD_DEFAULT);
         $userClass->save($_POST['user'], 'uid');
         header("Location:../all/editsuccess");
+        if($_SESSION['loggedin']['uid']==$val)header("Location:/ZooAssignment/public/Logout");
       }
 
       $link='/ZooAssignment/public/ManageUsers/delete/'.$val;
@@ -75,6 +80,7 @@ class ManageUsers extends Controller{
       $title = "Dashboard - View Staff";
       $breadcrumbContent=["ManageUsers"=>"Users", "ManageUsers/browse"=>"View Staff"];
       $bodyTitle="Edit Staff";
+      $role=['Administrator'];
       require_once "../app/controllers/adminLoadView.php";
     }
 

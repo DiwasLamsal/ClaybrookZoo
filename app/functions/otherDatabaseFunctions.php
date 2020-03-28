@@ -1,5 +1,14 @@
 <?php
 
+function checkLastAdministrator(){
+  global $pdo;
+  $ob = $pdo->prepare('SELECT * FROM users
+                           WHERE ustatus = "Active" AND utype = "Administrator"');
+  $ob->execute();
+  return ($ob->rowCount()>1?false:true);
+}
+
+
 function getSponsorById($id){
   $objClass=new DatabaseTable('sponsors');
   $ob=$objClass->find('sid',$id);
@@ -249,6 +258,11 @@ function deleteSponsorData($val){
   return $sponsorClass->delete('said',$val);
 }
 
+function deleteWatchListData($val){
+  $watchlistClass = new DatabaseTable('watchlists');
+  $watchlistClass->delete('waid',$val);
+}
+
 function removeCurrentFeaturedAnimal(){
   global $pdo;
   $stmt = $pdo->prepare('UPDATE animals SET afeatured = "No"
@@ -291,6 +305,7 @@ function findSearchedAnimals($criteria){
 }
 
 
+
 function checkAnimalContainsSponsorship($id){
   global $pdo;
   $q = "SELECT * FROM sponsorships WHERE said = '$id' AND sstatus='Active' ORDER BY sid DESC LIMIT 1";
@@ -307,5 +322,22 @@ function updateExpiredSponsorships(){
   $stmt = $pdo->prepare($q);
   $stmt->execute();
 }
+
+
+function checkAnimalContainsWatchlist($aid){
+  $watchlistClass = new DatabaseTable('watchlists');
+  $watchlist = $watchlistClass->find('waid', $aid);
+  if($watchlist->rowCount()>0)
+    return $watchlist;
+  return false;
+}
+
+
+
+
+
+
+
+
 
 ?>

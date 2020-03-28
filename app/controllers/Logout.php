@@ -8,7 +8,7 @@
         unset($_SESSION['loggedin']);
       }
       session_destroy();
-      header("Location:/ZooAssignment/public/Home");
+      header("Location:/ZooAssignment/public/Login");
     }
   }
 

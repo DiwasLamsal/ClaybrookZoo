@@ -7,7 +7,7 @@
       <tr>
         <th>S.N.</th>
         <th>Full Name</th>
-        <th>Username</th>
+        <th>User ID</th>
         <th>Role</th>
         <th>Email</th>
         <th>Status</th>
@@ -30,12 +30,15 @@
         $archiveIcon = '<a class="btn btn-warning btn-sm" href = "/ZooAssignment/public/ManageUsers/archive/'.$user['uid'].'">
                           <i class="fas fa-trash"></i> Change Status
                         </a>';
+        if($user['ustatus']=="Active" && $user['utype']=="Administrator"&&checkLastAdministrator()){
+          $archiveIcon = "Need at least One Active Administrator";
+         }
 
         $count++;
         echo '<tr>
                 <td>'.$count.'</td>
                 <td>'.$user['ufullname'].'</td>
-                <td>'.$user['uusername'].'</td>
+                <td>'.$user['uid'].'</td>
                 <td>'.$user['utype'].'</td>
                 <td>'.$user['email'].'</td>
                 <td>'.$user['ustatus'].'</td>

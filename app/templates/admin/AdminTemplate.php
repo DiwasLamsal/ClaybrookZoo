@@ -37,6 +37,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="icon" href="/ZooAssignment/public/resources/images/favicon.ico" type="image/gif" sizes="16x16">
   <!-- jQuery -->
   <script src="/ZooAssignment/public/script/jquery.min.js"></script>
+	<!-- Chart for doughnut -->
+	<script src="/ZooAssignment/public/script/Chart.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

@@ -215,6 +215,12 @@ function getCount($tbl){
   return $obj->rowCount();
 }
 
+function getWatchListCount($status){
+  $objClass = new DatabaseTable('watchlists');
+  $obj = $objClass->find('wlevel',$status);
+  return $obj->rowCount();
+}
+
 // https://dcblog.dev/delete-folders-from-server-using-php
 function deleteDir($dirname) {
   $dir_handle=false;

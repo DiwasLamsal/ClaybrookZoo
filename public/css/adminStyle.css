@@ -80,4 +80,12 @@ nav hr{
   object-fit: contain;
 }
 
+.featured-img-holder{
+  height: 310px;
+  overflow: hidden;
+}
+.featured-box-img{
+  height: 100%;
+}
+
 /* ------------------------------------------------------------------------------------------  */

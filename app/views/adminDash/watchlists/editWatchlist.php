@@ -71,9 +71,6 @@
   </div>
 </div>
 
-<?php
-  if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']['utype']!="Zookeeper"){ ?>
-
       <div class="col-md-12 mb-3">
         <div class="card card-info h-100">
           <div class="card-header">
@@ -155,6 +152,3 @@
         </form>
       </div>
     <?php echo $modal;?>
-
-
-  <?php } ?>

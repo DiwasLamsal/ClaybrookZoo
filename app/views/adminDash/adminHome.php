@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-olive">
+        <div class="small-box bg-gradient-olive">
           <div class="inner">
             <h3><?php echo getCount('animals'); ?></h3>
             <p>Animals</p>
@@ -11,52 +11,52 @@
           <div class="icon">
             <i class="fas fa-otter"></i>
           </div>
-          <a href="./ManageAnimals/all" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <!-- <a href="./ManageAnimals/all" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
         </div>
       </div>
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-olive">
+        <div class="small-box bg-gradient-olive">
           <div class="inner">
-            <h3>53</h3>
+            <h3>0</h3>
 
-            <p>Visitors Today</p>
+            <p>Upcoming Events</p>
           </div>
           <div class="icon">
-            <i class="fas fa-users"></i>
+            <i class="fas fa-calendar"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
         </div>
       </div>
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-olive">
+        <div class="small-box bg-gradient-olive">
           <div class="inner">
-            <h3>20<sup style="font-size: 20px">%</sup></h3>
+            <h3><?php echo getCount('watchlists');?><sup style="font-size: 20px"></sup></h3>
 
             <p>Animals on Watchlist</p>
           </div>
           <div class="icon">
             <i class="fas fa-eye"></i>
           </div>
-          <a href="./ManageWatchlist/all" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <!-- <a href="./ManageWatchlist/all" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
         </div>
       </div>
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-olive">
+        <div class="small-box bg-gradient-olive">
           <div class="inner">
-            <h3><?php echo getCount('animals'); ?></h3>
+            <h3><?php echo getCount('users'); ?></h3>
 
             <p>Total Staff</p>
           </div>
           <div class="icon">
-            <i class="fas fa-calendar-alt"></i>
+            <i class="fas fa-users"></i>
           </div>
-          <a href="./ManageUsers/all" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <!-- <a href="./ManageUsers/all" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
         </div>
       </div>
       <!-- ./col -->
@@ -67,13 +67,13 @@
 
     <div class="row">
       <!-- Left col -->
-      <section class="col-lg-7 connectedSortable">
+      <section class="col-lg-7 connectedSortable mb-3">
         <!-- Custom tabs (Charts with tabs)-->
-        <div class="card">
+        <div class="card bg-gradient-olive h-100">
           <div class="card-header">
             <h3 class="card-title">
-              <i class="fas fa-chart-pie mr-1"></i>
-              Visitors
+              <i class="fas fa-calendar mr-2"></i>
+              Events
             </h3>
           </div><!-- /.card-header -->
           <div class="card-body">
@@ -91,46 +91,62 @@
         </div>
       </section>
 
-  <!-- right col -->
-  <section class="col-lg-5 connectedSortable">
-    <!-- Calendar -->
-    <div class="card bg-gradient-success">
-      <div class="card-header border-0">
-
-        <h3 class="card-title">
-          <i class="far fa-calendar-alt"></i>
-          Calendar
-        </h3>
-        <!-- tools card -->
-        <div class="card-tools">
-          <!-- button with a dropdown -->
-          <div class="btn-group">
-            <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-              <i class="fas fa-bars"></i></button>
-            <div class="dropdown-menu float-right" role="menu">
-              <a href="#" class="dropdown-item">Add new event</a>
-              <a href="#" class="dropdown-item">Clear events</a>
-              <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">View calendar</a>
-            </div>
-          </div>
-          <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
-            <i class="fas fa-minus"></i>
-          </button>
-          <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
-            <i class="fas fa-times"></i>
-          </button>
+    <section class="col-lg-5 connectedSortable mb-3">
+      <div class="card card-olive h-100">
+        <div class="card-header">
+          <h3 class="card-title"><i class="fas fa-chart-pie mr-2"></i>Animal Health Condition</h3>
         </div>
-        <!-- /. tools -->
+        <div class="card-body">
+          <canvas id="donutChart" style="min-height: 280px; height: 280px; max-height: 280px; max-width: 100%;">
+          </canvas>
+        </div>
+        <!-- /.card-body -->
       </div>
-      <!-- /.card-header -->
-      <div class="card-body pt-0">
-        <!--The calendar -->
-        <div id="calendar" style="width: 100%"></div>
-      </div>
-      <!-- /.card-body -->
-    </div>
-  </section>
+    </section>
 
     <!-- /.row (main row) -->
     </div><!-- /.container-fluid -->
+
+<script>
+
+    //-------------
+    //- DONUT CHART - AdminLTE donut chart
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+    var donutData        = {
+      labels: [
+          'Critical',
+          'Severe',
+          'Substantial',
+          'Moderate',
+          'Low',
+          'Healthy',
+
+      ],
+      datasets: [
+        {//Get healthy and sick animals
+          data: [<?php echo getWatchListCount('Critical');?>,
+                 <?php echo getWatchListCount('Severe');?>,
+                 <?php echo getWatchListCount('Substantial');?>,
+                 <?php echo getWatchListCount('Moderate');?>,
+                 <?php echo getWatchListCount('Low');?>,
+                 <?php echo getCount('animals')-getCount('watchlists');?>
+              ],
+          backgroundColor : ['#DC143C','#F0E68C','#66CDAA','#32CD32','#00a65a','#008000'],
+        }
+      ]
+    }
+    var donutOptions     = {
+      maintainAspectRatio : false,
+      responsive : true,
+    }
+    //Create pie or douhnut chart
+    // You can switch between pie and douhnut using the method below.
+    var donutChart = new Chart(donutChartCanvas, {
+      type: 'doughnut',
+      data: donutData,
+      options: donutOptions
+    })
+
+</script>

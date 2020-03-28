@@ -19,8 +19,8 @@ class ManageUsers extends Controller{
 
     $template = '../app/views/adminDash/manageUsers.php';
     $content = loadTemplate($template, ['users'=>$users, 'dataTableCode'=>$dataTableCode]);
-    $title = "Dashboard - Users";
-    $breadcrumbContent=["ManageUsers"=>"Users"];
+    $title = "Dashboard - Staff";
+    $breadcrumbContent=["ManageUsers"=>"Staff"];
     $bodyTitle="Users";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -37,9 +37,9 @@ class ManageUsers extends Controller{
 
     $template = '../app/views/adminDash/addUser.php';
     $content = loadTemplate($template, []);
-    $title = "Dashboard - Add new User";
-    $breadcrumbContent=["ManageUsers"=>"Users", "ManageUsers/Add"=>"Add User"];
-    $bodyTitle="Add User";
+    $title = "Dashboard - Add new Staff";
+    $breadcrumbContent=["ManageUsers"=>"Users", "ManageUsers/Add"=>"Add Staff"];
+    $bodyTitle="Add Staff";
     require_once "../app/controllers/adminLoadView.php";
   }
 
@@ -72,9 +72,9 @@ class ManageUsers extends Controller{
 
       $template = '../app/views/adminDash/addUser.php';
       $content = loadTemplate($template, ['user'=>$user, 'modal'=>$modal]);
-      $title = "Dashboard - View User";
-      $breadcrumbContent=["ManageUsers"=>"Users", "ManageUsers/browse"=>"View User"];
-      $bodyTitle="Edit User";
+      $title = "Dashboard - View Staff";
+      $breadcrumbContent=["ManageUsers"=>"Users", "ManageUsers/browse"=>"View Staff"];
+      $bodyTitle="Edit Staff";
       require_once "../app/controllers/adminLoadView.php";
     }
 

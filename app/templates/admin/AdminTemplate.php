@@ -61,7 +61,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/ZooAssignment/public/UserHome" class="brand-link text-left">
+    <a href="/ZooAssignment/public/Dashboard" class="brand-link text-left">
       <img src="/ZooAssignment/public/resources/images/logo.jpg" alt="Claybrook Zoo Heading"
       class="brand-image img-circle elevation-3"
            style="opacity: .8; margin-left: 20px;">

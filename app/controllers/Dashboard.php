@@ -7,7 +7,7 @@
       $template = '../app/views/adminDash/adminHome.php';
       $content = loadTemplate($template, []);
 
-      $title = "Admin - Dashboard";
+      $title = "Dashboard";
       $selected = "Dashboard";
       $breadcrumbContent=["UserHome"=>"Dashboard"];
       $bodyTitle="Users";

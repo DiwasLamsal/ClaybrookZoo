@@ -66,7 +66,7 @@ class ManageSponsorships extends Controller{
       $template = '../app/views/adminDash/sponsors/editSponsorship.php';
       $content = loadTemplate($template, ['sponsorship'=>$sponsorship, 'modal'=>$modal]);
       $title = "Dashboard - View Sponsorship";
-      $breadcrumbContent=["ManageSponsorships"=>"Sponsorships", "ManageSponsorships/browseSponsorship"=>"View Sponsorship"];
+      $breadcrumbContent=["ManageSponsorships/".strtolower($_POST['sponsorship']['sstatus'])=>"Sponsorships", "ManageSponsorships/browseSponsorship"=>"View Sponsorship"];
       $role=['Administrator','Moderator'];
       $bodyTitle="Edit Sponsorship";
       require_once "../app/controllers/adminLoadView.php";
@@ -143,7 +143,7 @@ class ManageSponsorships extends Controller{
       $template = '../app/views/adminDash/sponsors/editSponsor.php';
       $content = loadTemplate($template, ['sponsor'=>$sponsor, 'modal'=>$modal]);
       $title = "Dashboard - View Sponsor";
-      $breadcrumbContent=["ManageSponsor"=>"Sponsors", "ManageSponsorships/browseSponsor"=>"View Sponsor"];
+      $breadcrumbContent=["ManageSponsorships/sponsors"=>"Sponsors", "ManageSponsorships/browseSponsor"=>"View Sponsor"];
       $role=['Administrator','Moderator'];
       $bodyTitle="Edit Sponsor";
       require_once "../app/controllers/adminLoadView.php";

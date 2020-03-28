@@ -21,7 +21,7 @@ class ManageAnimals extends Controller{
     $template = '../app/views/adminDash/manageAnimals.php';
     $content = loadTemplate($template, ['animals'=>$animals, 'dataTableCode'=>$dataTableCode, 'type'=>'']);
     $title = "Dashboard - Animals";
-    $breadcrumbContent=["ManageAnimals"=>"Animals"];
+    $breadcrumbContent=["ManageAnimals/all"=>"Animals"];
     $role=['Administrator','Moderator'];
     $bodyTitle="Animals";
     require_once "../app/controllers/adminLoadView.php";
@@ -36,7 +36,7 @@ class ManageAnimals extends Controller{
     $template = '../app/views/adminDash/manageAnimals.php';
     $content = loadTemplate($template, ['animals'=>$animals, 'dataTableCode'=>$dataTableCode, 'type'=>"archive"]);
     $title = "Dashboard - Dormant Animals";
-    $breadcrumbContent=["ManageAnimals"=>"Archived Animals"];
+    $breadcrumbContent=["ManageAnimals/all"=>"Archived Animals"];
     $role=['Administrator'];
     $bodyTitle="Archived Animals";
     require_once "../app/controllers/adminLoadView.php";
@@ -115,7 +115,7 @@ class ManageAnimals extends Controller{
     $template = '../app/views/adminDash/addAnimal.php';
     $content = loadTemplate($template, ['locations'=>$locations]);
     $title = "Dashboard - Add new Animal";
-    $breadcrumbContent=["ManageAnimals"=>"Animals", "ManageAnimals/Add"=>"Add Animal"];
+    $breadcrumbContent=["ManageAnimals/all"=>"Animals", "ManageAnimals/Add"=>"Add Animal"];
     $role=['Administrator','Moderator'];
     $bodyTitle="Add Animal";
     require_once "../app/controllers/adminLoadView.php";
@@ -224,7 +224,7 @@ class ManageAnimals extends Controller{
       ];
       $content = loadTemplate($template, $criteria);
       $title = "Dashboard - View Animal";
-      $breadcrumbContent=["ManageAnimals"=>"Animals", "ManageAnimals/browse"=>"View Animal"];
+      $breadcrumbContent=["ManageAnimals/all"=>"Animals", "ManageAnimals/browse"=>"View Animal"];
       $role=['Administrator','Moderator'];
       $bodyTitle="Edit Animal";
       require_once "../app/controllers/adminLoadView.php";

@@ -19,7 +19,7 @@ class ManageWatchlist extends Controller{
     $template = '../app/views/adminDash/watchlists/manageWatchlist.php';
     $content = loadTemplate($template, ['watchlists'=>$watchlists, 'dataTableCode'=>$dataTableCode]);
     $title = "Dashboard - Watchlists";
-    $breadcrumbContent=["ManageWatchlist"=>"Watchlist"];
+    $breadcrumbContent=["ManageWatchlist/all"=>"Watchlist"];
     $role=['Administrator','Moderator','Zookeeper'];
     $bodyTitle="Watchlist";
     require_once "../app/controllers/adminLoadView.php";
@@ -55,7 +55,7 @@ class ManageWatchlist extends Controller{
       $content = loadTemplate($template, ['watchlist'=>$watchlist->fetch(), 'modal'=>$modal]);
 
       $title = "Dashboard - Edit Watchlist";
-      $breadcrumbContent=["ManageWatchlist"=>"Watchlist", "ManageWatchlist/all/".$val=>"View Watchlist"];
+      $breadcrumbContent=["ManageWatchlist/all"=>"Watchlist", "ManageWatchlist/all/".$val=>"View Watchlist"];
       $role=['Administrator','Moderator','Zookeeper'];
       $bodyTitle="View Watchlist";
       require_once "../app/controllers/adminLoadView.php";

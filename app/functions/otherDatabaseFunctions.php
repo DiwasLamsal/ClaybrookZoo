@@ -111,6 +111,17 @@ function removeSponsorBanner($sid){
   }
 }
 
+function removeEventBanner($eid){
+  $objClass = new DatabaseTable('events');
+  $obj = $objClass->find('eid', $eid);
+  $path="/ZooAssignment/public/";
+  if($obj->rowCount()>0){
+    $ob=$obj->fetch();
+    if(file_exists($ob['ebanner'])){unlink($ob['ebanner']);}
+    if(file_exists($path.$ob['ebanner'])){unlink($path.$ob['ebanner']);}
+  }
+}
+
 function deleteImagesByType($aid, $type){
   $objClass = new DatabaseTable('animal_images');
   $obj = $objClass->find('aianimal', $aid);

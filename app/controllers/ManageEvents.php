@@ -19,7 +19,7 @@ class ManageEvents extends Controller{
     $template = '../app/views/adminDash/events/manageEvents.php';
     $content = loadTemplate($template, ['events'=>$events, 'dataTableCode'=>$dataTableCode]);
     $title = "Dashboard - Events";
-    $breadcrumbContent=["ManageEvents"=>"Events"];
+    $breadcrumbContent=["ManageEvents/all"=>"Events"];
     $role=['Administrator','Moderator'];
     $bodyTitle="Events";
     require_once "../app/controllers/adminLoadView.php";
@@ -28,13 +28,19 @@ class ManageEvents extends Controller{
   public function add(){
     $eventClass = new DatabaseTable('events');
     if(isset($_POST['submit'])){
+      $target_dir = "resources/images/events/";
+      $target_file = $target_dir.microtime(true).'-Banner-'.basename($_FILES["eventImg"]["name"]);
+      $target_file = str_replace(' ', '_', $target_file);
+      move_uploaded_file($_FILES["eventImg"]["tmp_name"], $target_file);
+      $_POST['event']['ebanner']=$target_file;
+
       $eventClass->save($_POST['event']);
       header("Location:/ZooAssignment/public/ManageEvents/all/addsuccess");
     }
     $template = '../app/views/adminDash/events/addEvent.php';
     $content = loadTemplate($template, []);
     $title = "Dashboard - Add new event";
-    $breadcrumbContent=["ManageEvents"=>"Events", "ManageEvents/add"=>"Add Event"];
+    $breadcrumbContent=["ManageEvents/all"=>"Events", "ManageEvents/add"=>"Add Event"];
     $role=['Administrator','Moderator'];
     $bodyTitle="Add Event";
     require_once "../app/controllers/adminLoadView.php";
@@ -52,6 +58,17 @@ class ManageEvents extends Controller{
         $eventClass->save($_POST['event'], 'eid');
         header("Location:../all/editsuccess");
       }
+      if(isset($_POST['submitBanner'])){
+        $_POST['event']['eid']=$val;
+        removeEventBanner($val);
+        $target_dir = "resources/images/events/";
+        $target_file = $target_dir.microtime(true).'-Banner-'.basename($_FILES["eventImg"]["name"]);
+        $target_file = str_replace(' ', '_', $target_file);
+        move_uploaded_file($_FILES["eventImg"]["tmp_name"], $target_file);
+        $_POST['event']['ebanner']=$target_file;
+        $eventClass->save($_POST['event'], 'eid');
+        header("Location:../all/editsuccess");
+      }
 
       $link='/ZooAssignment/public/ManageEvents/delete/'.$val;
       $message = ($link==false)?"This event cannot be deleted.":"";
@@ -62,7 +79,7 @@ class ManageEvents extends Controller{
       $content = loadTemplate($template, ['event'=>$event, 'modal'=>$modal]);
 
       $title = "Dashboard - Edit Event";
-      $breadcrumbContent=["ManageEvents"=>"Events", "ManageEvents/browse"=>"View Event"];
+      $breadcrumbContent=["ManageEvents/all"=>"Events", "ManageEvents/browse"=>"View Event"];
       $role=['Administrator','Moderator'];
       $bodyTitle="View Event";
       require_once "../app/controllers/adminLoadView.php";

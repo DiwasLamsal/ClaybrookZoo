@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-gradient-info">
+        <div class="small-box bg-gradient-gray">
           <div class="inner">
             <h3><?php echo getCount('animals'); ?></h3>
             <p>Animals</p>
@@ -17,7 +17,7 @@
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-gradient-info">
+        <div class="small-box bg-gradient-gray">
           <div class="inner">
             <h3>0</h3>
 
@@ -32,7 +32,7 @@
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-gradient-info">
+        <div class="small-box bg-gradient-gray">
           <div class="inner">
             <h3><?php echo getCount('watchlists');?><sup style="font-size: 20px"></sup></h3>
 
@@ -47,7 +47,7 @@
       <!-- ./col -->
       <div class="col-lg-3 col-6">
         <!-- small box -->
-        <div class="small-box bg-gradient-info">
+        <div class="small-box bg-gradient-gray">
           <div class="inner">
             <h3><?php echo getCount('users'); ?></h3>
 
@@ -70,7 +70,7 @@
       <section class="col-lg-7 connectedSortable mb-3">
         <!-- Custom tabs (Charts with tabs)-->
         <div class="card h-100">
-          <div class="card-header bg-gradient-info ">
+          <div class="card-header bg-gradient-gray ">
             <h3 class="card-title">
               <i class="fas fa-calendar mr-2"></i>
               Events
@@ -93,7 +93,7 @@
 
     <section class="col-lg-5 connectedSortable mb-3">
       <div class="card card h-100">
-        <div class="card-header bg-gradient-info ">
+        <div class="card-header bg-gradient-gray ">
           <h3 class="card-title"><i class="fas fa-chart-pie mr-2"></i>Animal Health Condition</h3>
         </div>
         <div class="card-body">

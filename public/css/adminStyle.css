@@ -74,4 +74,10 @@ nav hr{
   white-space: nowrap;
 }
 
+
+.form-banner-image{
+  max-height: 130px;
+  object-fit: contain;
+}
+
 /* ------------------------------------------------------------------------------------------  */

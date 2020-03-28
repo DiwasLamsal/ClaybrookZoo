@@ -21,13 +21,14 @@ class ManageSponsorships extends Controller{
   }
 
 
-  public function expiring($val=""){
+  public function expired($val=""){
     $sponsorshipClass = new DatabaseTable('sponsorships');
-    $sponsorships=$sponsorshipClass->find('sstatus', 'Expiring');
+    $sponsorships=$sponsorshipClass->find('sstatus', 'Expired');
     $this->sponsorships($sponsorships, $val);
   }
 
   public function sponsorships($sponsorships, $val){
+    updateExpiredSponsorships();
     if($val!=""&&is_numeric($val)){
       $this->browseSponsorship($val);
       return;
@@ -51,9 +52,9 @@ class ManageSponsorships extends Controller{
       $sponsorship=$sponsorship->fetch();
 
       if(isset($_POST['submit'])){
-        $_POST['sponsorship']['reviewdate']=date("Y-m-d");
+        $_POST['sponsorship']['sid']=$val;
         $sponsorshipClass->save($_POST['sponsorship'], 'sid');
-        header("Location:../strtolower".($sponsorshipClass['sstatus'])."/editsuccess");
+        header("Location:../".strtolower($_POST['sponsorship']['sstatus'])."/editsuccess");
       }
 
       $link='/ZooAssignment/public/ManageSponsorships/deleteSponsorship/'.$val;
@@ -74,8 +75,9 @@ class ManageSponsorships extends Controller{
       $sponsorshipClass=new DatabaseTable('sponsorships');
       $sponsorship = $sponsorshipClass->find('sid',$val);
       if($sponsorship->rowCount()>0){
+        $sponsorship=$sponsorship->fetch();
         $sponsorshipClass->delete('sid', $val);
-        header("Location:../active/deletesuccess");
+        header("Location:../strtolower".($sponsorship['sstatus'])."/editsuccess");
       }
       else{
         header("Location:../active/nosuchsponsorship");
@@ -111,19 +113,21 @@ class ManageSponsorships extends Controller{
       $sponsor=$sponsor->fetch();
 
       if(isset($_POST['submit'])){
-        $sponsorClass->save($_POST['sponsor'], 'sid');
-        header("Location:../sponsor/editsuccess");
+        $_POST['sponsor']['sid']=$val;
+        $sponsorClass->update($_POST['sponsor'], 'sid');
+        header("Location:../sponsors/editsuccess");
       }
 
       if(isset($_POST['submitBanner'])){
-          removeSponsorBanner($val);
-          $target_dir = "resources/images/sponsors/";
-          $target_file = $target_dir.microtime(true).'-Banner-'.basename($_FILES["bannerImg"]["name"]);
-          $target_file = str_replace(' ', '_', $target_file);
-          move_uploaded_file($_FILES["bannerImg"]["tmp_name"], $target_file);
-          $_POST['sponsor']['sbanner']=$target_file;
-          if($sponsorClass->save($_POST['sponsor'], 'sid'))
-            header("Location:../sponsor/edisuccess");
+        $_POST['sponsor']['sid']=$val;
+        removeSponsorBanner($val);
+        $target_dir = "resources/images/sponsors/";
+        $target_file = $target_dir.microtime(true).'-Banner-'.basename($_FILES["bannerImg"]["name"]);
+        $target_file = str_replace(' ', '_', $target_file);
+        move_uploaded_file($_FILES["bannerImg"]["tmp_name"], $target_file);
+        $_POST['sponsor']['sbanner']=$target_file;
+        if($sponsorClass->save($_POST['sponsor'], 'sid'))
+          header("Location:../sponsors/edisuccess");
       }
 
       $link='/ZooAssignment/public/ManageSponsorships/deleteSponsor/'.$val;
@@ -131,11 +135,11 @@ class ManageSponsorships extends Controller{
         $link = false;
       $message = ($link==false)?"This sponsor contains sponsorships and cannot be deleted.":"";
       $template = '../app/views/adminDash/modal.php';
-      $modal = loadTemplate($template, ['type'=>'Sponsorship', 'link'=>$link, 'message'=>$message]);
+      $modal = loadTemplate($template, ['type'=>'Sponsor', 'link'=>$link, 'message'=>$message]);
 
-      $template = '../app/views/adminDash/sponsors/editSponsorship.php';
+      $template = '../app/views/adminDash/sponsors/editSponsor.php';
       $content = loadTemplate($template, ['sponsor'=>$sponsor, 'modal'=>$modal]);
-      $title = "Dashboard - View Sponsorship";
+      $title = "Dashboard - View Sponsor";
       $breadcrumbContent=["ManageSponsor"=>"Sponsors", "ManageSponsorships/browseSponsor"=>"View Sponsor"];
       $bodyTitle="Edit Sponsor";
       require_once "../app/controllers/adminLoadView.php";
@@ -149,10 +153,10 @@ class ManageSponsorships extends Controller{
     if($sponsor->rowCount()>0){
       removeSponsorBanner($val);
       $sponsorClass->delete('sid', $val);
-      header("Location:../sponsor/deletesuccess");
+      header("Location:../sponsors/deletesuccess");
     }
     else{
-      header("Location:../sponsor/nosuchsponsor");
+      header("Location:../sponsors/nosuchsponsor");
     }
   }
 

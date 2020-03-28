@@ -46,6 +46,7 @@
           $animalGallery=getImagesByType($val, 'Gallery');
           $animalGlobal=checkGlobalImageExists($val)?getImagesByType($val,'Global'):false;
 
+          $sponsorship = checkAnimalContainsSponsorship($val);
 
             $template = '../app/views/animals/viewAnimal.php';
             $criteria=[
@@ -54,7 +55,8 @@
               'area'=>$area,
               $catName=>$catObj,
               'catObj'=>$catObjTwo,
-              'coverImage'=>$animalCover, 'galleryImages'=>$animalGallery, 'globalImage'=>$animalGlobal
+              'coverImage'=>$animalCover, 'galleryImages'=>$animalGallery, 'globalImage'=>$animalGlobal,
+              'sponsorship'=>$sponsorship
             ];
             $content = loadTemplate($template, $criteria);
             $title = "Claybrook Zoo - Animal";
@@ -117,7 +119,6 @@
           $animalGallery=getImagesByType($val, 'Gallery');
           $animalGlobal=checkGlobalImageExists($val)?getImagesByType($val,'Global'):false;
 
-
             $template = '../app/views/animals/viewAnimal.php';
             $criteria=[
               'animal'=>$animal,
@@ -157,17 +158,16 @@
           $target_file = str_replace(' ', '_', $target_file);
           move_uploaded_file($_FILES["bannerImg"]["tmp_name"], $target_file);
           $_POST['sponsor']['sbanner']=$target_file;
-          if($sponsorClass->save($_POST['sponsor']))
-            $_POST['sponsorship']['ssid']=$sponsorClass->findLastRecordId('sid')->fetch()['sid'];
+          $sponsorClass->save($_POST['sponsor']);
+          $_POST['sponsorship']['ssid']=$sponsorClass->findLastRecordId('sid')->fetch()['sid'];
         }
         $_POST['sponsorship']['said']=$val;
         $_POST['sponsorship']['sstartdate']=$_POST['year']."-01-01";
         $_POST['sponsorship']['senddate']=$_POST['year']."-12-31";
         $_POST['sponsorship']['spaid']="No";
         $_POST['sponsorship']['sstatus']="Pending";
-        if($sponsorshipClass->insert($_POST['sponsorship']))
-          header("Location:/ZooAssignment/public/Animals/".$val.'/success');
-
+        $sponsorshipClass->insert($_POST['sponsorship']);
+        header("Location:/ZooAssignment/public/Animals/browse/".$val.'/success');
       }
 
 

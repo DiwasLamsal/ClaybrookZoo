@@ -255,12 +255,43 @@
         <h3 class="card-title">Sponsorship Information</h3>
       </div>
       <div class="card-body text-center">
+<?php if ($sponsorship!=false){
+  $sponsor=getSponsorById($sponsorship['ssid'])->fetch();
+  $banner = '<img class = "form-banner-image" src=/ZooAssignment/public/'.$sponsor['sbanner'].' alt = "Banner Image">';
+  if (filter_var($sponsor['swebsite'], FILTER_VALIDATE_URL) !== FALSE) {
+    $banner = "<a href = '$sponsor[swebsite]' target='_blank'>$banner</a>";
+  }
+?>
+    <div class = "row">
+      <div class = "col-md-6 mb-3 text-center">
+        <?php echo $banner;?>
+      </div>
+      <div class = "col-md-6 mb-3 text-left">
+        <br>
+        <strong style="text-transform:uppercase;">
+          <i class="fas fa-building mr-1"></i>
+          Sponsored By</strong>&nbsp;
+        <span class="text-muted">&nbsp;
+          <?php echo $sponsor['scompany'];?>
+        </span><br><hr>
+        <strong style="text-transform:uppercase;">
+          <i class="fas fa-phone mr-1"></i>
+          Contact</strong>&nbsp;
+        <span class="text-muted">&nbsp;
+          <?php echo $sponsor['sptelephone'];?>
+        </span>
 
+      </div>
+    </div>
+
+<?php
+}else{ ?>
         <p class = "text-center">No Sponsors Available.</p><br>
         <a href="/ZooAssignment/public/Animals/sponsor/<?php echo $animal['aid'];?>" class="btn btn-success">
           Sponsor This Animal
         </a>
 
+<?php } ?>
       </div>
     </div>
   </div>

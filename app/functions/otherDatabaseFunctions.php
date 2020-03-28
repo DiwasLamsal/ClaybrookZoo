@@ -292,15 +292,20 @@ function findSearchedAnimals($criteria){
 
 
 function checkAnimalContainsSponsorship($id){
-  $spClass = new DatabaseTable('sponsorships');
-  $sp = $spClass->find('said', $id);
-  if($sp->rowCount()>0)
-    return true;
+  global $pdo;
+  $q = "SELECT * FROM sponsorships WHERE said = '$id' AND sstatus='Active' ORDER BY sid DESC LIMIT 1";
+  $stmt = $pdo->prepare($q);
+  $stmt->execute();
+  if($stmt->rowCount()>0)
+    return $stmt->fetch();//Returns the newest record
   return false;
 }
 
-
-
-
+function updateExpiredSponsorships(){
+  global $pdo;
+  $q = "UPDATE sponsorships SET sstatus = 'Expired' WHERE sstatus = 'Active' AND CURRENT_DATE>senddate";
+  $stmt = $pdo->prepare($q);
+  $stmt->execute();
+}
 
 ?>

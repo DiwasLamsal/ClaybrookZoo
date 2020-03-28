@@ -27,7 +27,7 @@
                             <i class="fas fa-folder"></i> View
                         </a>';
 
-        $imgCode = '<img class = "table-banner-image" src=/ZooAssignment/public/'.$sponsor['sbanner'].' alt = "Cover Image">';
+        $imgCode = '<img class = "table-banner-image" src=/ZooAssignment/public/'.$sponsor['sbanner'].' alt = "Banner Image">';
         $website = "Not Available";
         if (filter_var($sponsor['swebsite'], FILTER_VALIDATE_URL) !== FALSE) {
           $website = "<a href = '$sponsor[swebsite]' target='_blank'>$sponsor[swebsite]</a>";

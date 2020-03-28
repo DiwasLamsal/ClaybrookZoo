@@ -239,9 +239,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/ZooAssignment/public/ManageSponsorships/expiring" class="nav-link">
+                <a href="/ZooAssignment/public/ManageSponsorships/expired" class="nav-link">
                   <i class="fas fa-exclamation-triangle nav-icon"></i>
-                  <p>Expiring Sponsorships</p>
+                  <p>Expired Sponsorships</p>
                 </a>
               </li>
               <hr>

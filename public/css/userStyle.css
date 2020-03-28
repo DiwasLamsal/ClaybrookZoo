@@ -294,11 +294,15 @@ nav ul li a:hover{
 }
 
 
+.form-banner-image{
+  max-height: 200px;
+  max-width: 95%;
+  object-fit: contain;
+}
+
 /********************************************************************************************************************/
 
 @media(max-width: 786px) {
-
-
 
   header{
     width: 100%;

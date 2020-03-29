@@ -26,16 +26,19 @@
 
 <div class="card w-100 h-100 nav-card text-center">
   <div class="card-body transparent-card-body">
+
+		<img class="mb-3" id = "nav-logo" src = "/ZooAssignment/public/resources/images/logo.jpg" alt = "logo">
+
       <a href="/ZooAssignment/public/Kiosk/"
-      class="btn btn-lg bg-gradient-olive w-100 p-3"><i class = "fas fa-home mr-2"></i> Home</a>
+      class="btn bg-gradient-olive w-100 p-3"><i class = "fas fa-home mr-2"></i> Home</a>
       <br><br>
 
       <a href="/ZooAssignment/public/Kiosk/allAnimals/"
-      class="btn btn-lg bg-gradient-olive w-100 p-3"><i class = "fas fa-otter mr-2"></i> Animals</a>
+      class="btn bg-gradient-olive w-100 p-3"><i class = "fas fa-otter mr-2"></i> Animals</a>
       <br><br>
 
       <a href="#"
-      class="btn btn-lg bg-gradient-olive w-100 p-3"><i class = "fas fa-utensils mr-2"></i> Food</a>
+      class="btn bg-gradient-olive w-100 p-3"><i class = "fas fa-utensils mr-2"></i> Food</a>
   </div>
 </div>
 

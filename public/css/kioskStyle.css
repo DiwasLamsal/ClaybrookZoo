@@ -103,6 +103,12 @@ body{
   width:14vw;
 }
 
+#nav-logo{
+  width: 100px;
+  border: 4px ridge grey;
+}
+
+
 @media(max-width: 700px) {
   body{
     overflow-y: auto;

@@ -99,7 +99,7 @@
 <div class = "row">
 <?php if($globalImage){ ?>
   <div class = "col-md-4 d-flex align-items-stretch">
-    <div class="card">
+    <div class="card"  style="width: 100%;">
       <div class="card-header bg-gradient-olive">
         <h3 class="card-title">Global Distribution Map</h3>
       </div>
@@ -123,7 +123,6 @@
               <a class="nav-item nav-link active text-olive" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Habitat & Population</a>
               <a class="nav-item nav-link text-olive" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">Size & Diet</a>
               <a class="nav-item nav-link text-olive" id="product-rating-tab" data-toggle="tab" href="#product-rating" role="tab" aria-controls="product-rating" aria-selected="false">Other Information</a>
-              <a class="nav-item nav-link text-olive" id="area-tab" data-toggle="tab" href="#area" role="tab" aria-controls="area" aria-selected="false">Area/Location</a>
             </div>
           </div>
           <div class="tab-content p-3" id="nav-tabContent">
@@ -198,10 +197,6 @@
                  echo "<p><b>$key:</b> $value</p>";
               }
               ?>
-
-            </div>
-
-            <div class="tab-pane fade" id="area" role="tabpanel" aria-labelledby="area">
               <p>
                 <b>Area:</b>
                 <a href="/ZooAssignment/public/Areas/browse/<?php echo $area['aid'];?>" class="btn bg-gradient-olive"><?php echo $area['atitle'];?></a>
@@ -211,6 +206,7 @@
                 <a href="/ZooAssignment/public/Areas/locations/<?php echo $location['lid'];?>" class="btn bg-gradient-olive"><?php echo $location['lcode'];?></a>
               </p>
             </div>
+
 
           </div>
         </div>
@@ -253,9 +249,9 @@
 <div class = "row">
   <div class = "col-md-12">
     <div class="card">
-      <div class="card-header bg-gradient-olive">
+      <!-- <div class="card-header bg-gradient-olive">
         <h3 class="card-title">Sponsorship Information</h3>
-      </div>
+      </div> -->
       <div class="card-body text-center">
 <?php if ($sponsorship!=false){
   $sponsor=getSponsorById($sponsorship['ssid'])->fetch();

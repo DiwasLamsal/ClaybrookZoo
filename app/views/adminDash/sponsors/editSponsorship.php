@@ -161,20 +161,15 @@
               </div>
             </div>
 
-
-                </div>
-
+          </div>
                 <!-- /input-group -->
                 <div class="card-footer">
-
                   <input class="btn btn-primary"
                   type="submit" value="Update"
                   name="submit" <?php if(!isset($sponsorship)){?> id="submission" <?php }?>>
-
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-default">
                       <i class="fas fa-trash"></i> Delete
                     </button>
-
                 </div>
 
               <!-- /.card-body -->
@@ -182,6 +177,34 @@
   </form>
 </div>
 
+
+
+<div class="col-md-12 mb-3">
+  <div class="card h-100">
+    <div class="card-header bg-gradient-info">
+      <h3 class="card-title">Letter for Sponsor</h3>
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip"
+                title="Collapse">
+          <i class="fas fa-minus"></i></button>
+        <button type="button" class="btn btn-tool btn-sm" data-card-widget="remove" data-toggle="tooltip"
+                title="Remove">
+          <i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class = "row">
+        <div class = "col p-4 border border-secondary">
+          <?php echo $letter;?>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <a href="mailto:<?php echo $sponsor['semail'];?>" class="btn bg-gradient-olive"><i class="fas fa-envelope mr-2"></i> Mail Letter</a>
+      <a target = "_blank" href="/ZooAssignment/public/ManageSponsorships/print/<?php echo $sponsorship['sid'];?>" class="btn bg-gradient-olive"><i class="fas fa-print mr-2"></i> Print Letter</a>
+    </div>
+  </div>
+</div>
 
 
 <?php echo $modal;?>

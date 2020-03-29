@@ -94,9 +94,23 @@
 
         </div>
         <div class="card-footer">
-          <input class="btn bg-gradient-olive"
-          type="submit" value="Search"
-          name="search">
+
+          <div class = "row">
+            <div class = "col text-left">
+              <input class="btn bg-gradient-olive"
+              type="submit" value="Search"
+              name="search">
+            </div>
+            <div class = "col text-right">
+              <form method="POST" class="animalForm" action="/ZooAssignment/public/Animals/search/">
+                <input class="btn bg-gradient-olive"
+                  type="submit" value="View All Animals"
+                  name="search">
+              </form>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </form>
@@ -133,15 +147,4 @@
 
 <?php } ?>
 
-</div>
-
-
-<div class = "form-row text-center">
-  <div class="col-12">
-    <form method="POST" class="animalForm" action="/ZooAssignment/public/Animals/search/">
-      <input class="btn bg-gradient-olive"
-        type="submit" value="View All Animals in the Zoo"
-        name="search">
-    </form>
-  </div>
 </div>

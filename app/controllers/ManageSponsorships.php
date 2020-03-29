@@ -63,8 +63,11 @@ class ManageSponsorships extends Controller{
       $template = '../app/views/adminDash/modal.php';
       $modal = loadTemplate($template, ['type'=>'Sponsorship', 'link'=>$link, 'message'=>$message]);
 
+      $letterTemplate = '../app/letters/sponsorshipMail.php';
+      $letter = loadTemplate($letterTemplate, ['sponsorship'=>$sponsorship]);
+
       $template = '../app/views/adminDash/sponsors/editSponsorship.php';
-      $content = loadTemplate($template, ['sponsorship'=>$sponsorship, 'modal'=>$modal]);
+      $content = loadTemplate($template, ['sponsorship'=>$sponsorship, 'modal'=>$modal,'letter'=>$letter]);
       $title = "Dashboard - View Sponsorship";
       $breadcrumbContent=["ManageSponsorships/".strtolower($sponsorship['sstatus'])=>"Sponsorships", "ManageSponsorships/browseSponsorship"=>"View Sponsorship"];
       $role=['Administrator','Moderator'];
@@ -72,6 +75,18 @@ class ManageSponsorships extends Controller{
       require_once "../app/controllers/adminLoadView.php";
     }
   }
+
+  public function print($val){
+    $sponsorshipClass=new DatabaseTable('sponsorships');
+    $sponsorship = $sponsorshipClass->find('sid',$val);
+    if($sponsorship->rowCount()>0){
+      $sponsorship=$sponsorship->fetch();
+      $letterTemplate = '../app/letters/sponsorshipMail.php';
+      $letter = loadTemplate($letterTemplate, ['sponsorship'=>$sponsorship, 'print'=>true]);
+      $this->view($letter);
+    }
+  }
+
 
     public function deleteSponsorship($val=""){
       $sponsorshipClass=new DatabaseTable('sponsorships');

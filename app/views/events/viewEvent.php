@@ -16,8 +16,8 @@
 
 
   <div class = "col-lg-4 mb-2 p-0">
-    <div class="card card-solid h-100 text-center rounded-0">
-      <div class="card-body bg-gradient-olive">
+    <div class="card card-solid h-100 text-center bg-gradient-olive rounded-0">
+      <div class="card-body">
           <strong style="text-transform:uppercase;">
             <?php echo $event['etitle'];?></strong>
           <hr>

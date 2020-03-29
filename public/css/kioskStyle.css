@@ -1,0 +1,137 @@
+
+/* Fonts */
+@font-face {
+  font-family: opensansbold;
+  src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: opensansextrabold;
+  src: url(../fonts/OpenSans-ExtraBold.ttf);
+}
+@font-face {
+  font-family: opensanslight;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: opensansregular;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: opensanssemibold;
+  src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+p{font-family: opensansregular;}
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+a{text-decoration: none;font-family: opensanssemibold; transition: .1s;}
+a:hover, a:active{text-decoration: none;}
+.text-olive:hover{color: green;}
+
+
+body{
+  overflow: hidden;
+  font-family: opensansregular;
+  background-color: #431212FF;
+  background-image: url("/ZooAssignment/public/resources/images/kiosk/purty-wood.png");
+  user-select: none;
+}
+
+.text-zoo-heading {
+  font-family: 'Amatic SC', cursive;
+  font-weight: bolder;
+  font-size: 50px;
+}
+
+.text-zoo-p{
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+}
+
+.nav, .body-container{
+  height: 100vh;
+}
+.transparent-card-body, .nav-card{
+  background: none;
+}
+
+.body-card{
+  background: none;
+  border: 20px solid transparent;
+  border-image: url('/ZooAssignment/public/resources/images/kiosk/border.png') 30 round;
+}
+
+.body-card-body{
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: url("/ZooAssignment/public/resources/images/asfalt-dark.png"), white;
+}
+
+
+.animal-img-holder{
+  height: 250px;
+  overflow: hidden;
+}
+
+.animal-box-img{
+  height: 100%;
+}
+
+
+#monkeyImg, #chimpImg, #foxImg, #leoImg{
+  position: fixed;
+  left:2vw;
+  bottom:0;
+  width: 12vw;
+}
+#chimpImg{
+  width: 10vw;
+  left:8vw;
+}
+#foxImg{
+  left:12vw;
+  bottom: -10vh;
+  width:14vw;
+}
+#leoImg{
+  left:13vw;
+  bottom: -10vh;
+  width:14vw;
+}
+
+@media(max-width: 700px) {
+  body{
+    overflow-y: auto;
+  }
+}
+
+
+
+/********************************************************************************************************************/
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkgrey;
+}
+/********************************************************************************************************************/

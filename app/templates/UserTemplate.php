@@ -118,7 +118,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 		<footer>
 			<br>
-				<a href="#" class ="text-olive">Kiosk Template</a>&nbsp; | &nbsp;
+				<a href="/ZooAssignment/public/Kiosk" target="_blank" class ="text-olive">Kiosk Template</a>&nbsp; | &nbsp;
 				<a  class ="text-olive" href="/ZooAssignment/public/Login">Login to Dashboard</a>
 			<br><br>
 			&copy; Claybrook Zoo <?php echo date("Y");?>. <br><br><br><br>

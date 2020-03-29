@@ -93,55 +93,6 @@
     }
 
 
-    public function signage($val){
-      $animalClass = new DatabaseTable('animals');
-      $animal = $animalClass->find('aid', $val);
-
-      if($animal->rowCount()>0){
-        $animal=$animal->fetch();
-        if($animal['astatus']=="Active"){
-          $locationClass = new DatabaseTable('locations');
-          $location = $locationClass->find('lid', $animal['alid'])->fetch();
-
-          $areaClass = new DatabaseTable('areas');
-          $area = $areaClass->find('aid', $location['larea'])->fetch();
-
-          $catTable=getAnimalCategoryTable($val);
-          $catName=getAnimalCategoryName($val);
-          $catAnimalCode=getAnimalCategoryCode($val);
-          $catPK = getAnimalCategoryPK($val);
-
-          $catClass = new DatabaseTable($catTable);
-          $catObj = $catClass->find($catAnimalCode, $val)->fetch();
-          $catObjTwo = $catClass->find($catAnimalCode, $val)->fetch();
-
-          $animalCover=getCoverImage($val);
-          $animalGallery=getImagesByType($val, 'Gallery');
-          $animalGlobal=checkGlobalImageExists($val)?getImagesByType($val,'Global'):false;
-
-            $template = '../app/views/animals/viewAnimal.php';
-            $criteria=[
-              'animal'=>$animal,
-              'location'=>$location,
-              'area'=>$area,
-              $catName=>$catObj,
-              'catObj'=>$catObjTwo,
-              'coverImage'=>$animalCover, 'galleryImages'=>$animalGallery, 'globalImage'=>$animalGlobal
-            ];
-            $content = loadTemplate($template, $criteria);
-            $title = "Claybrook Zoo - Animal Signage";
-            $bodyTitle = "Animals";
-            $breadcrumbContent=["Animals"=>"Animals"];
-            $selected = "Animals";
-            require_once "../app/controllers/userLoadView.php";
-          }
-      }
-      else{
-        header("Location:../nosuchanimal");
-      }
-    }
-
-
     public function sponsor($val){
       $animalClass = new DatabaseTable('animals');
       $animal = $animalClass->find('aid', $val);

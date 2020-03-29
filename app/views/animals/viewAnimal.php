@@ -82,7 +82,7 @@
         <hr>
 
         <strong style="text-transform:uppercase;">
-          <a class="btn btn-secondary" href = "/ZooAssignment/public/Animals/signage/<?php echo $animal['aid'];?>" target="_blank">
+          <a class="btn btn-secondary" href = "/ZooAssignment/public/Kiosk/animal/<?php echo $animal['aid'];?>" target="_blank">
           <i class="fas fa-sign mr-1"></i>
           Signage</strong></a>
 

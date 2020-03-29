@@ -16,7 +16,7 @@
             <i class="fas fa-compass mr-1"></i>
             Zoo Area </strong>&nbsp;
           <span class="text-muted">&nbsp;
-            <a href="/ZooAssignment/public/Areas/browse/<?php echo $area['aid'];?>" class="btn btn-primary">
+            <a href="/ZooAssignment/public/Areas/browse/<?php echo $area['aid'];?>" class="btn bg-gradient-olive">
               <?php echo $area['atitle'];?>
             </a>
           </span>
@@ -58,7 +58,7 @@
             <div class="col-12">
               <form method="POST" class="animalForm" action="/ZooAssignment/public/Animals/search/">
                 <input type="hidden" name="location" value="<?php echo $location['lid'];?>">
-                <input class="btn btn-success"
+                <input class="btn bg-gradient-olive"
                   type="submit" value="View All Animals in This Location"
                   name="search">
               </form>

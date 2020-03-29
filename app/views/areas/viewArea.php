@@ -32,7 +32,7 @@
             <div class="col-12">
               <form method="POST" class="animalForm" action="/ZooAssignment/public/Animals/search/">
                 <input type="hidden" name="area" value="<?php echo $area['aid'];?>">
-                <input class="btn btn-success"
+                <input class="btn bg-gradient-olive"
                   type="submit" value="View All Animals in This Area"
                   name="search">
               </form>
@@ -56,7 +56,7 @@
         <div class="card-body">
           <h5 class="card-title">Location Code: <?php echo $location['lcode'];?></h5>
           <p class="card-text">Size: <?php echo $location['ldimensions'];?> sq. ft., Capacity: <?php echo $location['lsize'];?></p>
-          <a href="/ZooAssignment/public/Areas/locations/<?php echo $location['lid'];?>" class="btn btn-primary">View Location</a>
+          <a href="/ZooAssignment/public/Areas/locations/<?php echo $location['lid'];?>" class="btn bg-gradient-olive">View Location</a>
         </div>
       </div>
     </div>

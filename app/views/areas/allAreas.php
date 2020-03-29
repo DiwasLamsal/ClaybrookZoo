@@ -9,7 +9,7 @@
       <div class="card-body">
         <h5 class="card-title"><?php echo $area['atitle'];?></h5>
         <p class="card-text"><?php echo $area['adescription'];?></p>
-        <a href="/ZooAssignment/public/Areas/browse/<?php echo $area['aid'];?>" class="btn btn-primary">View Area</a>
+        <a href="/ZooAssignment/public/Areas/browse/<?php echo $area['aid'];?>" class="btn bg-gradient-olive">View Area</a>
       </div>
     </div>
   </div>

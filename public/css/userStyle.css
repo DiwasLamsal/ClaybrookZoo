@@ -28,7 +28,7 @@ h4{font-family: opensansbold}
 h5{font-family: opensansbold}
 a{text-decoration: none;font-family: opensanssemibold; transition: .1s;}
 a:hover, a:active{text-decoration: none;}
-
+.text-olive:hover{color: green;}
 
 /* CSS Start */
 
@@ -113,6 +113,15 @@ main{
 
 .text-green {
     color: #2E8B57;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: calc(1.5rem + 40px);
+}
+
+.text-zoo {
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 header {
@@ -233,12 +242,12 @@ nav ul li a.nav-link{
 
 nav ul li a.active, nav.black ul li a.active{
   color: white;
-  background: #9acd32;
+  background: #69b421;
 }
 
 nav ul li a.active:hover, nav.black ul li a.active:hover{
   color:white;
-  background: #89c441;
+  background: #8abd22;
 }
 
 nav ul li a:hover{

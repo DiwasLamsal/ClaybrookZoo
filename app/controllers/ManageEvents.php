@@ -95,7 +95,8 @@ class ManageEvents extends Controller{
     $eventClass = new DatabaseTable('events');
     $event = $eventClass->find('eid', $val);
     if($event->rowCount()>0){
-      $eventClass->delete('eaid', $val);
+      removeEventBanner($val);
+      $eventClass->delete('eid', $val);
       header("Location:../all/deletesuccess");
     }
     else{

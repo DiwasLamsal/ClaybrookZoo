@@ -66,7 +66,7 @@ class ManageSponsorships extends Controller{
       $template = '../app/views/adminDash/sponsors/editSponsorship.php';
       $content = loadTemplate($template, ['sponsorship'=>$sponsorship, 'modal'=>$modal]);
       $title = "Dashboard - View Sponsorship";
-      $breadcrumbContent=["ManageSponsorships/".strtolower($_POST['sponsorship']['sstatus'])=>"Sponsorships", "ManageSponsorships/browseSponsorship"=>"View Sponsorship"];
+      $breadcrumbContent=["ManageSponsorships/".strtolower($sponsorship['sstatus'])=>"Sponsorships", "ManageSponsorships/browseSponsorship"=>"View Sponsorship"];
       $role=['Administrator','Moderator'];
       $bodyTitle="Edit Sponsorship";
       require_once "../app/controllers/adminLoadView.php";

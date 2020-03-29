@@ -61,8 +61,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="/ZooAssignment/public/Logout" class="nav-link">Logout</a>
+      <li class="nav-item d-sm-inline-block">
+        <a href="/ZooAssignment/public/Logout" class="mr-3 text-secondary">Logout</a>
       </li>
     </ul>
   </nav>

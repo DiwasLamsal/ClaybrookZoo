@@ -14,7 +14,8 @@ if (session_status() == PHP_SESSION_NONE) {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-
+	<!-- Title font -->
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
 	<!-- Font Awesome Icons -->
 	<link rel="stylesheet" href="/ZooAssignment/public/css/fontawesome-free/css/all.min.css">
 	<!-- Theme style -->
@@ -79,6 +80,11 @@ if (session_status() == PHP_SESSION_NONE) {
 										 <i class="nav-icon fas fa-compass"></i> &nbsp;Areas
 									 </a>
 								 </li>
+								 <li>
+									 <a class = "nav-link <?php if($selected=="Events")echo'active';?>" href="/ZooAssignment/public/Events">
+										 <i class="nav-icon fas fa-calendar"></i> &nbsp;Events
+									 </a>
+								 </li>
                  <li>
 									 <a class = "nav-link <?php if($selected=="Contact")echo'active';?>" href="/ZooAssignment/public/Contact">
 										 <i class="nav-icon fas fa-address-book"></i> &nbsp;Contact
@@ -107,7 +113,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 
 					<?php echo $breadcrumb;?>
-					
+
 
 					<!-- Content body goes here -->
            <?php echo $content;?>
@@ -116,7 +122,8 @@ if (session_status() == PHP_SESSION_NONE) {
 
 		<footer>
 			<br>
-			<a href="#">Kiosk Template</a>&nbsp; | &nbsp; <a href="/ZooAssignment/public/Login">Login to Dashboard</a>
+				<a href="#" class ="text-olive">Kiosk Template</a>&nbsp; | &nbsp;
+				<a  class ="text-olive" href="/ZooAssignment/public/Login">Login to Dashboard</a>
 			<br><br>
 			&copy; Claybrook Zoo <?php echo date("Y");?>. <br><br><br><br>
 

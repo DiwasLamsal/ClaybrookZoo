@@ -13,7 +13,7 @@
       <dd class="col-sm-8">
         <p>
           <a class="link" href = "https://www.claybrook-zoo.com" target="_blank">
-            <button type="button" class="btn btn-info">www.Claybrook-Zoo.com</button>
+            <button type="button" class="btn bg-gradient-olive">www.Claybrook-Zoo.com</button>
           </a>
         </p>
       </dd>
@@ -37,7 +37,9 @@
 
 
 <div class="card">
-  <div class="card-header bg-info text-white">Claybrook Zoo Inner Map</div>
+  <div class="card-header bg-info  bg-gradient-olive text-white">
+    <h3 class = "card-title">Claybrook Zoo Inner Map</h3>
+  </div>
   <div class="card-body text-center">
     <img src = "/ZooAssignment/public/resources/images/extras/map.bmp"
       class="img-fluid" alt="Map">
@@ -47,7 +49,9 @@
 
 
 <div class="card">
-  <div class="card-header bg-info text-white">Leave a Message</div>
+  <div class="card-header bg-gradient-olive text-white">
+    <h3 class = "card-title">Leave a Message</h3>
+  </div>
   <div class="card-body">
     <form class="form-horizontal" method="post">
       <div class="form-group row">
@@ -77,7 +81,7 @@
 
       <div class="form-group row">
         <div class="offset-sm-2 col-sm-10">
-          <button type="submit" class="btn btn-success">Submit</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </div>
       </div>
     </form>

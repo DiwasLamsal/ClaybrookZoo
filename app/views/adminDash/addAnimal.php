@@ -875,7 +875,7 @@ if(isset($animal)){
       if(cleanFileName.length<50)
         $(this).next('.custom-file-label').html(cleanFileName);
       else
-        $(this).next('.custom-file-label').html("File Name Too Long");
+        $(this).next('.custom-file-label').html("File Name Too Long to Display Here");
   });
 
   $('#inputGroupFile02').on('change',function(){

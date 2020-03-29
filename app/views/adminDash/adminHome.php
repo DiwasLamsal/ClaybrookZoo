@@ -19,9 +19,9 @@
         <!-- small box -->
         <div class="small-box bg-gradient-gray">
           <div class="inner">
-            <h3>0</h3>
+            <h3><?php echo getCount('events');?></h3>
 
-            <p>Upcoming Events</p>
+            <p>Events</p>
           </div>
           <div class="icon">
             <i class="fas fa-calendar"></i>
@@ -72,21 +72,18 @@
         <div class="card h-100">
           <div class="card-header bg-gradient-gray ">
             <h3 class="card-title">
-              <i class="fas fa-calendar mr-2"></i>
-              Events
+              <i class="fas fa-video mr-2"></i>
+              Claybrook Zoo
             </h3>
           </div><!-- /.card-header -->
-          <div class="card-body">
-            <div class="tab-content p-0">
-              <!-- Morris chart - Sales -->
-              <div class="chart tab-pane active" id="revenue-chart"
-                   style="position: relative; height: 300px;">
-                  <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
-               </div>
-              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
-              </div>
-            </div>
+          <div class="card-body p-0">
+
+          <iframe style="width:100%; height: 100%;" src="https://www.youtube.com/embed/F5UPc8dya-M" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
+            Zoo Video
+          </iframe>
+
+
           </div><!-- /.card-body -->
         </div>
       </section>

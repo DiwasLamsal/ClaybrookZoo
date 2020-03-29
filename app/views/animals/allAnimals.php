@@ -21,14 +21,14 @@
       <div class="card-body">
         <h5 class="card-title"><?php echo $featured['aname'];?></h5>
         <p class="card-text"><?php echo $featured['aspecies'].', '.$featured['acategory'];?></p>
-        <a href="/ZooAssignment/public/Animals/browse/<?php echo $featured['aid'];?>" class="btn btn-primary">View Animal</a>
+        <a href="/ZooAssignment/public/Animals/browse/<?php echo $featured['aid'];?>" class="btn bg-gradient-olive">View Animal</a>
       </div>
     </div>
   </div>
 
   <div class="col-md-5 mb-3">
-    <div class="card card-info h-100">
-      <div class="card-header">
+    <div class="card card h-100">
+      <div class="card-header bg-gradient-olive">
         <h3 class="card-title">Search</h3>
       </div>
       <div class="card-body" style="padding-bottom: 0px; padding-top: 10px;">
@@ -94,7 +94,7 @@
 
         </div>
         <div class="card-footer">
-          <input class="btn btn-primary"
+          <input class="btn bg-gradient-olive"
           type="submit" value="Search"
           name="search">
         </div>
@@ -126,7 +126,7 @@
       <div class="card-body">
         <h5 class="card-title"><?php echo $animal['aname'];?></h5>
         <p class="card-text"><?php echo $animal['aspecies'].', '.$animal['acategory'];?></p>
-        <a href="/ZooAssignment/public/Animals/browse/<?php echo $animal['aid'];?>" class="btn btn-primary">View Animal</a>
+        <a href="/ZooAssignment/public/Animals/browse/<?php echo $animal['aid'];?>" class="btn bg-gradient-olive">View Animal</a>
       </div>
     </div>
   </div>
@@ -139,7 +139,7 @@
 <div class = "form-row text-center">
   <div class="col-12">
     <form method="POST" class="animalForm" action="/ZooAssignment/public/Animals/search/">
-      <input class="btn btn-success"
+      <input class="btn bg-gradient-olive"
         type="submit" value="View All Animals in the Zoo"
         name="search">
     </form>

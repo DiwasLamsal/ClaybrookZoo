@@ -4,7 +4,7 @@
 
     public function index(){
       $animalClass = new DatabaseTable('animals');
-      $animals = $animalClass->find('astatus', 'Active');
+      $animals = $animalClass->findSorted('astatus', 'Active', 'alevel');
       $locationClass = new DatabaseTable('locations');
       $locations = $locationClass->findAll();
       $areaClass= new DatabaseTable('areas');
@@ -13,7 +13,7 @@
       $template = '../app/views/animals/allAnimals.php';
       $content = loadTemplate($template, ['animals'=>$animals, 'featured'=>$featured, 'locations'=>$locations, 'areas'=>$areas]);
       $title = "Claybrook Zoo - Animal";
-      $bodyTitle = "Animals Home";
+      $bodyTitle = "Animals";
       $breadcrumbContent=["Animals"=>"Animals"];
       $selected = "Animals";
       require_once "../app/controllers/userLoadView.php";

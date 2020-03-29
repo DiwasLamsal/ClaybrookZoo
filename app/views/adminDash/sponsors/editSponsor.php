@@ -118,13 +118,10 @@
           </div>
         </div>
           <div class="card-footer">
-
             <input class="btn btn-primary"
             type="submit" value="Update Banner"
             name="submitBanner" >
-
           </div>
-
         <!-- /.card-body -->
       </div>
     </form>

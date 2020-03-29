@@ -24,7 +24,7 @@ if($animals->rowCount()==0){
       <div class="card-body">
         <h5 class="card-title"><?php echo $animal['aname'];?></h5>
         <p class="card-text"><?php echo $animal['aspecies'].', '.$animal['acategory'];?></p>
-        <a href="/ZooAssignment/public/Animals/browse/<?php echo $animal['aid'];?>" class="btn btn-primary">View Animal</a>
+        <a href="/ZooAssignment/public/Animals/browse/<?php echo $animal['aid'];?>" class="btn bg-gradient-olive">View Animal</a>
       </div>
     </div>
   </div>

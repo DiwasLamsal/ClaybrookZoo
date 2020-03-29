@@ -4,7 +4,7 @@
 
 
 <div class = "row p-0">
-  <div class = "col-lg-8 mb-3">
+  <div class = "col-lg-8 mb-2">
     <div class="card card-solid h-100 rounded-0">
       <div class="card-body">
         <div class="text-center">
@@ -15,13 +15,13 @@
   </div>
 
 
-  <div class = "col-lg-4 mb-3 p-0">
+  <div class = "col-lg-4 mb-2 p-0">
     <div class="card card-solid h-100 text-center rounded-0">
       <div class="card-body bg-gradient-olive">
           <strong style="text-transform:uppercase;">
             <?php echo $event['etitle'];?></strong>
           <hr>
-            <?php echo $event['edescription'];?>
+            <h6><?php echo nl2br($event['edescription'])."\n";?></h6>
           <br>
         </div>
         <div class = "card-footer">
@@ -44,7 +44,7 @@
     </div>
     <div class="card card-solid h-100 rounded-0">
       <div class="card-body">
-          <?php echo $event['eticket'];?>
+          <?php echo nl2br($event['eticket'])."\n";?>
         <br>
       </div>
     </div>

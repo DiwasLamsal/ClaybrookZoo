@@ -15,7 +15,7 @@
           </div>
           <div class = "col-md-8">
         <h5 class="card-title"><?php echo $event['etitle'];?></h5>
-        <p class="card-text"><strong style="text-transform:uppercase;">
+        <p class="card-text"><strong style="text-transform:uppercase;"><br>
           <i class="fas fa-calendar-day mr-1"></i> FROM <?php echo $event['estartdate'];?>
             &rarr; <?php echo $event['eenddate'];?></strong>&nbsp;</p>
         <a href="/ZooAssignment/public/Events/browse/<?php echo $event['eid'];?>" class="btn bg-gradient-olive">View Event</a>

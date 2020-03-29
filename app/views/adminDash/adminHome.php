@@ -65,28 +65,28 @@
 
 
 
-    <div class="row">
-      <!-- Left col -->
-      <section class="col-lg-7 connectedSortable mb-3">
-        <!-- Custom tabs (Charts with tabs)-->
-        <div class="card h-100">
-          <div class="card-header bg-gradient-gray ">
-            <h3 class="card-title">
-              <i class="fas fa-video mr-2"></i>
-              Claybrook Zoo
-            </h3>
-          </div><!-- /.card-header -->
-          <div class="card-body p-0">
+  <div class="row">
+    <!-- Left col -->
+    <section class="col-lg-7 connectedSortable mb-3">
+      <!-- Custom tabs (Charts with tabs)-->
+      <div class="card h-100">
+        <div class="card-header bg-gradient-gray ">
+          <h3 class="card-title">
+            <i class="fas fa-video mr-2"></i>
+            Claybrook Zoo
+          </h3>
+        </div><!-- /.card-header -->
+        <div class="card-body p-0">
 
-          <iframe style="width:100%; height: 100%;" src="https://www.youtube.com/embed/F5UPc8dya-M" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
-            Zoo Video
-          </iframe>
+        <iframe style="width:100%; height: 100%;" src="https://www.youtube.com/embed/F5UPc8dya-M" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          Zoo Video
+        </iframe>
 
 
-          </div><!-- /.card-body -->
-        </div>
-      </section>
+        </div><!-- /.card-body -->
+      </div>
+    </section>
 
     <section class="col-lg-5 connectedSortable mb-3">
       <div class="card card h-100">
@@ -100,9 +100,82 @@
         <!-- /.card-body -->
       </div>
     </section>
-
+  </div>
     <!-- /.row (main row) -->
-    </div><!-- /.container-fluid -->
+
+
+<div class = "row">
+
+  <div class="col-lg-5 mb-3">
+
+<?php
+    if (session_status() == PHP_SESSION_NONE) {
+      session_start();
+    }
+    $loggedin=$_SESSION['loggedin'];
+    if($loggedin['utype']!='Zookeeper'){
+?>
+
+      <div class="card card-widget widget-user h-100">
+          <!-- Add the bg color to the header using any of the bg-* classes -->
+          <div class="widget-user-header bg-gradient-gray">
+            <h3 class="widget-user-username"><?php echo $loggedin['ufullname'];?></h3>
+            <h5 class="widget-user-desc"><?php echo $loggedin['utype'];?></h5>
+          </div>
+          <div class="widget-user-image">
+            <img class="img-circle elevation-2" src="/ZooAssignment/public/resources/images/extras/avatar5.png" alt="User Avatar">
+          </div>
+          <div class="card-footer">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="description-block">
+                  <span class="description-text">Email</span>
+                  <h5 class="description-header"><?php echo $loggedin['email'];?></h5>
+                </div>
+                <!-- /.description-block -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+        </div>
+    </div>
+
+  <section class="col-lg-7 connectedSortable">
+    <form method="POST" enctype="multipart/form-data">
+    <div class="card h-100">
+      <div class="card-header bg-gradient-gray ">
+        <h3 class="card-title"><i class="fas fa-image mr-2"></i>Change Header Image</h3>
+      </div>
+      <div class="card-body">
+        <div class = "row">
+          <div class = "col mb-3 text-center">
+            <img style="max-width: 95%;" class = "form-banner-image" src="/ZooAssignment/public/resources/images/header/header.jpg."
+                  alt = "Header Image">
+          </div>
+          <div class = "col form-inline">
+            <div class="input-group">
+                <input type="file" name="headerImg" required accept="image/*">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer text-right">
+        <input class="btn btn-primary"
+        type="submit" value="Submit"
+        name="submitHeader" >
+      </div>
+
+      <!-- /.card-body -->
+    </div>
+  </form>
+  </section>
+
+</div>
+
+<?php } ?>
+
+</div><!-- /.container-fluid -->
 
 <script>
 

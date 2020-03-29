@@ -3,7 +3,7 @@
 class ManageEvents extends Controller{
 
   public function index(){
-    header("Location:./all");
+    header("Location:ManageEvents/all");
   }
 
   public function all($val=""){

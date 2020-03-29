@@ -3,7 +3,7 @@
 class ManageLocations extends Controller{
 
   public function index(){
-    header("Location:./all");
+    header("Location:ManageLocations/all");
   }
 
   public function all($val=""){

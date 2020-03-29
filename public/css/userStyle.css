@@ -132,6 +132,7 @@ header {
   background: linear-gradient(to top right, transparent 50%,
     rgba(0, 10, 0, 0.5) 60%) 0 0/100% 200px no-repeat,
     url('/ZooAssignment/public/resources/images/header/header.jpg') no-repeat 50% 60%;
+    /* Photo by Honey Fangs on Unsplash */
   background-size: cover;
   background-attachment: fixed;
   box-shadow: 0 -20px 20px 10px white inset;

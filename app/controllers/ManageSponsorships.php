@@ -68,7 +68,7 @@ class ManageSponsorships extends Controller{
       $title = "Dashboard - View Sponsorship";
       $breadcrumbContent=["ManageSponsorships/".strtolower($sponsorship['sstatus'])=>"Sponsorships", "ManageSponsorships/browseSponsorship"=>"View Sponsorship"];
       $role=['Administrator','Moderator'];
-      $bodyTitle="Edit Sponsorship";
+      $bodyTitle="View Sponsorship";
       require_once "../app/controllers/adminLoadView.php";
     }
   }
@@ -145,7 +145,7 @@ class ManageSponsorships extends Controller{
       $title = "Dashboard - View Sponsor";
       $breadcrumbContent=["ManageSponsorships/sponsors"=>"Sponsors", "ManageSponsorships/browseSponsor"=>"View Sponsor"];
       $role=['Administrator','Moderator'];
-      $bodyTitle="Edit Sponsor";
+      $bodyTitle="View Sponsor";
       require_once "../app/controllers/adminLoadView.php";
     }
   }
@@ -163,6 +163,18 @@ class ManageSponsorships extends Controller{
       header("Location:../sponsors/nosuchsponsor");
     }
   }
+
+  public function sendWarningEmail($val=""){
+    $sponsorClass = new DatabaseTable('sponsors');
+    $sponsor = $sponsorClass->find('sid', $val);
+    if($sponsor->rowCount()>0){
+      // Send warning email here
+    }
+    else{
+      header("Location:../sponsors/nosuchsponsor");
+    }
+  }
+
 
 
 // ------------------------------------------ End ------------------------------------------

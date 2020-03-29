@@ -95,11 +95,7 @@ if (session_status() == PHP_SESSION_NONE) {
 										 <i class="nav-icon fas fa-gamepad"></i> &nbsp;Kids
 									 </a>
 								 </li>
-								 <li>
-									 <a class = "nav-link <?php if($selected=="Vacancies")echo'active';?>" href="/ZooAssignment/public/Vacancies">
-										 <i class="nav-icon fas fa-user-md"></i> &nbsp;Vacancies
-									 </a>
-								 </li>
+
               </ul>
            </div>
         </nav>

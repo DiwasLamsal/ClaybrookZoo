@@ -1,17 +1,17 @@
 <?php
 
-class ManageVacancies extends Controller{
+class ManageTickets extends Controller{
 
   public function index(){
-    header("Location:ManageVacancies/all");
+    header("Location:ManageTickets/all");
   }
 
   public function all(){
     $template = '../app/views/adminDash/comingSoon.php';
     $content = loadTemplate($template, []);
-    $title = "Dashboard - Vacancies";
-    $breadcrumbContent=["ManageVacancies"=>"Vacancies"];
-    $bodyTitle="Vacancies";
+    $title = "Dashboard - Tickets";
+    $breadcrumbContent=["ManageTickets"=>"Tickets"];
+    $bodyTitle="Tickets";
     $role=['Administrator','Moderator'];
     require_once "../app/controllers/adminLoadView.php";
   }

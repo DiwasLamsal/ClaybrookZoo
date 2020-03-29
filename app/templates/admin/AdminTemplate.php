@@ -328,15 +328,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-user-plus nav-icon"></i>
-                  <p>Add User</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>View Users</p>
+                <a href="/ZooAssignment/public/ManageTickets/all" class="nav-link">
+                  <i class="fas fa-clock nav-icon"></i>
+                  <p>Coming Soon</p>
                 </a>
               </li>
               <hr>
@@ -356,17 +350,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-user-plus nav-icon"></i>
-                  <p>Add User</p>
+                <a href="/ZooAssignment/public/ManageVacancies/all" class="nav-link">
+                  <i class="fas fa-clock nav-icon"></i>
+                  <p>Coming Soon</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>View Users</p>
-                </a>
-              </li>
+
               <hr>
             </ul>
           </li>

@@ -3,7 +3,7 @@
 class ManageWatchlist extends Controller{
 
   public function index(){
-    header("Location:./all");
+    header("Location:ManageWatchlist/all");
   }
 
   public function all($val=""){

@@ -3,7 +3,7 @@
 class ManageAreas extends Controller{
 
   public function index(){
-    header("Location:./all");
+    header("Location:ManageAreas/all");
   }
 
   public function all($val=""){

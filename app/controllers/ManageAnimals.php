@@ -3,7 +3,7 @@
 class ManageAnimals extends Controller{
 
   public function index(){
-    header("Location:./all");
+    header("Location:ManageAnimals/all");
   }
 
   public function all($val=""){

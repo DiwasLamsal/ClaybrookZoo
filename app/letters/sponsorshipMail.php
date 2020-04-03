@@ -37,7 +37,7 @@ Yours Sincerely, <br>
 
 <?php
 if(session_status() == PHP_SESSION_NONE)session_start();
-echo $_SESSION['loggedin']['ufullname'].' '.$_SESSION['loggedin']['ufullname'];?>. <br><br>
+echo $_SESSION['loggedin']['ufullname'];?>. <br><br>
 
 <p style ="text-align: center;">
   <a href = "/ZooAssignment/public/">Claybrook Zoo</a></p>

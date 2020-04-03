@@ -14,6 +14,8 @@ body { margin: 1.6cm; }
 <b>Date: </b><?php echo date('d-m-Y');?>
 <br>
 <br>
+  <?php echo $sponsor['scompany'];?>,
+<br>
   <?php echo $sponsor['saddress'];?>
 <br>
 <br>

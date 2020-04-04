@@ -13,11 +13,13 @@ class ManageLocations extends Controller{
     }
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
+    $messageTemplate = '../app/templates/admin/MessageTemplate.php';
+    $message = loadTemplate($messageTemplate, ['message'=>$val]);
 
     $locationClass = new DatabaseTable('locations');
     $locations = $locationClass->findAll();
     $template = '../app/views/adminDash/manageLocations.php';
-    $content = loadTemplate($template, ['locations'=>$locations, 'dataTableCode'=>$dataTableCode]);
+    $content = loadTemplate($template, ['locations'=>$locations, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Locations";
     $breadcrumbContent=["ManageLocations/all"=>"locations"];
     $role=['Administrator','Moderator'];
@@ -81,7 +83,7 @@ class ManageLocations extends Controller{
     }
 
     else{
-      header("Location:../all/nosucharea");
+      header("Location:../all/nosuchlocation");
     }
 
   }
@@ -95,7 +97,7 @@ class ManageLocations extends Controller{
       header("Location:../all/deletesuccess");
     }
     else{
-      header("Location:../all/nosucharea");
+      header("Location:../all/nosuchlocation");
     }
 
   }

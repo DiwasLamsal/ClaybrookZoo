@@ -33,10 +33,13 @@ class ManageSponsorships extends Controller{
       $this->browseSponsorship($val);
       return;
     }
+    $messageTemplate = '../app/templates/admin/MessageTemplate.php';
+    $message = loadTemplate($messageTemplate, ['message'=>$val]);
+
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
     $template = '../app/views/adminDash/sponsors/manageSponsorships.php';
-    $content = loadTemplate($template, ['sponsorships'=>$sponsorships, 'dataTableCode'=>$dataTableCode]);
+    $content = loadTemplate($template, ['sponsorships'=>$sponsorships, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Sponsorships";
     $breadcrumbContent=["ManageSponsorships/sponsorships"=>"Sponsorships"];
     $role=['Administrator','Moderator'];
@@ -114,7 +117,7 @@ class ManageSponsorships extends Controller{
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
     $template = '../app/views/adminDash/sponsors/manageSponsors.php';
-    $content = loadTemplate($template, ['sponsors'=>$sponsors, 'dataTableCode'=>$dataTableCode]);
+    $content = loadTemplate($template, ['sponsors'=>$sponsors, 'dataTableCode'=>$dataTableCode, 'message'=>$val]);
     $title = "Dashboard - Sponsors";
     $breadcrumbContent=["ManageSponsorships/sponsors"=>"Sponsors"];
     $role=['Administrator','Moderator'];

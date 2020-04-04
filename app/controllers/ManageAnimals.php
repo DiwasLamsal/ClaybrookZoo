@@ -18,8 +18,11 @@ class ManageAnimals extends Controller{
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
 
+    $messageTemplate = '../app/templates/admin/MessageTemplate.php';
+    $message = loadTemplate($messageTemplate, ['message'=>$val]);
+
     $template = '../app/views/adminDash/manageAnimals.php';
-    $content = loadTemplate($template, ['animals'=>$animals, 'dataTableCode'=>$dataTableCode, 'type'=>'']);
+    $content = loadTemplate($template, ['animals'=>$animals, 'dataTableCode'=>$dataTableCode, 'type'=>'', 'message'=>$message]);
     $title = "Dashboard - Animals";
     $breadcrumbContent=["ManageAnimals/all"=>"Animals"];
     $role=['Administrator','Moderator'];
@@ -27,14 +30,16 @@ class ManageAnimals extends Controller{
     require_once "../app/controllers/adminLoadView.php";
   }
 
-  public function trash(){
+  public function trash($val=""){
     $animalClass = new DatabaseTable('animals');
     $animals = $animalClass->find('astatus', 'Dormant');
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
+    $messageTemplate = '../app/templates/admin/MessageTemplate.php';
+    $message = loadTemplate($messageTemplate, ['message'=>$val]);
 
     $template = '../app/views/adminDash/manageAnimals.php';
-    $content = loadTemplate($template, ['animals'=>$animals, 'dataTableCode'=>$dataTableCode, 'type'=>"archive"]);
+    $content = loadTemplate($template, ['animals'=>$animals, 'dataTableCode'=>$dataTableCode, 'type'=>"archive", 'message'=>$message]);
     $title = "Dashboard - Dormant Animals";
     $breadcrumbContent=["ManageAnimals/all"=>"Archived Animals"];
     $role=['Administrator'];
@@ -185,7 +190,7 @@ class ManageAnimals extends Controller{
 
            $aiClass->save($_POST['animal_image'], 'aiid');
          }
-         header("Location:../all/galleryimagesuccess");
+         header("Location:../all/editimagesuccess");
        }
      }
 

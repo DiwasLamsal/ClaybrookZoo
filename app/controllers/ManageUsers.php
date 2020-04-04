@@ -17,7 +17,10 @@ class ManageUsers extends Controller{
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
     $template = '../app/views/adminDash/manageUsers.php';
-    $content = loadTemplate($template, ['users'=>$users, 'dataTableCode'=>$dataTableCode]);
+    $messageTemplate = '../app/templates/admin/MessageTemplate.php';
+    $message = loadTemplate($messageTemplate, ['message'=>$val]);
+
+    $content = loadTemplate($template, ['users'=>$users, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Staff";
     $breadcrumbContent=["ManageUsers/all"=>"Staff"];
     $bodyTitle="Users";
@@ -99,7 +102,7 @@ class ManageUsers extends Controller{
       header("Location:../all/deletesuccess");
     }
     else{
-      header("Location:../all/error");
+      header("Location:../all/nosuchuser");
     }
 
   }

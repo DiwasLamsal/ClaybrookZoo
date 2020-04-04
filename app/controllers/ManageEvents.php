@@ -15,9 +15,11 @@ class ManageEvents extends Controller{
     $events = $eventClass->findAll();
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
+    $messageTemplate = '../app/templates/admin/MessageTemplate.php';
+    $message = loadTemplate($messageTemplate, ['message'=>$val]);
 
     $template = '../app/views/adminDash/events/manageEvents.php';
-    $content = loadTemplate($template, ['events'=>$events, 'dataTableCode'=>$dataTableCode]);
+    $content = loadTemplate($template, ['events'=>$events, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Events";
     $breadcrumbContent=["ManageEvents/all"=>"Events"];
     $role=['Administrator','Moderator'];
@@ -86,7 +88,7 @@ class ManageEvents extends Controller{
     }
 
     else{
-      header("Location:../all/nosucharea");
+      header("Location:../all/nosuchevent");
     }
 
   }
@@ -100,7 +102,7 @@ class ManageEvents extends Controller{
       header("Location:../all/deletesuccess");
     }
     else{
-      header("Location:../all/nosucharea");
+      header("Location:../all/nosuchevent");
     }
 
   }

@@ -15,9 +15,11 @@ class ManageWatchlist extends Controller{
     $watchlists = $watchlistClass->findAll();
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
+    $messageTemplate = '../app/templates/admin/MessageTemplate.php';
+    $message = loadTemplate($messageTemplate, ['message'=>$val]);
 
     $template = '../app/views/adminDash/watchlists/manageWatchlist.php';
-    $content = loadTemplate($template, ['watchlists'=>$watchlists, 'dataTableCode'=>$dataTableCode]);
+    $content = loadTemplate($template, ['watchlists'=>$watchlists, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Watchlists";
     $breadcrumbContent=["ManageWatchlist/all"=>"Watchlist"];
     $role=['Administrator','Moderator','Zookeeper'];

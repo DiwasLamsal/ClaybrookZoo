@@ -16,9 +16,11 @@ class ManageAreas extends Controller{
     $areas = $areaClass->findAll();
     $template = '../app/views/adminDash/dataTableCode.php';
     $dataTableCode = loadTemplate($template, []);
+    $messageTemplate = '../app/templates/admin/MessageTemplate.php';
+    $message = loadTemplate($messageTemplate, ['message'=>$val]);
 
     $template = '../app/views/adminDash/manageAreas.php';
-    $content = loadTemplate($template, ['areas'=>$areas, 'dataTableCode'=>$dataTableCode]);
+    $content = loadTemplate($template, ['areas'=>$areas, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Areas";
     $breadcrumbContent=["ManageAreas/all"=>"Areas"];
     $role=['Administrator','Moderator'];

@@ -60,7 +60,7 @@ class ManageUsers extends Controller{
         $_POST['user']['uid']=$val;
         $userClass->save($_POST['user'], 'uid');
         header("Location:../all/editsuccess");
-        if($_SESSION['loggedin']['uid']==$val)header("Location:../all/Logout");
+        if($_SESSION['loggedin']['uid']==$val)header("Location:../Logout");
       }
 
       if(isset($_POST['submitPassword'])){

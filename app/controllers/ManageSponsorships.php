@@ -42,7 +42,7 @@ class ManageSponsorships extends Controller{
     $content = loadTemplate($template, ['sponsorships'=>$sponsorships, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Sponsorships";
     $breadcrumbContent=["ManageSponsorships/sponsorships"=>"Sponsorships"];
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     $bodyTitle="Sponsorships";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -73,7 +73,7 @@ class ManageSponsorships extends Controller{
       $content = loadTemplate($template, ['sponsorship'=>$sponsorship, 'modal'=>$modal,'letter'=>$letter]);
       $title = "Dashboard - View Sponsorship";
       $breadcrumbContent=["ManageSponsorships/".strtolower($sponsorship['sstatus'])=>"Sponsorships", "ManageSponsorships/browseSponsorship"=>"View Sponsorship"];
-      $role=['Administrator','Moderator'];
+      $role=['Administrator','Manager'];
       $bodyTitle="View Sponsorship";
       require_once "../app/controllers/adminLoadView.php";
     }
@@ -120,7 +120,7 @@ class ManageSponsorships extends Controller{
     $content = loadTemplate($template, ['sponsors'=>$sponsors, 'dataTableCode'=>$dataTableCode, 'message'=>$val]);
     $title = "Dashboard - Sponsors";
     $breadcrumbContent=["ManageSponsorships/sponsors"=>"Sponsors"];
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     $bodyTitle="Sponsors";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -162,7 +162,7 @@ class ManageSponsorships extends Controller{
       $content = loadTemplate($template, ['sponsor'=>$sponsor, 'modal'=>$modal]);
       $title = "Dashboard - View Sponsor";
       $breadcrumbContent=["ManageSponsorships/sponsors"=>"Sponsors", "ManageSponsorships/browseSponsor"=>"View Sponsor"];
-      $role=['Administrator','Moderator'];
+      $role=['Administrator','Manager'];
       $bodyTitle="View Sponsor";
       require_once "../app/controllers/adminLoadView.php";
     }

@@ -127,7 +127,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
 <!-- End of Staff Navigation Area -->
 <?php } ?>
-<?php if(in_array($currentUser['utype'],['Administrator','Moderator'])){ //Show only if admin or moderator ?>
+<?php if(in_array($currentUser['utype'],['Administrator','Manager'])){ //Show only if admin or Manager ?>
 
 <!-- Areas Navigation Area -->
           <li class="nav-item has-treeview">
@@ -285,7 +285,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
 <!-- End of Watchlist Navigation Area -->
-<?php if(in_array($currentUser['utype'],['Administrator','Moderator'])){ //Show only if admin or moderator ?>
+<?php if(in_array($currentUser['utype'],['Administrator','Manager'])){ //Show only if admin or Manager ?>
 
 
 	<!-- Events Navigation Area -->

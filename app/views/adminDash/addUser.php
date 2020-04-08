@@ -124,7 +124,7 @@ if(isset($user)){
               </div>
               <select name="user[utype]" class="form-control" id = "typeSelect" <?php if(isset($user) && $user['utype']=="Administrator" && checkLastAdministrator())echo 'disabled';?>>
                   <option value="Administrator" <?php if(isset($user) && $user['utype']=="Administrator")echo 'selected';?>>Administrator</option>
-                  <option value="Moderator" <?php if(isset($user) && $user['utype']=="Moderator")echo 'selected';?>>Moderator
+                  <option value="Manager" <?php if(isset($user) && $user['utype']=="Manager")echo 'selected';?>>Manager
                   </option>
                   <option value="Zookeeper" <?php if(isset($user) && $user['utype']=="Zookeeper")echo 'selected';?>>Zookeeper
                   </option>

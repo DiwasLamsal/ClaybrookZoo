@@ -1,23 +1,26 @@
+Administrator: Diwas Lamsal
+Login ID: 10000
+password: asdasdasd
+
 *******************************************************************
 
 *Please read this file as a walkthrough to use the system
 
-GROUP B - CSY2027 GROUP PROJECT ASSIGNMENT
+18406547 - DIWAS LAMSAL CLAYBROOK ZOO ASSIGNMENT
 
-* Database name: groupb
+* Database name: zooassignment
 *******************************************************************
 
-Please Upload the SQL file groupb.sql before you proceed. The database name is groupb. 
-
+Please Upload the SQL file zooassignment.sql before you proceed. The database name is zooassignment. 
 
 *******************************************
 *IMPORTANT*
 
-Please add the folder ZooAssignment to the root server directory because Absolute path has been used
+Please add the folder ZooAssignment to the root server directory because. Absolute paths has been used
 The files such as CSS, images, or javascript required absolute pathing due to the htaccess structure 
 and the MVC module
 
-The folder structure shall be:
+The folder structure (for Xampp server) shall be:
 
 	htdocs/ZooAssignment/
 	
@@ -38,10 +41,9 @@ The current values are:
 $server = 'localhost';
 $username = 'root';
 $password = '';
-$schema = 'groupb';
+$schema = 'zooassignment';
 
 If you have different information for your MySQL, please find the file pdoconnect.php and edit it
-
 
 
 *******************************************
@@ -50,55 +52,26 @@ LOGIN INFORMATION:
 
 ----------------------
 Administrator: Diwas Lamsal
-ID: 10000000
+Login ID: 10000
 password: asdasdasd
 ----------------------
 ----------------------
-Module Leader:
-ID: 10000004
+Administrator: Claybrook Administrator
+Login ID: 10001
 password: asdasdasd
 ----------------------
 ----------------------
-Module Leader: 
-ID: 10000003
+Manager: Bhuwan Karki
+Login ID: 10002
 password: asdasdasd
 ----------------------
 ----------------------
-Student: Ayush Raj Moktan
-ID: 10000012
+Zookeeper: Ayush Raj Moktan
+Login ID: 10003
 password: asdasdasd
 ----------------------
-----------------------
-Student: Binayak Dhakal
-ID: 10000013
-password: asdasdasd
 ----------------------
 
 *******************************************
 
-Resources information:
 
-All the dummy data that can be uploaded to the system is placed inside the uploadData folder inside the resources folder 
-inside the public folder. 
-
-/ZooAssignment/Public/resources/uploadData
-
-The admissionData folder contains student UCAS admission csv file.
-The assignmentSubmission folder contains dummy student assignment submissions files.
-The assignmentUpload folder contains dummy assignments for different modules.
-The attendanceData folder contains attendance csv files for two students in Level 6.
-The resourceUpload folder contains dummy resources for different modules.
-
-You can use these files to test the differnt aspects of the system.
-
-*******************************************
-
-Please view Binayak Dhakal and Ayush Raj Moktan as examples
-as the assignment, attendance, and other related data have 
-already been entered for them.
-
-The login details above are for users with data already
-added for displaying the usage of system.
-
-
-*******************************************

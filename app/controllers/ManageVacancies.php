@@ -12,7 +12,7 @@ class ManageVacancies extends Controller{
     $title = "Dashboard - Vacancies";
     $breadcrumbContent=["ManageVacancies"=>"Vacancies"];
     $bodyTitle="Vacancies";
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     require_once "../app/controllers/adminLoadView.php";
   }
 }

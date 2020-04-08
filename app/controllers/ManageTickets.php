@@ -12,7 +12,7 @@ class ManageTickets extends Controller{
     $title = "Dashboard - Tickets";
     $breadcrumbContent=["ManageTickets"=>"Tickets"];
     $bodyTitle="Tickets";
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     require_once "../app/controllers/adminLoadView.php";
   }
 }

@@ -75,7 +75,7 @@
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
- if(in_array($_SESSION['loggedin']['utype'],['Administrator','Moderator'])){ //Show only if admin or moderator ?>
+ if(in_array($_SESSION['loggedin']['utype'],['Administrator','Manager'])){ //Show only if admin or Manager ?>
 
 
       <div class="col-md-12 mb-3">

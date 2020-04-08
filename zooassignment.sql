@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2020 at 08:13 PM
+-- Generation Time: Apr 08, 2020 at 10:22 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -55,9 +55,9 @@ INSERT INTO `animals` (`aid`, `alid`, `aspecies`, `aname`, `adob`, `agender`, `a
 ('BIREA20496C', 3, 'Eagle', 'Bald Eagle', '1998-07-02', 'Male', '9 years', 'C', 'Bird', 'Their prey items include waterfowl and small mammals like squirrels, prairie dogs, raccoons and rabbits. Bald eagles are opportunistic predators meaning that in addition to hunting for live prey, they will steal from other animals (primarily from other eagles or smaller fish eating birds) or scavenge on carrion.', 'Their prey items include waterfowl and small mammals like squirrels, prairie dogs, raccoons and rabbits. Bald eagles are opportunistic predators meaning that in addition to hunting for live prey, they will steal from other animals (primarily from other eagles or smaller fish eating birds) or scavenge on carrion.', 'Their prey items include waterfowl and small mammals like squirrels, prairie dogs, raccoons and rabbits. Bald eagles are opportunistic predators meaning that in addition to hunting for live prey, they will steal from other animals (primarily from other eagles or smaller fish eating birds) or scavenge on carrion.', '2019-12-31', 'Their prey items include waterfowl and small mammals like squirrels, prairie dogs, raccoons and rabbits. Bald eagles are opportunistic predators meaning that in addition to hunting for live prey, they will steal from other animals (primarily from other eagles or smaller fish eating birds) or scavenge on carrion.', 'No', 'Active'),
 ('BIRPA20322C', 5, 'Parrot', 'Alexandrine Parakeet', '2012-06-23', 'Male', '2 years', 'C', 'Bird', 'Most parrots eat a diet that contains nuts, flowers, fruit, buds, seeds and insects. Seeds are their favorite food. They have strong jaws that allow them to snap open nutshells to get to the seed that\'s inside.', 'Habitat. Most wild parrots live in the warm areas of the Southern Hemisphere, though they can be found in many other regions of the world, such as northern Mexico. Australia, South America and Central America have the greatest diversity of parrot species. Not all parrots like warm weather, though', 'Looking for something fun to do this winter? Here\'s a fun citizen-science project that twitchers, birders, parrot enthusiasts, naturalists and their families can participate in: the World Parrot Count.\r\n\r\nThis international census is organised by the Parrot Researchers Group, which is part of the International Ornithological Union (IOU). Day-to-day coordination is done by Roelant Jonker, a doctoral student in the department of environmental sciences at Leiden University in the Netherlands, and by Michael Braun, a graduate student in the department of biology at Heidelberg University in Germany.', '2015-10-28', 'Parrots can range in size from about 3.5 to 40 inches (8.7 to 100 centimeters) and weigh 2.25 to 56 ounces (64 g to 1.6 kg), on average. The world\'s heaviest type of parrot is the kakapo, which can weigh up to 9 lbs', 'No', 'Active'),
 ('MAMEL20610A', 1, 'Elephant', 'African Bush Elephant', '1993-06-17', 'Male', '60-70 years', 'A', 'Mammal', 'African bush elephants are herbivores, which means they eat plants. These animals live across a variety of habitats in Africa, so their diets vary depending on where exactly they live. In general, African bush elephants eat grasses and plants and the leaves, bark and fruit from trees and shrubs.', 'The African Bush Elephants habitat is given away by its name â€“ in the African Bush! This includes savanna grasslands, partial desert areas and primary forest within Central and Southern Africa. These locations are perfect areas for the African Bush Elephant to find food.', 'The African bush elephant occurs in Sub-Saharan Africa including Uganda, Kenya, Tanzania, Botswana, Zimbabwe, Namibia, Zambia, and Angola. ... In Mali and Namibia, it also inhabits desert areas.', '1998-12-16', 'The African Bush Elephant is the largest known land mammal on Earth, with male African Bush Elephants reaching up to 3.5 metres in height and the females being slightly smaller at around 3 metres tall. The body of the African Bush Elephants can also grow to between 6 and 7 meters long.', 'No', 'Active'),
-('MAMJA20807B', 6, 'Jaguar', 'North American Jaguar', '2013-06-12', 'Male', '12 â€“ 15 years', 'B', 'Mammal', 'Jaguars are known to eat deer, peccary, crocodiles, snakes, monkeys, deer, sloths, tapirs, turtles, eggs, frogs, fish and anything else they can catch.', 'Jaguars prefer wet lowland habitats, swampy savannas or tropical rain forests. Their favorite habitat is in the tropical and subtropical forests. Jaguars also live in forests and grasslands, living near rivers and lakes, in small caves, marshland, and under rock ledges; they live in shrubby areas as well.', 'Only 15,000 jaguars left: conservation experts call for greater collaboration. Posted: Friday, May 3, 2019. 9:08 am CST. By BBN Staff: Conservation groups are calling on transnational cooperation to protect jaguars, as new population estimates say that there are around 15,00 of the animal left on earth', '2013-05-14', 'The jaguar stands 63 to 76 cm (25 to 30 in) tall at the shoulders. Further variations in size have been observed across regions and habitats, with size tending to increase from north to south', 'No', 'Active'),
+('MAMJA20807B', 6, 'Jaguar', 'North American Jaguar', '2013-06-12', 'Male', '12 â€“ 15 years', 'B', 'Mammal', 'Jaguars are known to eat deer, peccary, crocodiles, snakes, monkeys, deer, sloths, tapirs, turtles, eggs, frogs, fish and anything else they can catch.', 'Jaguars prefer wet lowland habitats, swampy savannas or tropical rain forests. Their favorite habitat is in the tropical and subtropical forests. Jaguars also live in forests and grasslands, living near rivers and lakes, in small caves, marshland, and under rock ledges; they live in shrubby areas as well.', 'Only 15,000 jaguars left: conservation experts call for greater collaboration. Posted: Friday, May 3, 2019. 9:08 am CST. By BBN Staff: Conservation groups are calling on transnational cooperation to protect jaguars, as new population estimates say that there are around 15,00 of the animal left on earth', '2013-05-14', 'The jaguar stands 63 to 76 cm (25 to 30 in) tall at the shoulders. Further variations in size have been observed across regions and habitats, with size tending to increase from north to south', 'Yes', 'Active'),
 ('MAMLE20622A', 6, 'Leopard/Jaguar', 'Black Panther Jaguar', '2012-07-07', 'Female', '12 â€“ 15 years', 'A', 'Mammal', 'Panthers are carnivorous animals, or meat eaters. Their food mainly includes herbivores like deer, wild hogs, and wild boar. They also feed on livestock or small animals, such as rabbits, dogs, birds, and fish. They eat almost anything that moves, as long as the prey isn\'t too big or strong', 'The black panther\'s habitats include the rainforest, marshland, woodlands, swamps, savannahs, and even mountains and deserts. One of the reasons that black panthers are able to live in such variety of habitats is that they can eat many types of animals', 'Although they are most commonly found in tropical and deciduous forests, the Panther can also be found inhabiting both marsh and swampland, along with grasslands and even more hostile areas such as deserts and mountains.', '2013-05-14', 'They weigh anywhere from 65 to 200 pounds (29 to 91 kg) and range in length from three to seven feet (0.9 to 2.1 m), not including tails, which are about two to three feet (0.6 to 0.9 m) long. The average adult black leopard stands two feet high at the shoulder.\r\n', 'No', 'Active'),
-('MAMTI20795A', 1, 'Tiger', 'Royal Bengal Tiger', '2013-07-17', 'Male', '8 to 10 years', 'A', 'Mammal', 'The tiger is a carnivore. It prefers hunting large ungulates such as chital, sambar, gaur, and to a lesser extent also barasingha, water buffalo, nilgai, serow and takin. Among the medium-sized prey species it frequently kills wild boar, and occasionally hog deer, muntjac and grey langur.', 'The Bengal tiger, or Royal Bengal tiger, roams a wide range of habitats including high altitudes, tropical and subtropical rainforests, mangroves, and grasslands. They are primarily found in parts of India, Nepal, Bhutan, Bangladesh and Myanmar.', 'We can find the largest population of Royal Bengal Tigers in India. As per the latest tiger census report 2019, there are 2,967 Royal Bengal tigers in India. India has more than 75% of the total tiger population in the world.', '2017-06-05', 'Males have an average total length of 270 to 310 cm (110 to 120 in) including the tail, while females measure 240 to 265 cm (94 to 104 in) on average. The tail is typically 85 to 110 cm (33 to 43 in) long, and on average, tigers are 90 to 110 cm (35 to 43 in) in height at the shoulders', 'Yes', 'Active'),
+('MAMTI20795A', 1, 'Tiger', 'Royal Bengal Tiger', '2013-07-17', 'Male', '8 to 10 years', 'A', 'Mammal', 'The tiger is a carnivore. It prefers hunting large ungulates such as chital, sambar, gaur, and to a lesser extent also barasingha, water buffalo, nilgai, serow and takin. Among the medium-sized prey species it frequently kills wild boar, and occasionally hog deer, muntjac and grey langur.', 'The Bengal tiger, or Royal Bengal tiger, roams a wide range of habitats including high altitudes, tropical and subtropical rainforests, mangroves, and grasslands. They are primarily found in parts of India, Nepal, Bhutan, Bangladesh and Myanmar.', 'We can find the largest population of Royal Bengal Tigers in India. As per the latest tiger census report 2019, there are 2,967 Royal Bengal tigers in India. India has more than 75% of the total tiger population in the world.', '2017-06-05', 'Males have an average total length of 270 to 310 cm (110 to 120 in) including the tail, while females measure 240 to 265 cm (94 to 104 in) on average. The tail is typically 85 to 110 cm (33 to 43 in) long, and on average, tigers are 90 to 110 cm (35 to 43 in) in height at the shoulders', 'No', 'Active'),
 ('REPSN20640E', 5, 'Snake', 'African Black Mamba', '2020-01-01', 'Male', '2 years', 'E', 'Reptile or Amphibian', 'Snakes are elongated, legless, carnivorous reptiles of the suborder Serpentes. Like all other squamates, snakes are ectothermic, amniote vertebrates covered inSnakes are elongated, legless, carnivorous reptiles of the suborder Serpentes. Like all other squamates, snakes are ectothermic, amniote vertebrates covered in', 'Snakes are elongated, legless, carnivorous reptiles of the suborder Serpentes. Like all other squamates, snakes are ectothermic, amniote vertebrates covered inSnakes are elongated, legless, carnivorous reptiles of the suborder Serpentes. Like all other squamates, snakes are ectothermic, amniote vertebrates covered in', 'Snakes are elongated, legless, carnivorous reptiles of the suborder Serpentes. Like all other squamates, snakes are ectothermic, amniote vertebrates covered inSnakes are elongated, legless, carnivorous reptiles of the suborder Serpentes. Like all other squamates, snakes are ectothermic, amniote vertebrates covered in', '2020-03-02', 'Snakes are elongated, legless, carnivorous reptiles of the suborder Serpentes. Like all other squamates, snakes are ectothermic, amniote vertebrates covered inSnakes are elongated, legless, carnivorous reptiles of the suborder Serpentes. Like all other squamates, snakes are ectothermic, amniote vertebrates covered in', 'No', 'Active');
 
 -- --------------------------------------------------------
@@ -92,7 +92,7 @@ INSERT INTO `animal_images` (`aiid`, `aianimal`, `aifilename`, `aifiletype`) VAL
 (40, 'BIRPA20322C', 'resources/images/animals/BIRPA20322C/1584960748.8055-Gallery-parrot2.jpg', 'Gallery'),
 (41, 'BIRPA20322C', 'resources/images/animals/BIRPA20322C/1584962533.7539-Global-Parrot_range.png', 'Global'),
 (42, 'REPSN20640E', 'resources/images/animals/REPSN20640E/1585023913.3408-Global-220px-Africa_land_cover_location_mamba_map_with_borders.jpg', 'Global'),
-(43, 'BIREA20496C', 'resources/images/animals/BIREA20496C/1585463081.0135-Cover-download_(1).jfif', 'Cover'),
+(43, 'BIREA20496C', 'resources/images/animals/BIREA20496C/1586007611.248-Cover-download_(2).jfif', 'Cover'),
 (44, 'BIREA20496C', 'resources/images/animals/BIREA20496C/1585146130.487-Gallery-1200px-Ãguila_calva.jpg', 'Gallery'),
 (45, 'BIREA20496C', 'resources/images/animals/BIREA20496C/1585146130.4918-Gallery-download_(1).jfif', 'Gallery'),
 (46, 'BIREA20496C', 'resources/images/animals/BIREA20496C/1585146130.4962-Gallery-download.jfif', 'Gallery'),
@@ -308,7 +308,8 @@ CREATE TABLE `sponsors` (
 
 INSERT INTO `sponsors` (`sid`, `scompany`, `sptelephone`, `sstelephone`, `semail`, `saddress`, `sbanner`, `swebsite`) VALUES
 (1, 'Zenth  Staybrite Ltd', '01966 7855122', '0800 3289392', 'zenth@gmail.com', 'Mrs Jane Woods (Senior Accountant)\r\n 45 Blackwood Road\r\nWesthills\r\nLongbottom\r\nNorth Yorkshire\r\nNY12 D454\r\n', 'resources/images/sponsors/1585373794.7772-Banner-test.bmp', 'Not Available'),
-(4, 'The Coca-Cola Company', '(1.800.438.2653)', '+1 (404) 676.2683', 'coca@cola.com', 'Atlanta, Georgia, United States', 'resources/images/sponsors/1585381763.7043-Banner-coco-cola.jpg', 'https://www.coca-colacompany.com/');
+(4, 'The Coca-Cola Company', '(1.800.438.2653)', '+1 (404) 676.2683', 'coca@cola.com', 'Atlanta, Georgia, United States', 'resources/images/sponsors/1585381763.7043-Banner-coco-cola.jpg', 'https://www.coca-colacompany.com/'),
+(5, 'Ferrari Italia', '21324', '515 5135 15341', 'fitalia@ferrari.com', 'Ferrari Head Office Address: Ferrari SpA, headquarters and factory: Via Abetone Inferiore n. 4, I-41053 Maranello (MO).', 'resources/images/sponsors/1586274590.9019-Banner-unnamed.jpg', 'http://www.ferrariitalia.com');
 
 -- --------------------------------------------------------
 
@@ -337,8 +338,9 @@ CREATE TABLE `sponsorships` (
 --
 
 INSERT INTO `sponsorships` (`sid`, `said`, `ssid`, `sprice`, `sstartdate`, `senddate`, `sarea`, `snotes`, `spaymentdetails`, `spaid`, `reviewdate`, `ssigndate`, `sstatus`) VALUES
-(1, 'BIRPA20322C', 1, 1500.00, '2021-01-01', '2021-12-31', '1/8', 'Sponsorship details to be displayed in the bottom right-hand corner.', 'Electronic Transfer of  Funds to Zoo Sponsorship Account', 'Yes', '2020-03-28', '2020-03-27', 'Active'),
-(3, 'MAMTI20795A', 4, 2500.00, '2022-01-01', '2022-12-31', '1/10', 'We love animals and would love to pay for this tiger. In return, we would just want a small space for our advertisement.', 'We will make a payment to your bank account through cash.', 'Yes', '2020-03-28', '2020-03-28', 'Active');
+(1, 'BIRPA20322C', 1, 1500.00, '2021-01-01', '2021-12-31', '1/8', 'Sponsorship details to be displayed in the bottom right-hand corner.', 'Electronic Transfer of  Funds to Zoo Sponsorship Account', 'Yes', '2020-04-05', '2020-03-27', 'Active'),
+(3, 'MAMTI20795A', 4, 2500.00, '2022-01-01', '2022-12-31', '1/10', 'We love animals and would love to pay for this tiger. In return, we would just want a small space for our advertisement.', 'We will make a payment to your bank account through cash.', 'Yes', '2020-03-28', '2020-03-28', 'Active'),
+(4, 'MAMJA20807B', 5, 2000.00, '2024-01-01', '2024-12-31', '2/10', 'Nothing really', 'We will send a cheque.', 'No', '2020-04-07', '2020-04-07', 'Active');
 
 -- --------------------------------------------------------
 
@@ -349,7 +351,7 @@ INSERT INTO `sponsorships` (`sid`, `said`, `ssid`, `sprice`, `sstartdate`, `send
 CREATE TABLE `users` (
   `uid` int(11) NOT NULL,
   `ufullname` varchar(255) NOT NULL,
-  `utype` enum('Administrator','Moderator','Zookeeper') NOT NULL,
+  `utype` enum('Administrator','Manager','Zookeeper') NOT NULL,
   `upassword` varchar(255) NOT NULL,
   `ustatus` enum('Active','Dormant') NOT NULL,
   `email` varchar(255) NOT NULL
@@ -360,10 +362,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `ufullname`, `utype`, `upassword`, `ustatus`, `email`) VALUES
-(2, 'Claybrook Administrator', 'Administrator', '$2y$10$Lg/5.TDxJLubVcKdX58kTuoRyYF41fbqPGokzi/5eh6rFXwhL.Z/O', 'Active', 'administrator@claybrookzoo.com'),
-(5, 'Ramesha', 'Administrator', '$2y$10$WTcGvqBUTTf4ZiVkNePDZuE.jrT25qeBlD/RYyH6JM7nG4PiXaYH6', 'Active', 'ramesha@ramesha.com'),
-(7, 'Diwas Lamsal', 'Zookeeper', '$2y$10$W2YtigK3JCojTv0yF..iHuvziuLnQmx8dX5xaTLSpy2biXy.dhfra', 'Active', 'diwas@diwas.com'),
-(8, 'Suresha Adhikari', 'Moderator', '$2y$10$/gTXzBWsiWkK3C7waPvtRuUaQbOhNo.A/uQaRaoH.XD5dkkHSAguC', 'Active', 'suresha@adhikari.com');
+(10000, 'Diwas Lamsal', 'Administrator', '$2y$10$m.g2J..zy83rZC42zSp4BeIdCJKWNTq5/RXUlNsqaN9XVgIEmIym2', 'Active', 'diwaslamsal@claybrook.org'),
+(10001, 'Claybrook Administrator', 'Administrator', '$2y$10$WpfjWZc9pUQx5olvQjxB.uT32YHyOkalxu9aUZb23nIqnhGX7Fubu', 'Active', 'cbadmin@claybrook.org'),
+(10002, 'Bhuwan Karki', 'Manager', '$2y$10$TrgAUtTEpDd0j1hWoU55N.skjkl7ki0txOURMpFbB/huLlQqDRfNm', 'Active', 'bkarki@claybrook.org'),
+(10003, 'Robin Zookeeper', 'Zookeeper', '$2y$10$IZuu0DSMs1dJjrs0AlwsIec/ZpOxYN5fDs9SrEqVDcpHFxV.IaGsa', 'Active', 'rbzookeeper@claybrook.org');
 
 -- --------------------------------------------------------
 
@@ -538,19 +540,19 @@ ALTER TABLE `reptile_amphibians`
 -- AUTO_INCREMENT for table `sponsors`
 --
 ALTER TABLE `sponsors`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sponsorships`
 --
 ALTER TABLE `sponsorships`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10004;
 
 --
 -- AUTO_INCREMENT for table `watchlists`

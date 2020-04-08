@@ -22,7 +22,7 @@ class ManageEvents extends Controller{
     $content = loadTemplate($template, ['events'=>$events, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Events";
     $breadcrumbContent=["ManageEvents/all"=>"Events"];
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     $bodyTitle="Events";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -43,7 +43,7 @@ class ManageEvents extends Controller{
     $content = loadTemplate($template, []);
     $title = "Dashboard - Add new event";
     $breadcrumbContent=["ManageEvents/all"=>"Events", "ManageEvents/add"=>"Add Event"];
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     $bodyTitle="Add Event";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -82,7 +82,7 @@ class ManageEvents extends Controller{
 
       $title = "Dashboard - Edit Event";
       $breadcrumbContent=["ManageEvents/all"=>"Events", "ManageEvents/browse"=>"View Event"];
-      $role=['Administrator','Moderator'];
+      $role=['Administrator','Manager'];
       $bodyTitle="View Event";
       require_once "../app/controllers/adminLoadView.php";
     }

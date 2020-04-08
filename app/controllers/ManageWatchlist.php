@@ -22,7 +22,7 @@ class ManageWatchlist extends Controller{
     $content = loadTemplate($template, ['watchlists'=>$watchlists, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Watchlists";
     $breadcrumbContent=["ManageWatchlist/all"=>"Watchlist"];
-    $role=['Administrator','Moderator','Zookeeper'];
+    $role=['Administrator','Manager','Zookeeper'];
     $bodyTitle="Watchlist";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -58,7 +58,7 @@ class ManageWatchlist extends Controller{
 
       $title = "Dashboard - Edit Watchlist";
       $breadcrumbContent=["ManageWatchlist/all"=>"Watchlist", "ManageWatchlist/all/".$val=>"View Watchlist"];
-      $role=['Administrator','Moderator','Zookeeper'];
+      $role=['Administrator','Manager','Zookeeper'];
       $bodyTitle="View Watchlist";
       require_once "../app/controllers/adminLoadView.php";
     }

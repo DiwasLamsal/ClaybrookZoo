@@ -22,7 +22,7 @@ class ManageLocations extends Controller{
     $content = loadTemplate($template, ['locations'=>$locations, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Locations";
     $breadcrumbContent=["ManageLocations/all"=>"locations"];
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     $bodyTitle="Locations";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -41,7 +41,7 @@ class ManageLocations extends Controller{
     $content = loadTemplate($template, ['areas'=>$areas]);
     $title = "Dashboard - Add new location";
     $breadcrumbContent=["ManageLocations/all"=>"locations", "ManageLocations/Add"=>"Add Location"];
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     $bodyTitle="Add location";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -77,7 +77,7 @@ class ManageLocations extends Controller{
 
       $title = "Dashboard - View Location";
       $breadcrumbContent=["ManageLocations/all"=>"Locations", "ManageLocations/browse"=>"View Location"];
-      $role=['Administrator','Moderator'];
+      $role=['Administrator','Manager'];
       $bodyTitle="Edit location";
       require_once "../app/controllers/adminLoadView.php";
     }

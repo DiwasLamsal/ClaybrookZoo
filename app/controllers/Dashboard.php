@@ -16,7 +16,7 @@
       $selected = "Dashboard";
       $breadcrumbContent=["UserHome"=>"Dashboard"];
       $bodyTitle="Dashboard";
-      $role=['Administrator','Moderator','Zookeeper'];
+      $role=['Administrator','Manager','Zookeeper'];
       require_once "../app/controllers/adminLoadView.php";
     }
 

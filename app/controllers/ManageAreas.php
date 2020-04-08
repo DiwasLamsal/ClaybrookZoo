@@ -23,7 +23,7 @@ class ManageAreas extends Controller{
     $content = loadTemplate($template, ['areas'=>$areas, 'dataTableCode'=>$dataTableCode, 'message'=>$message]);
     $title = "Dashboard - Areas";
     $breadcrumbContent=["ManageAreas/all"=>"Areas"];
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     $bodyTitle="Areas";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -39,7 +39,7 @@ class ManageAreas extends Controller{
     $content = loadTemplate($template, []);
     $title = "Dashboard - Add new area";
     $breadcrumbContent=["ManageAreas/all"=>"areas", "ManageAreas/add"=>"Add Area"];
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     $bodyTitle="Add Area";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -69,7 +69,7 @@ class ManageAreas extends Controller{
 
       $title = "Dashboard - Edit area";
       $breadcrumbContent=["ManageAreas/all"=>"Areas", "ManageAreas/browse"=>"View Area"];
-      $role=['Administrator','Moderator'];
+      $role=['Administrator','Manager'];
       $bodyTitle="Edit Area";
       require_once "../app/controllers/adminLoadView.php";
     }

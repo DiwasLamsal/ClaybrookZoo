@@ -25,7 +25,7 @@ class ManageAnimals extends Controller{
     $content = loadTemplate($template, ['animals'=>$animals, 'dataTableCode'=>$dataTableCode, 'type'=>'', 'message'=>$message]);
     $title = "Dashboard - Animals";
     $breadcrumbContent=["ManageAnimals/all"=>"Animals"];
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     $bodyTitle="Animals";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -121,7 +121,7 @@ class ManageAnimals extends Controller{
     $content = loadTemplate($template, ['locations'=>$locations]);
     $title = "Dashboard - Add new Animal";
     $breadcrumbContent=["ManageAnimals/all"=>"Animals", "ManageAnimals/Add"=>"Add Animal"];
-    $role=['Administrator','Moderator'];
+    $role=['Administrator','Manager'];
     $bodyTitle="Add Animal";
     require_once "../app/controllers/adminLoadView.php";
   }
@@ -230,7 +230,7 @@ class ManageAnimals extends Controller{
       $content = loadTemplate($template, $criteria);
       $title = "Dashboard - View Animal";
       $breadcrumbContent=["ManageAnimals/all"=>"Animals", "ManageAnimals/browse"=>"View Animal"];
-      $role=['Administrator','Moderator'];
+      $role=['Administrator','Manager'];
       $bodyTitle="Edit Animal";
       require_once "../app/controllers/adminLoadView.php";
     }

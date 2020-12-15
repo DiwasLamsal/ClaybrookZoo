@@ -5,7 +5,7 @@ Software Engineering 3 Term II, University of Northampton
 
 <hr>
 
-![Claybrook Zoo Image](https://diwaslamsal.github.io/ClaybrookZoo/ZooAssignment/claybrook.png)
+![Claybrook Zoo Image](https://diwaslamsal.github.io/ClaybrookZoo/ZooAssignment/claybrook2.png)
 
 
 

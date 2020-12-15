@@ -5,7 +5,7 @@ Software Engineering 3 Term II, University of Northampton
 
 <hr>
 
-![Claybrook Zoo Image](https://diwaslamsal.com.np/assets/img/project_images/1597490811.7589-Logo-lance-anderson-QZwf5yNopUo-unsplash.jpg)
+![Claybrook Zoo Image](https://diwaslamsal.github.io/ClaybrookZoo/ZooAssignment/claybrook2.png)
 
 
 

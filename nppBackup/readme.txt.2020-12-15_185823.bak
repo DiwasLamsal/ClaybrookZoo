@@ -17,15 +17,16 @@ Please Upload the SQL file zooassignment.sql before you proceed. The database na
 *IMPORTANT*
 
 Please add the folder ZooAssignment to the root server directory because. Absolute paths have been used
-The files such as CSS, images, or JavaScript required absolute pathing due to the htaccess structure 
+The files such as CSS, images, or javascript required absolute pathing due to the htaccess structure 
 and the MVC module
 
-The folder structure (for Xampp server) should be:
+The folder structure (for Xampp server) shall be:
 
 	htdocs/ZooAssignment/
 	
 such that ZooAssignment is the first directory in the url - localhost/ZooAssignment
 
+Please do not change the root folder name or restructure the directories
 
 *******************************************
 

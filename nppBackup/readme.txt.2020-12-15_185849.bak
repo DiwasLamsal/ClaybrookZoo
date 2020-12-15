@@ -26,6 +26,7 @@ The folder structure (for Xampp server) should be:
 	
 such that ZooAssignment is the first directory in the url - localhost/ZooAssignment
 
+Please do not change the root folder name or restructure the directories
 
 *******************************************
 

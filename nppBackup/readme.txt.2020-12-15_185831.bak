@@ -20,12 +20,13 @@ Please add the folder ZooAssignment to the root server directory because. Absolu
 The files such as CSS, images, or JavaScript required absolute pathing due to the htaccess structure 
 and the MVC module
 
-The folder structure (for Xampp server) should be:
+The folder structure (for Xampp server) shall be:
 
 	htdocs/ZooAssignment/
 	
 such that ZooAssignment is the first directory in the url - localhost/ZooAssignment
 
+Please do not change the root folder name or restructure the directories
 
 *******************************************
 
